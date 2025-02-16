@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ovvuheo8un77"]
+
+[ext_resource type="PackedScene" uid="uid://d2if6hpywxgxc" path="res://markIncompleteScenes/interactable.tscn" id="1_75mtr"]
+[ext_resource type="Script" path="res://markIncompleteScenes/npc.gd" id="1_v7hnn"]
+
+[node name="npc" type="CharacterBody2D"]
+script = ExtResource("1_v7hnn")
+
+[node name="Interactable" parent="." instance=ExtResource("1_75mtr")]
