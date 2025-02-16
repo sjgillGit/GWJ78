@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2if6hpywxgxc"]
+
+[ext_resource type="Script" path="res://interactable.gd" id="1_8wif2"]
+[ext_resource type="Texture2D" uid="uid://cwmxtjorslxxv" path="res://Assets/Characters(100x100)/Orc/Orc with shadows/Orc-Idle.png" id="2_hx0ix"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xmr45"]
+radius = 13.0
+height = 42.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdrrd"]
+atlas = ExtResource("2_hx0ix")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5jx0"]
+atlas = ExtResource("2_hx0ix")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehdbw"]
+atlas = ExtResource("2_hx0ix")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekmra"]
+atlas = ExtResource("2_hx0ix")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td6hw"]
+atlas = ExtResource("2_hx0ix")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmknx"]
+atlas = ExtResource("2_hx0ix")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1y0b2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdrrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5jx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehdbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekmra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td6hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmknx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_8wif2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xmr45")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1y0b2")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
