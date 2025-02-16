@@ -157,13 +157,9 @@ zoom = Vector2(2.54, 2.54)
 
 [node name="Interactable" parent="testPlayer" instance=ExtResource("4_oxtlt")]
 visible = false
-
-[node name="Interactable" parent="." instance=ExtResource("4_oxtlt")]
-visible = false
-position = Vector2(-144, -6)
+position = Vector2(-1, -1)
 
 [node name="npc" parent="." instance=ExtResource("5_v22lt")]
-position = Vector2(-126, -17)
+position = Vector2(-149, -7)
 
 [connection signal="on_interact" from="testPlayer/Interactable" to="testPlayer" method="_on_interactable_on_interact"]
-[connection signal="on_interact" from="Interactable" to="testPlayer" method="_on_interactable_on_interact"]
