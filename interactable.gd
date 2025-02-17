@@ -12,7 +12,7 @@ func set_text(text):
 	testDialogue = text
 
 func _on_body_entered(body: Node2D) -> void:
-	#print("Hello, walking a little close arent we?")
+	print("Hello, walking a little close arent we?")
 	interact_range = true
 	emit_signal("on_interact", testDialogue)
 
