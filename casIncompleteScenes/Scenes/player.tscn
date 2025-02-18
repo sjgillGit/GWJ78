@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://64kk41csrmwh"]
+[gd_scene load_steps=40 format=3 uid="uid://64kk41csrmwh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hle43"]
 [ext_resource type="Texture2D" uid="uid://1ry2ws1yvpnx" path="res://Assets/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="2_3k4tc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1f22xc23x1hs" path="res://Assets/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="4_d02jw"]
 [ext_resource type="Texture2D" uid="uid://vjg5gctfmy5j" path="res://Assets/Characters(100x100)/Orc/Orc/Orc.png" id="5_ipuik"]
 [ext_resource type="Texture2D" uid="uid://c0qtisd6q10ob" path="res://Assets/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="6_4rll0"]
+[ext_resource type="Script" path="res://casIncompleteScenes/Components/dash_component.gd" id="7_pmk2b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kt6h3"]
 radius = 5.0
@@ -274,3 +275,8 @@ offset_bottom = -13.0
 sprite_frames = SubResource("SpriteFrames_4hkln")
 animation = &"run_night"
 autoplay = "idle_day"
+
+[node name="DashComponent" type="Node" parent="." node_paths=PackedStringArray("characterBody")]
+script = ExtResource("7_pmk2b")
+characterBody = NodePath("..")
+airDashStrength = 300.0
