@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GWJ78"
-run/main_scene="res://PrivateDevRoom/UIComponents/uimanager.tscn"
+run/main_scene="res://Scenes/UIComponents/uimanager.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -27,7 +27,7 @@ project/assembly_name="GWJ78"
 
 [gui]
 
-theme/custom="res://PrivateDevRoom/UIComponents/DefaultTheme.tres"
+theme/custom="res://Scenes/UIComponents/DefaultTheme.tres"
 theme/default_font_multichannel_signed_distance_field=true
 
 [input]
