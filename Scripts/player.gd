@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var player_speed_boost: float
 @export var player_health_boost: int
 
-@export var player_properties: Node
+@export var player_properties: Player_Properties
 
 @export_category("Player Inventory")
 @export var player_currency: int = 0
