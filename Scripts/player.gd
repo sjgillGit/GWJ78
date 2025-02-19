@@ -1,15 +1,11 @@
 extends CharacterBody2D
 
 
-var player_speed
-var player_max_speed
-var player_jump_velocity
-var player_acceleration
-var player_speed_delta
-var player_health
 
 @export var player_speed_boost: float
 @export var player_health_boost: int
+
+@export var player_properties: Node
 
 @export_category("Player Inventory")
 @export var player_currency: int = 0
@@ -44,8 +40,8 @@ func _ready():
 				print("goal signal connected to player")
 			else:
 				print("failed to connect goal group signal to player")
-	set_base_stats()
-	apply_stat_modifiers()
+	#set_base_stats()
+	#apply_stat_modifiers()
 
 func _physics_process(delta: float) -> void:
 	#table for 
@@ -61,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1):
-		velocity.y = player_jump_velocity
+		velocity.y = player_properties.JUMP_VELOCITY
 		
 	if Input.is_action_just_pressed("interact"):
 		if dayS:
@@ -70,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			_on_time_of_day_change("DAY")
 			dayS = !dayS
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
@@ -80,7 +76,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite_2d.play(idleAnim)
-		else:
+		#else:
+		elif velocity.x != 0:
 			animated_sprite_2d.play(runAnim)
 	else:
 		animated_sprite_2d.play(jumpAnim)
@@ -90,33 +87,16 @@ func _physics_process(delta: float) -> void:
 		
 	if direction and isMoving:
 		if Input.is_action_pressed("sprint") and is_on_floor():
-			if abs(velocity.x) <= player_max_speed:
-				velocity.x += player_acceleration * direction
+			if abs(velocity.x) <= player_properties.MAX_SPEED:
+				velocity.x += player_properties.ACCELERATION * direction
 		else:
-			velocity.x = move_toward(velocity.x, direction * player_speed, player_speed_delta)
+			velocity.x = move_toward(velocity.x, direction * player_properties.BASE_SPEED, player_properties.SPEED_DELTA)
 	else:
-		velocity.x = move_toward(velocity.x, 0, player_speed_delta)
+		velocity.x = move_toward(velocity.x, 0, player_properties.SPEED_DELTA)
 		
 	move_and_slide()
-		
-	
-func set_base_stats():
-	player_speed = Player_Properties.BASE_SPEED
-	player_health = Player_Properties.PLAYER_BASE_HEALTH
-	player_jump_velocity = Player_Properties.JUMP_VELOCITY
-	player_acceleration = Player_Properties.ACCELERATION
-	player_speed_delta = Player_Properties.SPEED_DELTA
-	player_max_speed = Player_Properties.MAX_SPEED
-	
-func apply_stat_modifiers():
-	player_speed += player_speed_boost
-	player_health += player_health_boost
 	
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	
-
 	
 func _on_time_of_day_change(dayState: String):
 	if dayState == "DAY":

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://64kk41csrmwh"]
+[gd_scene load_steps=41 format=3 uid="uid://64kk41csrmwh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hle43"]
 [ext_resource type="Texture2D" uid="uid://1ry2ws1yvpnx" path="res://Assets/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="2_3k4tc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vjg5gctfmy5j" path="res://Assets/Characters(100x100)/Orc/Orc/Orc.png" id="5_ipuik"]
 [ext_resource type="Texture2D" uid="uid://c0qtisd6q10ob" path="res://Assets/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="6_4rll0"]
 [ext_resource type="Script" path="res://casIncompleteScenes/Components/dash_component.gd" id="7_pmk2b"]
+[ext_resource type="Script" path="res://casIncompleteScenes/Components/Player_Properties.gd" id="8_0hiwl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kt6h3"]
 radius = 5.0
@@ -255,10 +256,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_properties")]
 position = Vector2(0, -7)
 collision_layer = 2
 script = ExtResource("1_hle43")
+player_properties = NodePath("Player_Properties")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -280,3 +282,6 @@ autoplay = "idle_day"
 script = ExtResource("7_pmk2b")
 characterBody = NodePath("..")
 airDashStrength = 300.0
+
+[node name="Player_Properties" type="Node" parent="."]
+script = ExtResource("8_0hiwl")

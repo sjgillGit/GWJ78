@@ -12,7 +12,7 @@ const SPEED_DELTA = 20.0
 const MAX_SPEED = 500.0
 @export_category("Player Modifiers")
 @export var air_dash: bool
-@export var current_speed = 150.0
+@export var current_speed = BASE_SPEED
 @export var player_current_base_health = 100
 @export_category("Player - Other")
 @export var player_money:int = 0
