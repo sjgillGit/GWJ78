@@ -59,7 +59,20 @@ func advance_time():
 		print("advance_time error, setting to morning")
 		set_time_of_day("morning")
 		
-		
+
+func update_town_stats(data: Dictionary):
+	print("update_town_stats triggered. now we can sleep")
+	if data.has("water_quality"):
+		water_quality += data["water_quality"]
+	if data.has("villager_happiness"):
+		villager_happiness += data["villager_happiness"]
+	if data.has("population_health"):
+		population_health += data["population_health"]
+	if data.has("chaos_change"):
+		chaos += data["chaos_change"]
+	if data.has("good_change"):
+		good += data["good_change"]
+
 func _get_water_quality():
 	pass
 func _set_water_quality(water):

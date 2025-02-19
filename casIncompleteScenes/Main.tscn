@@ -1,31 +1,32 @@
-[gd_scene load_steps=14 format=4 uid="uid://clv81mumqhage"]
+[gd_scene load_steps=15 format=4 uid="uid://clv81mumqhage"]
 
 [ext_resource type="Script" path="res://casIncompleteScenes/main.gd" id="1_8q21h"]
 [ext_resource type="PackedScene" uid="uid://64kk41csrmwh" path="res://casIncompleteScenes/Scenes/player.tscn" id="1_ebon2"]
 [ext_resource type="Texture2D" uid="uid://whldjdgd2yg2" path="res://Assets/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="3_y6ycr"]
 [ext_resource type="Texture2D" uid="uid://beruwyt8ga5da" path="res://Assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="4_ump44"]
 [ext_resource type="Texture2D" uid="uid://bbjo23p7opss7" path="res://Assets/Cute_Fantasy_Free/Tiles/Water_Middle.png" id="6_64oc1"]
+[ext_resource type="Script" path="res://Player_Properties.gd" id="7_sydf7"]
 [ext_resource type="PackedScene" uid="uid://qpedhtehupoe" path="res://casIncompleteScenes/Scenes/killzone.tscn" id="12_6ct6u"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4lexq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxhq2"]
 texture = ExtResource("3_y6ycr")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhqon"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0orvv"]
 texture = ExtResource("4_ump44")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_het5k"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8btmc"]
 texture = ExtResource("6_64oc1")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7yljf"]
 physics_layer_0/collision_layer = 1
-sources/11 = SubResource("TileSetAtlasSource_4lexq")
-sources/12 = SubResource("TileSetAtlasSource_mhqon")
-sources/14 = SubResource("TileSetAtlasSource_het5k")
+sources/11 = SubResource("TileSetAtlasSource_xxhq2")
+sources/12 = SubResource("TileSetAtlasSource_0orvv")
+sources/14 = SubResource("TileSetAtlasSource_8btmc")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p6qgo"]
 
@@ -93,6 +94,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_fjr8r")
+
+[node name="Player_Properties" type="Node" parent="."]
+script = ExtResource("7_sydf7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
