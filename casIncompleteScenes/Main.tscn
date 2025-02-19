@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://clv81mumqhage"]
+[gd_scene load_steps=16 format=4 uid="uid://clv81mumqhage"]
 
 [ext_resource type="Script" path="res://casIncompleteScenes/main.gd" id="1_8q21h"]
 [ext_resource type="PackedScene" uid="uid://64kk41csrmwh" path="res://casIncompleteScenes/Scenes/player.tscn" id="1_ebon2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://beruwyt8ga5da" path="res://Assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="4_ump44"]
 [ext_resource type="Texture2D" uid="uid://bbjo23p7opss7" path="res://Assets/Cute_Fantasy_Free/Tiles/Water_Middle.png" id="6_64oc1"]
 [ext_resource type="PackedScene" uid="uid://c4etiehr4qi5" path="res://Scenes/gold.tscn" id="8_ogbpq"]
+[ext_resource type="PackedScene" uid="uid://b4g8y0hm6xin3" path="res://casIncompleteScenes/Scenes/windTurbine.tscn" id="8_uysb3"]
 [ext_resource type="PackedScene" uid="uid://qpedhtehupoe" path="res://casIncompleteScenes/Scenes/killzone.tscn" id="12_6ct6u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxhq2"]
@@ -97,6 +98,9 @@ shape = SubResource("RectangleShape2D_fjr8r")
 
 [node name="Gold" parent="." instance=ExtResource("8_ogbpq")]
 position = Vector2(69, -16)
+
+[node name="Area2D3" parent="." instance=ExtResource("8_uysb3")]
+position = Vector2(220, -130)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

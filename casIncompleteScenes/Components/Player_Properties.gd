@@ -26,6 +26,13 @@ func _set_air_dash(toggle: bool):
 func _set_current_speed(boost: float):
 	current_speed = current_speed * boost
 
+func _set_temporary_speed_change(value: float, duration: float):
+	current_speed *= value
+	#get_tree().create_timer(duration).timeout.connect(set.bind("current_speed", current_speed/value))
+	get_tree().create_timer(duration).timeout.connect(func():
+		current_speed /= value
+		)
+
 func _level_complete(rewards: Player_Properties):
 	pass
 	#player_currency += rewards.money_found

@@ -45,7 +45,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	#table for 
-	label.text = "Velocity.x = %d \nVelocity.y = %d" % [velocity.x, velocity.y]
+	label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
 	# Add the gravity.
 	if not is_on_floor():
 		if not isDashing:
@@ -90,7 +90,7 @@ func _physics_process(delta: float) -> void:
 			if abs(velocity.x) <= player_properties.MAX_SPEED:
 				velocity.x += player_properties.ACCELERATION * direction
 		else:
-			velocity.x = move_toward(velocity.x, direction * player_properties.BASE_SPEED, player_properties.SPEED_DELTA)
+			velocity.x = move_toward(velocity.x, direction * player_properties.current_speed, player_properties.SPEED_DELTA)
 	else:
 		velocity.x = move_toward(velocity.x, 0, player_properties.SPEED_DELTA)
 		
