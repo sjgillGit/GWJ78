@@ -27,6 +27,7 @@ signal UpdateTown
 
 @export var player_collision_layer: int = 2
 
+var player_position: Vector2 = Vector2.ZERO
 
 
 func _set_air_dash(toggle: bool):

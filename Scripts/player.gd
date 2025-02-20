@@ -2,9 +2,8 @@ extends CharacterBody2D
 
 @export var player_speed_boost: float
 @export var player_health_boost: int
-
+@export var player_health: int = 100
 @export var player_properties: Player_Properties
-
 @export_category("Player Inventory")
 @export var player_currency: int = 0
 
@@ -37,6 +36,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	#table for 
+	PlayerProperties.player_position = global_position
 	label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
 	# Add the gravity.
 	if not is_on_floor():
@@ -142,3 +142,8 @@ func initialize_playerProperties():
 				print("goal signal connected to player")
 			else:
 				print("failed to connect goal group signal to player")
+				
+func take_damage():
+	player_health -= 30
+	print("damage taken by player, current hp: ", player_health)
+	
