@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4g8y0hm6xin3"]
+
+[ext_resource type="Texture2D" uid="uid://d2gpavvykk6q8" path="res://Assets/Cute_Fantasy_Free/Outdoor decoration/Chest.png" id="1_2pghx"]
+[ext_resource type="Script" path="res://Scripts/wind_gust.gd" id="1_l504j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juhxo"]
+size = Vector2(82.0625, 20)
+
+[node name="WindGust" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_l504j")
+metadata/_edit_vertical_guides_ = [-130.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2pghx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-46.9688, 0)
+shape = SubResource("RectangleShape2D_juhxo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

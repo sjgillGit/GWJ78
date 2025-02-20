@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://64kk41csrmwh"]
+[gd_scene load_steps=42 format=3 uid="uid://64kk41csrmwh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hle43"]
 [ext_resource type="Texture2D" uid="uid://1ry2ws1yvpnx" path="res://Assets/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="2_3k4tc"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d1f22xc23x1hs" path="res://Assets/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="4_d02jw"]
 [ext_resource type="Texture2D" uid="uid://vjg5gctfmy5j" path="res://Assets/Characters(100x100)/Orc/Orc/Orc.png" id="5_ipuik"]
 [ext_resource type="Texture2D" uid="uid://c0qtisd6q10ob" path="res://Assets/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="6_4rll0"]
+[ext_resource type="Script" path="res://Scripts/Components/dash_component.gd" id="7_pmk2b"]
+[ext_resource type="Script" path="res://Scripts/Components/Player_Properties.gd" id="8_0hiwl"]
+[ext_resource type="Script" path="res://Scripts/Components/stealth_component.gd" id="9_v4jh1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kt6h3"]
 radius = 5.0
@@ -254,10 +257,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_properties")]
 position = Vector2(0, -7)
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_hle43")
+player_properties = NodePath("Player_Properties")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -266,11 +270,25 @@ metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = -19.0
-offset_top = -36.0
+offset_top = -69.0
 offset_right = 21.0
-offset_bottom = -13.0
+offset_bottom = -46.0
+theme_override_font_sizes/font_size = 11
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4hkln")
 animation = &"run_night"
 autoplay = "idle_day"
+
+[node name="DashComponent" type="Node" parent="." node_paths=PackedStringArray("characterBody")]
+script = ExtResource("7_pmk2b")
+characterBody = NodePath("..")
+airDashStrength = 300.0
+
+[node name="Player_Properties" type="Node" parent="."]
+script = ExtResource("8_0hiwl")
+
+[node name="StealthComponent" type="Node" parent="." node_paths=PackedStringArray("characterBody", "player_properties")]
+script = ExtResource("9_v4jh1")
+characterBody = NodePath("..")
+player_properties = NodePath("../Player_Properties")
