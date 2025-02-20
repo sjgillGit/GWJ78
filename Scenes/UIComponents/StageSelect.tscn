@@ -16,7 +16,7 @@ func initialize_stage_select(progress):
 	%Button5.grab_focus()
 "
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="StageSelect" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

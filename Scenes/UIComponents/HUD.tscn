@@ -27,17 +27,23 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 
 [node name="Item1" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "juice boxes: 32"
+text = "juice boxes: 32
+press  e, esc, = for current 
+implemented ui"
 
 [node name="Item2" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "money: 69"
 
 [node name="RandomLabelNumber3" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "usb-c adapters: 17"
 
 [node name="ShouldDecideWhatTheseWillShow" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "plastic staws: 89214042999"
