@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://be8fu88chioyx"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://be8fu88chioyx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2ruy"]
 bg_color = Color(0.118581, 0.118581, 0.118581, 1)
@@ -54,6 +54,14 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bclhu"]
+bg_color = Color(0.725244, 0.632445, 0.481244, 1)
+border_color = Color(0.72549, 0.631373, 0.482353, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d633"]
 bg_color = Color(0.832323, 0.513749, 0.224328, 1)
 
@@ -92,7 +100,10 @@ Button/styles/normal = SubResource("StyleBoxFlat_7kqvc")
 Button/styles/pressed = SubResource("StyleBoxFlat_0oxw4")
 ConversationButton/base_type = &"Button"
 ConversationButton/styles/normal = SubResource("StyleBoxFlat_4600i")
+Label/font_sizes/font_size = 14
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_6lvlk")
+PanelNoBorder/base_type = &"PanelContainer"
+PanelNoBorder/styles/panel = SubResource("StyleBoxFlat_bclhu")
 RichTextLabel/constants/line_separation = 4
 RichTextLabel/font_sizes/normal_font_size = 22
 StageAvailableButton/base_type = &"Button"

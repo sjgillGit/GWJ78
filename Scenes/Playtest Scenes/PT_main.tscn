@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://ds04lfqoiwd5d"]
+[gd_scene load_steps=12 format=4 uid="uid://ds04lfqoiwd5d"]
 
 [ext_resource type="Script" path="res://Scripts/test_town.gd" id="1_lk8fl"]
 [ext_resource type="Texture2D" uid="uid://whldjdgd2yg2" path="res://Assets/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="2_5ms2n"]
 [ext_resource type="Texture2D" uid="uid://beruwyt8ga5da" path="res://Assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="3_px1la"]
 [ext_resource type="Texture2D" uid="uid://bbjo23p7opss7" path="res://Assets/Cute_Fantasy_Free/Tiles/Water_Middle.png" id="4_k421a"]
-[ext_resource type="PackedScene" uid="uid://64kk41csrmwh" path="res://casIncompleteScenes/Scenes/player.tscn" id="5_fjq05"]
-[ext_resource type="PackedScene" uid="uid://b4g8y0hm6xin3" path="res://casIncompleteScenes/Scenes/windGust.tscn" id="6_id4v2"]
+[ext_resource type="PackedScene" uid="uid://64kk41csrmwh" path="res://PrivateDevRoom/casIncompleteScenes/Scenes/player.tscn" id="5_fjq05"]
+[ext_resource type="PackedScene" uid="uid://b4g8y0hm6xin3" path="res://PrivateDevRoom/casIncompleteScenes/Scenes/windGust.tscn" id="6_id4v2"]
+[ext_resource type="PackedScene" uid="uid://c7qfihnyo70k4" path="res://Scenes/UIComponents/uimanager.tscn" id="7_02ni4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f130q"]
 texture = ExtResource("2_5ms2n")
@@ -54,6 +55,10 @@ position = Vector2(-29, -41)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+
+[node name="UIManager" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("7_02ni4")]
 
 [node name="WindGust" parent="." instance=ExtResource("6_id4v2")]
 position = Vector2(-158, -190)

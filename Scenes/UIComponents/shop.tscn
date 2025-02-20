@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3qjo3w02ijx8"]
+[gd_scene load_steps=5 format=3 uid="uid://v5snv6wy1hx1"]
 
+[ext_resource type="Theme" uid="uid://be8fu88chioyx" path="res://Scenes/UIComponents/DefaultTheme.tres" id="1_a1tgx"]
 [ext_resource type="PackedScene" uid="uid://d282ssyvd6lv5" path="res://Scenes/UIComponents/conversation.tscn" id="1_r2esc"]
+[ext_resource type="PackedScene" uid="uid://eiab34a5jbgh" path="res://Scenes/UIComponents/ShopItem.tscn" id="2_51hii"]
 
 [sub_resource type="GDScript" id="GDScript_jmmqq"]
 script/source = "extends Control
@@ -8,12 +10,19 @@ script/source = "extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	hide()
+	#%Item1.grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(Input.is_action_just_pressed('Interact')):
+		pass
+
+func _populate_store(picture, item_name, price):
+	%ItemPicture.set_texture('res://Assets/police_officer_front.png')
+	%ItemName.set_text(str(item_name))
+	%Price.set_text(str(price))
 "
 
 [node name="Shop" type="Control"]
@@ -25,5 +34,88 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_jmmqq")
 
-[node name="Conversation" parent="." instance=ExtResource("1_r2esc")]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1280, 520)
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Item" type="TabBar" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/TabContainer/Item"]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/Item/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_a1tgx")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="ItemContainer" type="PanelContainer" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"PanelNoBorder"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer/ItemContainer"]
+layout_mode = 2
+
+[node name="Item1" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer/ItemContainer/VBoxContainer2" instance=ExtResource("2_51hii")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Item2" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer/ItemContainer/VBoxContainer2" instance=ExtResource("2_51hii")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Item3" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer/ItemContainer/VBoxContainer2" instance=ExtResource("2_51hii")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Item4" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer/ItemContainer/VBoxContainer2" instance=ExtResource("2_51hii")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Item5" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer/ItemContainer/VBoxContainer2" instance=ExtResource("2_51hii")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="ItemDescription" type="PanelContainer" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/TabContainer/Item/PanelContainer/MarginContainer/GridContainer/ItemDescription"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "gufvygvcycv"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Upgrades" type="TabBar" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Conversation" parent="VBoxContainer" instance=ExtResource("1_r2esc")]
+layout_mode = 2
