@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cmm8dtn8mm1em"]
+[gd_scene load_steps=8 format=4 uid="uid://cmm8dtn8mm1em"]
 
 [ext_resource type="Texture2D" uid="uid://bb63gwy4i02jv" path="res://Assets/enviroment/world_tileset.png" id="1_07qun"]
-[ext_resource type="PackedScene" uid="uid://64kk41csrmwh" path="res://casIncompleteScenes/Scenes/player.tscn" id="2_gfhgj"]
-[ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://markIncompleteScenes/next_level.tscn" id="3_sk1j7"]
+[ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_t00hc"]
+[ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://markIncompleteScenes/level_one_start.tscn" id="3_sk1j7"]
 [ext_resource type="PackedScene" uid="uid://c2thyvk1fh353" path="res://markIncompleteScenes/mugger.tscn" id="4_kxsa5"]
+[ext_resource type="PackedScene" uid="uid://bxqvgy83i0ar2" path="res://markIncompleteScenes/level_two_start.tscn" id="5_quriu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d0vtq"]
 texture = ExtResource("1_07qun")
@@ -272,20 +273,19 @@ sources/0 = SubResource("TileSetAtlasSource_d0vtq")
 tile_map_data = PackedByteArray("AAAEAAAAAAAAAAEAAAADAAAAAAAAAAEAAAACAAAAAAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAD//wAAAAAAAAEAAAD+/wAAAAAAAAEAAAD9/wAAAAAAAAEAAAD8/wAAAAAAAAEAAAD7/wAAAAAAAAEAAAD7////AAAAAAEAAAD7//7/AAAAAAEAAAD7//3/AAAAAAEAAAD7//z/AAAAAAEAAAD8//v/AAAAAAEAAAD9//v/AAAAAAEAAAD+//v/AAAAAAEAAAD///v/AAAAAAEAAAAAAPv/AAAAAAEAAAABAPv/AAAAAAEAAAACAPz/AAAAAAEAAAADAP3/AAAAAAEAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAACAAAAAAAXAAAAAAACAAAAAAAYAAAAAAACAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAbAAAAAAACAAAAAAAcAAAAAAACAAAAAAAWAP//AAAIAAQAAAAQAP//AAAIAAMAAAAKAP//AAAIAAMAAAD+////AAADAAIAAAA=")
 tile_set = SubResource("TileSet_xhrbg")
 
-[node name="Player" parent="." instance=ExtResource("2_gfhgj")]
-position = Vector2(-6, -34)
+[node name="Player2" parent="." instance=ExtResource("2_t00hc")]
+position = Vector2(6, -15)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Player2"]
+position = Vector2(-6, 15)
 zoom = Vector2(3.45, 3.45)
-
-[node name="next_level_transition" parent="." instance=ExtResource("3_sk1j7")]
-position = Vector2(170, 2)
-
-[node name="next_level_transition2" parent="." instance=ExtResource("3_sk1j7")]
-position = Vector2(265, 3)
-
-[node name="next_level_transition3" parent="." instance=ExtResource("3_sk1j7")]
-position = Vector2(361, -3)
 
 [node name="mugger" parent="." instance=ExtResource("4_kxsa5")]
 position = Vector2(103, -10)
+
+[node name="next_level_transition" parent="." instance=ExtResource("3_sk1j7")]
+position = Vector2(169, -2)
+
+[node name="next_level_transition2" parent="." instance=ExtResource("5_quriu")]
+position = Vector2(265, -5)
+level_name = "debug_world_2"

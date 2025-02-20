@@ -1,9 +1,8 @@
-class_name nextLevel
-extends Area2D
+extends nextLevel
 @export_category("Map Next level")
-var next_level: Node2D
-@export var level_name: String = "debug_world_1"
-const FILE_BEGIN = "res://markIncompleteScenes/levels/" #use this if the files are done with numbers at the end
+#var next_level: Node2D
+#@export var level_name: String = "debug_world_2"
+#const FILE_BEGIN = "res://markIncompleteScenes/levels/" #use this if the files are done with numbers at the end
 #var current_scene_file = get_tree().current_scene.scene_file_path
 #var next_level_number = current_scene_file.to_int() +1
 #var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"

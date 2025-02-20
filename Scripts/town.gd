@@ -1,8 +1,8 @@
 extends Node2D
 signal timeOfDayCycle
 var time_of_day = "morning"
-func _ready():
-	print($Player/Camera2D.get_canvas_transform())
+#func _ready():
+	#print($Player/Camera2D.get_canvas_transform())
 	
 #Simple to implement
 var water_quality: int = 100

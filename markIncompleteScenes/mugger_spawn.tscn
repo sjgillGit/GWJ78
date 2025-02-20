@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgmywrevibtrl"]
+
+[sub_resource type="Curve2D" id="Curve2D_r48o1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -23, 0, 0, 0, 0, 0, -14, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 24, 0)
+}
+point_count = 4
+
+[node name="mugger spawn" type="Path2D"]
+curve = SubResource("Curve2D_r48o1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-23, 0)

@@ -15,7 +15,7 @@ signal UpdateTown
 @export var current_speed = BASE_SPEED
 @export var player_current_base_health = 100
 @export_category("Player Inventory")
-@export var player_currency: int = 0
+@export var player_money: int = 0
 
 @export_category("Player Un-saved inventory")
 @export var money_found: int =  0

@@ -115,13 +115,8 @@ func _on_goal_reached(data: Dictionary):
 	if data.has("gold"):
 		PlayerProperties.player_money += data["gold"]
 		print("Updated Player Gold: ", PlayerProperties.player_money)
+		Town.update_town_stats(data)
 	
-	var town = get_parent()
-	if town:
-		print("town node found, ",town)
-		town.update_town_stats(data)
-	else: 
-		print("depression")
 
 func add_gold(gold: int):
 	money_found += gold
