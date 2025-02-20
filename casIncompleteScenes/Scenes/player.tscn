@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d1f22xc23x1hs" path="res://Assets/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="4_d02jw"]
 [ext_resource type="Texture2D" uid="uid://vjg5gctfmy5j" path="res://Assets/Characters(100x100)/Orc/Orc/Orc.png" id="5_ipuik"]
 [ext_resource type="Texture2D" uid="uid://c0qtisd6q10ob" path="res://Assets/Characters(100x100)/Orc/Orc/Orc-Walk.png" id="6_4rll0"]
-[ext_resource type="Script" path="res://casIncompleteScenes/Components/dash_component.gd" id="7_pmk2b"]
-[ext_resource type="Script" path="res://casIncompleteScenes/Components/Player_Properties.gd" id="8_0hiwl"]
-[ext_resource type="Script" path="res://casIncompleteScenes/Components/stealth_component.gd" id="9_v4jh1"]
+[ext_resource type="Script" path="res://Scripts/Components/dash_component.gd" id="7_pmk2b"]
+[ext_resource type="Script" path="res://Scripts/Components/Player_Properties.gd" id="8_0hiwl"]
+[ext_resource type="Script" path="res://Scripts/Components/stealth_component.gd" id="9_v4jh1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kt6h3"]
 radius = 5.0

@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-
 @export var player_speed_boost: float
 @export var player_health_boost: int
 

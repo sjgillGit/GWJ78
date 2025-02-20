@@ -11,17 +11,20 @@ config_version=5
 [application]
 
 config/name="GWJ78"
-run/main_scene="res://casIncompleteScenes/Main.tscn"
+run/main_scene="res://Scenes/Playtest Scenes/PT_main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerProperties="*res://casIncompleteScenes/Components/Player_Properties.gd"
+PlayerProperties="*res://Scripts/Components/Player_Properties.gd"
 
 [dotnet]
 
 project/assembly_name="GWJ78"
+
+[global_group]
+
+UI=""
 
 [input]
 
