@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfej4v8tfvl6j"
-path="res://.godot/imported/tree_stump.png-505a1090727b2a613b595158fefdd976.ctex"
+uid="uid://d2yi0ny0635q7"
+path="res://.godot/imported/Pine_tree_stump.png-7bb9a458cbe228c5dc9f51f90cce1516.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/tree_stump.png"
-dest_files=["res://.godot/imported/tree_stump.png-505a1090727b2a613b595158fefdd976.ctex"]
+source_file="res://Assets/Art/Pine_tree_stump.png"
+dest_files=["res://.godot/imported/Pine_tree_stump.png-7bb9a458cbe228c5dc9f51f90cce1516.ctex"]
 
 [params]
 
