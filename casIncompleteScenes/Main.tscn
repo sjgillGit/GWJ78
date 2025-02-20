@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://beruwyt8ga5da" path="res://Assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="4_ump44"]
 [ext_resource type="Texture2D" uid="uid://bbjo23p7opss7" path="res://Assets/Cute_Fantasy_Free/Tiles/Water_Middle.png" id="6_64oc1"]
 [ext_resource type="PackedScene" uid="uid://c4etiehr4qi5" path="res://Scenes/gold.tscn" id="8_ogbpq"]
-[ext_resource type="PackedScene" uid="uid://b4g8y0hm6xin3" path="res://casIncompleteScenes/Scenes/windTurbine.tscn" id="8_uysb3"]
+[ext_resource type="PackedScene" uid="uid://b4g8y0hm6xin3" path="res://casIncompleteScenes/Scenes/windGust.tscn" id="8_uysb3"]
 [ext_resource type="PackedScene" uid="uid://qpedhtehupoe" path="res://casIncompleteScenes/Scenes/killzone.tscn" id="12_6ct6u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxhq2"]
@@ -41,7 +41,7 @@ size = Vector2(16, 112)
 script = ExtResource("1_8q21h")
 
 [node name="Player" parent="." instance=ExtResource("1_ebon2")]
-position = Vector2(-42, -77)
+position = Vector2(-22, -301)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -99,8 +99,9 @@ shape = SubResource("RectangleShape2D_fjr8r")
 [node name="Gold" parent="." instance=ExtResource("8_ogbpq")]
 position = Vector2(69, -16)
 
-[node name="Area2D3" parent="." instance=ExtResource("8_uysb3")]
-position = Vector2(220, -130)
+[node name="WindGust" parent="." instance=ExtResource("8_uysb3")]
+position = Vector2(-88, -442)
+scale = Vector2(-1, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
