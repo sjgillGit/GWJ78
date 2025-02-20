@@ -25,6 +25,8 @@ signal UpdateTown
 @export var chaos_change: int = 0
 @export var good_change: int = 0
 
+@export var player_collision_layer: int = 2
+
 
 
 func _set_air_dash(toggle: bool):

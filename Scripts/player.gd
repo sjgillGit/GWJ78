@@ -31,13 +31,7 @@ var runAnim:String = "run_day"
 var jumpAnim:String = "jump_day"
 
 func _ready():
-	for goal in get_tree().get_nodes_in_group("goal"):
-		if not goal.is_connected("playerInGoal", Callable(self, "_on_goal_reached")):
-			var error = goal.connect("playerInGoal", Callable(self, "_on_goal_reached"))
-			if error == OK:
-				print("goal signal connected to player")
-			else:
-				print("failed to connect goal group signal to player")
+	initialize_playerProperties()
 	#set_base_stats()
 	#apply_stat_modifiers()
 
@@ -132,3 +126,19 @@ func _on_goal_reached(data: Dictionary):
 func add_gold(gold: int):
 	money_found += gold
 	print("Player found: ", gold, ", add_gold triggered")
+	
+	
+func initialize_playerProperties():
+	self.set_collision_layer(PlayerProperties.player_collision_layer)
+	print("player layer 2:", self.get_collision_layer_value(2))
+	print("player layer 1:" ,self.get_collision_layer_value(1))
+	add_to_group("player")
+	var debug = get_groups()
+	print("Player in group",debug)
+	for goal in get_tree().get_nodes_in_group("goal"):
+		if not goal.is_connected("playerInGoal", Callable(self, "_on_goal_reached")):
+			var error = goal.connect("playerInGoal", Callable(self, "_on_goal_reached"))
+			if error == OK:
+				print("goal signal connected to player")
+			else:
+				print("failed to connect goal group signal to player")

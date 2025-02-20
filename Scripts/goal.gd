@@ -2,8 +2,7 @@ extends Area2D
 signal playerInGoal(data: Dictionary)
 
 func _ready():
-	add_to_group("Goal")
-	connect("body_entered", Callable(self, "_on_body_entered"))
+	initialize_player_properties()
 	
 
 func _on_body_entered(body: Node2D):
@@ -18,3 +17,11 @@ func _on_body_entered(body: Node2D):
 			}
 		emit_signal("playerInGoal", temp_data)
 		print("Goal area triggered, entered by ", body," data sent: ",temp_data)
+
+func initialize_player_properties():
+	set_collision_mask(PlayerProperties.player_collision_layer)
+	print("goal collision mask", get_collision_mask_value(PlayerProperties.player_collision_layer))
+	add_to_group("goal")
+	var debug = get_groups()
+	print("Goal in group: ",debug)
+	connect("body_entered", Callable(self, "_on_body_entered"))
