@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://ofdjnmyrkxly"]
 
 [ext_resource type="Texture2D" uid="uid://whldjdgd2yg2" path="res://Assets/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="1_rl6g6"]
-[ext_resource type="Script" path="res://Scripts/debug_world_2_2.gd" id="1_vno6u"]
+[ext_resource type="Script" path="res://Scripts/world_manager.gd" id="1_vno6u"]
 [ext_resource type="Texture2D" uid="uid://beruwyt8ga5da" path="res://Assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="2_rwbxn"]
 [ext_resource type="Texture2D" uid="uid://bbjo23p7opss7" path="res://Assets/Cute_Fantasy_Free/Tiles/Water_Middle.png" id="3_563q5"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="4_dtfoc"]

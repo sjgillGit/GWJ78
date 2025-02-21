@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlkd4r1qubwi1"]
+
+[ext_resource type="Texture2D" uid="uid://ddvgyavdx0afn" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets v2.png" id="1_ugv7u"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ugv7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

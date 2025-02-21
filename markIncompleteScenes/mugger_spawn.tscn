@@ -1,13 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgmywrevibtrl"]
+[gd_scene load_steps=4 format=3 uid="uid://bgmywrevibtrl"]
+
+[ext_resource type="Script" path="res://markIncompleteScenes/mugger_spawn.gd" id="1_f4e7y"]
+[ext_resource type="PackedScene" uid="uid://c2thyvk1fh353" path="res://markIncompleteScenes/mugger.tscn" id="2_pbpui"]
 
 [sub_resource type="Curve2D" id="Curve2D_r48o1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -23, 0, 0, 0, 0, 0, -14, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 24, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -69, 1, 0, 0, 0, 0, -9, 2, 0, 0, 0, 0, 162, 0, 0, 0, 0, 0, 248, 1)
 }
 point_count = 4
 
 [node name="mugger spawn" type="Path2D"]
 curve = SubResource("Curve2D_r48o1")
+script = ExtResource("1_f4e7y")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-23, 0)
+position = Vector2(-69, 1)
+rotation = 0.0166651
+
+[node name="mugger" parent="." instance=ExtResource("2_pbpui")]

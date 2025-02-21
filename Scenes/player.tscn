@@ -596,7 +596,6 @@ player_properties = NodePath("../Player_Properties")
 zoom = Vector2(2.34, 2.34)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
-visible = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D/CanvasLayer"]
 material = SubResource("ShaderMaterial_aupqv")

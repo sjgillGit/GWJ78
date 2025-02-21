@@ -27,6 +27,11 @@ signal UpdateTown
 
 @export var player_collision_layer: int = 2
 
+@export_category("Erasure Toggles")
+@export var water_toggle: bool = false
+@export var people_toggle: bool = false
+@export var prosperity_toggle: bool = false
+
 var player_position: Vector2 = Vector2.ZERO
 
 

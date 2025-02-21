@@ -325,8 +325,10 @@ position = Vector2(362, -6)
 level_name = "world_3"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_8salo")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_mpjd7")

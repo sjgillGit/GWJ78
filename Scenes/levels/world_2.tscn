@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://8285aixgfiif"]
+[gd_scene load_steps=12 format=4 uid="uid://8285aixgfiif"]
 
 [ext_resource type="Texture2D" uid="uid://whldjdgd2yg2" path="res://Assets/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="1_6j664"]
+[ext_resource type="Script" path="res://Scripts/world_manager.gd" id="1_waar8"]
 [ext_resource type="Texture2D" uid="uid://beruwyt8ga5da" path="res://Assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="2_crm1y"]
 [ext_resource type="Texture2D" uid="uid://bbjo23p7opss7" path="res://Assets/Cute_Fantasy_Free/Tiles/Water_Middle.png" id="3_bjyn6"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="5_m3xrc"]
@@ -28,6 +29,7 @@ sources/12 = SubResource("TileSetAtlasSource_ftt4a")
 sources/14 = SubResource("TileSetAtlasSource_awoa7")
 
 [node name="debugWorld2" type="Node2D"]
+script = ExtResource("1_waar8")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wc6t5")
