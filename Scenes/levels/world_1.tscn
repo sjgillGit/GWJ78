@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/world_manager.gd" id="1_pe62w"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="4_yx7o2"]
 [ext_resource type="Texture2D" uid="uid://cs4rtodc2ukrj" path="res://Assets/Cute_Fantasy_Free/Outdoor decoration/House.png" id="5_qms8i"]
-[ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="6_rckpy"]
+[ext_resource type="PackedScene" uid="uid://h238s1bnd640" path="res://Scenes/player.tscn" id="6_rckpy"]
 [ext_resource type="PackedScene" uid="uid://bgmywrevibtrl" path="res://markIncompleteScenes/mugger_spawn.tscn" id="7_8fpje"]
 [ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/gandalf_sheet.tscn" id="8_lxk5y"]
-[ext_resource type="PackedScene" uid="uid://cwof5mp8tj5cg" path="res://Scenes/platform.tscn" id="9_t1584"]
+[ext_resource type="PackedScene" path="res://Scenes/platform.tscn" id="9_t1584"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xpmxf"]
 a = Vector2(-25.125, -8)

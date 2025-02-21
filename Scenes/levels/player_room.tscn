@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bb63gwy4i02jv" path="res://Assets/enviroment/world_tileset.png" id="1_3k31k"]
 [ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/gandalf_sheet.tscn" id="1_uqgsu"]
-[ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_b6gq6"]
+[ext_resource type="PackedScene" uid="uid://h238s1bnd640" path="res://Scenes/player.tscn" id="2_b6gq6"]
 [ext_resource type="PackedScene" uid="uid://c2thyvk1fh353" path="res://markIncompleteScenes/mugger.tscn" id="3_hg66u"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="4_4o2fa"]
 [ext_resource type="PackedScene" uid="uid://bxqvgy83i0ar2" path="res://Scenes/levels/level_transitions/level_two_start.tscn" id="5_obu17"]
@@ -302,7 +302,6 @@ position = Vector2(12, -30)
 position = Vector2(18, -45)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-visible = false
 tile_map_data = PackedByteArray("AAAEAAAAAAAAAAEAAAADAAAAAAAAAAEAAAACAAAAAAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAD//wAAAAAAAAEAAAD+/wAAAAAAAAEAAAD9/wAAAAAAAAEAAAD8/wAAAAAAAAEAAAD7/wAAAAAAAAEAAAD7////AAAAAAEAAAD7//7/AAAAAAEAAAD7//3/AAAAAAEAAAD7//z/AAAAAAEAAAD8//v/AAAAAAEAAAD9//v/AAAAAAEAAAD+//v/AAAAAAEAAAD///v/AAAAAAEAAAAAAPv/AAAAAAEAAAABAPv/AAAAAAEAAAACAPz/AAAAAAEAAAADAP3/AAAAAAEAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAACAAAAAAAXAAAAAAACAAAAAAAYAAAAAAACAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAbAAAAAAACAAAAAAAcAAAAAAACAAAAAAAWAP//AAAIAAQAAAAQAP//AAAIAAMAAAAKAP//AAAIAAMAAAD+////AAADAAIAAAA=")
 tile_set = SubResource("TileSet_xhrbg")
 
@@ -325,10 +324,8 @@ position = Vector2(362, -6)
 level_name = "world_3"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
-visible = false
 material = SubResource("ShaderMaterial_8salo")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_mpjd7")

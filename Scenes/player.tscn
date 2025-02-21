@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://bc7wyx8xvx0ks"]
+[gd_scene load_steps=75 format=3 uid="uid://h238s1bnd640"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://byrupa24vdoc5" path="res://Assets/markAssets/02-King Pig/Jump (38x28).png" id="9_spv00"]
 [ext_resource type="Shader" path="res://markIncompleteScenes/shader.gdshader" id="10_pqmdy"]
 [ext_resource type="Texture2D" uid="uid://bgvwpgv17l1i4" path="res://Assets/markAssets/02-King Pig/Run (38x28).png" id="10_ssf1c"]
+[ext_resource type="PackedScene" uid="uid://c7qfihnyo70k4" path="res://Scenes/UIComponents/uimanager.tscn" id="16_svpwb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcjis"]
 atlas = ExtResource("2_e3mkm")
@@ -561,7 +562,6 @@ player_properties = NodePath("Player_Properties")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = -19.0
 offset_top = -69.0
 offset_right = 21.0
@@ -601,3 +601,5 @@ zoom = Vector2(2.34, 2.34)
 material = SubResource("ShaderMaterial_aupqv")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_a7d57")
+
+[node name="UIManager" parent="Camera2D/CanvasLayer" instance=ExtResource("16_svpwb")]

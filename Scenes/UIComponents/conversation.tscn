@@ -9,14 +9,16 @@ signal is_talking # town should receive this signal with a true value to stop se
 				 # conversation signals until this state variable is false. for debug testing i am sending to uimanager
 signal key_press
 var press_key = false
-
+var call_from_cauldron = false
 
 func _ready():
 	hide()
 	print(process_mode)
 
 func initialize_conversation(text: String):
-	is_talking.emit(true)
+	#is_talking.emit(true)
+	if ( call_from_cauldron ):
+		%Text.clear()
 	var limit = 400
 	var count = 0
 	var array_text = text.split('')

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bbjo23p7opss7" path="res://Assets/Cute_Fantasy_Free/Tiles/Water_Middle.png" id="3_bjyn6"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="5_m3xrc"]
 [ext_resource type="Texture2D" uid="uid://d2gpavvykk6q8" path="res://Assets/Cute_Fantasy_Free/Outdoor decoration/Chest.png" id="6_m8nuo"]
-[ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="7_vj65u"]
+[ext_resource type="PackedScene" uid="uid://h238s1bnd640" path="res://Scenes/player.tscn" id="7_vj65u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5g45"]
 texture = ExtResource("1_6j664")
