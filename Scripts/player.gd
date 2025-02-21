@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var player_speed_boost: float
 @export var player_health_boost: int
 @export var player_health: int = 100
-@export var player_properties: Player_Properties
 @export_category("Player Inventory")
 @export var player_currency: int = 0
 
@@ -14,6 +13,9 @@ extends CharacterBody2D
 @export var population_health_change: int = 0
 @export var chaos_change: int = 0
 @export var good_change: int = 0
+
+
+var player_properties:= PlayerProperties
 
 var direction = 0
 
@@ -41,14 +43,15 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		if not isDashing:
-			velocity += get_gravity() * delta * 1.2
+			velocity += get_gravity() * delta * player_properties.gravity_modifier
+			print(player_properties.gravity_modifier)
 		timeInAir += delta
 	else:
 		timeInAir = 0
 	
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1):
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1) and isMoving and !PlayerProperties.disable_jump:
 		velocity.y = player_properties.JUMP_VELOCITY
 		
 	#if Input.is_action_just_pressed("interact"):
