@@ -1,8 +1,9 @@
-[gd_scene load_steps=74 format=3 uid="uid://bc7wyx8xvx0ks"]
+[gd_scene load_steps=77 format=3 uid="uid://bc7wyx8xvx0ks"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
 [ext_resource type="Texture2D" uid="uid://1ry2ws1yvpnx" path="res://Assets/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="2_ql7s4"]
+[ext_resource type="Texture2D" uid="uid://cgfmxkmbq10v1" path="res://Assets/markAssets/02-King Pig/Hit (38x28).png" id="3_2qm07"]
 [ext_resource type="Texture2D" uid="uid://5qxlm25c34wk" path="res://Assets/markAssets/02-King Pig/Idle (38x28).png" id="3_uw11v"]
 [ext_resource type="Texture2D" uid="uid://d1f22xc23x1hs" path="res://Assets/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="3_vd58d"]
 [ext_resource type="Texture2D" uid="uid://dwyjk4htk60ox" path="res://Assets/Characters(100x100)/Soldier/Soldier/Soldier.png" id="4_uexj2"]
@@ -31,6 +32,14 @@ region = Rect2(76, 0, 38, 28)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w6lg"]
 atlas = ExtResource("2_e3mkm")
 region = Rect2(114, 0, 38, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_008r8"]
+atlas = ExtResource("3_2qm07")
+region = Rect2(0, 0, 38, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt3sh"]
+atlas = ExtResource("3_2qm07")
+region = Rect2(38, 0, 38, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ofek"]
 atlas = ExtResource("3_uw11v")
@@ -277,6 +286,29 @@ animations = [{
 "loop": true,
 "name": &"dead",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_008r8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt3sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_008r8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt3sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_008r8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt3sh")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -570,9 +602,9 @@ theme_override_font_sizes/font_size = 11
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4hkln")
-animation = &"run"
+animation = &"hurt"
 autoplay = "idle"
-frame_progress = 0.593785
+frame_progress = 0.485038
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)

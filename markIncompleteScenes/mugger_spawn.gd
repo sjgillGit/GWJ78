@@ -2,7 +2,7 @@ extends Path2D
 @onready var path_follow_2d: PathFollow2D = $PathFollow2D
 
 func _ready() -> void:
-	Town.chaos += 2
+	Town.chaos += 0
 	spawn_mob()
 
 func spawn_mob():

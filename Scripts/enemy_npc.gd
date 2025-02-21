@@ -16,12 +16,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2
-	if !isAttacking:
+	var distance = global_position.distance_to(PlayerProperties.player_position)
+	if !isAttacking and distance <= 150:
 		var playerPathing = global_position.direction_to(PlayerProperties.player_position) #where THIS mob is in the world (works with sprite or characterBody2D) direction_to
 		velocity.x = playerPathing.x * 10.00
 		change_Sprite_Direction()
 		move_and_slide()
-	else: pass
+	else: animated_sprite_2d.play("idle")
 	
 
 

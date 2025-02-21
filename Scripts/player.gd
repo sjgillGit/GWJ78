@@ -149,5 +149,6 @@ func initialize_playerProperties():
 				
 func take_damage():
 	player_health -= 30
+	
 	print("damage taken by player, current hp: ", player_health)
 	

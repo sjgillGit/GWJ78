@@ -8,7 +8,7 @@ var time_of_day = "morning"
 var water_quality: int = 100
 var villager_happiness: int = 100
 var population_health: int = 100
-var chaos: int = 0
+var chaos: int = 3
 var good: int = 0
 #Complex
 var admin: int = 100
