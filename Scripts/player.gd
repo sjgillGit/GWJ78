@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var player_speed_boost: float
 @export var player_health_boost: int
 @export var player_health: int = 100
-@export var player_properties: Player_Properties
 @export_category("Player Inventory")
 @export var player_currency: int = 0
 
@@ -15,6 +14,9 @@ extends CharacterBody2D
 @export var chaos_change: int = 0
 @export var good_change: int = 0
 
+
+var player_properties:= PlayerProperties
+
 var direction = 0
 
 @onready var label: Label = $Label
@@ -23,11 +25,13 @@ var direction = 0
 var dayS:bool = true
 var isMoving:bool = true
 var isDashing:bool = false
+var isHurt:bool = false
 var timeInAir:float = 0
 
 var idleAnim:String = "idle"
 var runAnim:String = "run"
 var jumpAnim:String = "jump_up"
+var hurtAnim:String = "hurt"
 
 func _ready():
 	initialize_playerProperties()
@@ -41,48 +45,35 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		if not isDashing:
-			velocity += get_gravity() * delta * 1.2
+			velocity += get_gravity() * delta * player_properties.gravity_modifier
 		timeInAir += delta
 	else:
 		timeInAir = 0
 	
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1):
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1) and isMoving and !PlayerProperties.disable_jump:
 		velocity.y = player_properties.JUMP_VELOCITY
 		
-	#if Input.is_action_just_pressed("interact"):
-		#if dayS:
-			#_on_time_of_day_change("NIGHT")
-			#dayS = !dayS
-		#else:
-			#_on_time_of_day_change("DAY")
-			#dayS = !dayS
-	if Input.is_action_just_pressed("interact"):
-		pass
-		#if dayS:
-		#	_on_time_of_day_change("NIGHT")
-		#	dayS = !dayS
-		#else:
-		#	_on_time_of_day_change("DAY")
-		#	dayS = !dayS
 
-	direction = Input.get_axis("move_left", "move_right")
+	
+	if isHurt:
+		pass
+	else:
+		direction = Input.get_axis("move_left", "move_right")
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite_2d.play(idleAnim)
+			#else:
+			elif velocity.x != 0:
+				animated_sprite_2d.play(runAnim)
+		else:
+			animated_sprite_2d.play(jumpAnim)
 	
 	if direction > 0:
 		animated_sprite_2d.flip_h = true
 	elif direction < 0:
 		animated_sprite_2d.flip_h = false
-	
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite_2d.play(idleAnim)
-		#else:
-		elif velocity.x != 0:
-			animated_sprite_2d.play(runAnim)
-	else:
-		animated_sprite_2d.play(jumpAnim)
-	
 	
 	
 		
@@ -149,6 +140,5 @@ func initialize_playerProperties():
 				
 func take_damage():
 	player_health -= 30
-	
+	animated_sprite_2d.play(hurtAnim)
 	print("damage taken by player, current hp: ", player_health)
-	
