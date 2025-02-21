@@ -77,7 +77,7 @@ texture = ExtResource("6_fae6s")
 [node name="Player" parent="." instance=ExtResource("7_w0pfu")]
 position = Vector2(-11, -76)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 
 [node name="mugger spawn" parent="." instance=ExtResource("9_xexan")]
 position = Vector2(175, -3)

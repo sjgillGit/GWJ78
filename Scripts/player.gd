@@ -25,9 +25,9 @@ var isMoving:bool = true
 var isDashing:bool = false
 var timeInAir:float = 0
 
-var idleAnim:String = "idle_day"
-var runAnim:String = "run_day"
-var jumpAnim:String = "jump_day"
+var idleAnim:String = "idle"
+var runAnim:String = "run"
+var jumpAnim:String = "jump_up"
 
 func _ready():
 	initialize_playerProperties()
@@ -37,7 +37,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	#table for 
 	PlayerProperties.player_position = global_position
-	label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
+	#label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
 	# Add the gravity.
 	if not is_on_floor():
 		if not isDashing:
@@ -51,6 +51,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1):
 		velocity.y = player_properties.JUMP_VELOCITY
 		
+<<<<<<< Updated upstream
 	#if Input.is_action_just_pressed("interact"):
 		#if dayS:
 			#_on_time_of_day_change("NIGHT")
@@ -58,12 +59,22 @@ func _physics_process(delta: float) -> void:
 		#else:
 			#_on_time_of_day_change("DAY")
 			#dayS = !dayS
+=======
+	if Input.is_action_just_pressed("interact"):
+		pass
+		#if dayS:
+		#	_on_time_of_day_change("NIGHT")
+		#	dayS = !dayS
+		#else:
+		#	_on_time_of_day_change("DAY")
+		#	dayS = !dayS
+>>>>>>> Stashed changes
 	direction = Input.get_axis("move_left", "move_right")
 	
 	if direction > 0:
-		animated_sprite_2d.flip_h = false
-	elif direction < 0:
 		animated_sprite_2d.flip_h = true
+	elif direction < 0:
+		animated_sprite_2d.flip_h = false
 	
 	if is_on_floor():
 		if direction == 0:
@@ -92,14 +103,14 @@ func _physics_process(delta: float) -> void:
 	
 func _on_time_of_day_change(dayState: String):
 	if dayState == "DAY":
-		idleAnim = "idle_day"
-		jumpAnim = "jump_day"
-		runAnim = "run_day"
+		idleAnim = "idle"
+		jumpAnim = "jump_up"
+		runAnim = "run"
 	else:
-		idleAnim = "idle_night"
-		jumpAnim = "jump_night"
-		runAnim = "run_night"
-		
+		#idleAnim = "idle_night"
+		#jumpAnim = "jump_night"
+		#runAnim = "run_night"
+		pass
 		
 func _level_start():
 	money_found = 0
