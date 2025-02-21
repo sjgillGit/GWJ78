@@ -68,6 +68,9 @@ func _physics_process(delta: float) -> void:
 		#else:
 		#	_on_time_of_day_change("DAY")
 		#	dayS = !dayS
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	direction = Input.get_axis("move_left", "move_right")
 	

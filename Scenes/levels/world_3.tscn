@@ -930,6 +930,7 @@ position = Vector2(215, -20)
 script = ExtResource("6_5mfsm")
 level_name = "world_3_2"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 [node name="Chest" type="Sprite2D" parent="next_level_transition"]
 position = Vector2(-1, 14)
@@ -947,6 +948,8 @@ offset = Vector2(10, -29)
 [node name="Chest" type="Sprite2D" parent="next_level_transition/Chest/Chest/Chest"]
 position = Vector2(-38, -82)
 texture = ExtResource("7_bhf84")
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
