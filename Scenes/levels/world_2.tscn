@@ -50,7 +50,7 @@ tile_set = SubResource("TileSet_wc6t5")
 
 [node name="next_level_transition" parent="." instance=ExtResource("5_m3xrc")]
 position = Vector2(250, -20)
-level_name = "debug_world_2_2"
+level_name = "world_2_2"
 
 [node name="Chest" type="Sprite2D" parent="next_level_transition"]
 position = Vector2(-1, 14)
