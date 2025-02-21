@@ -4,6 +4,7 @@ extends Area2D
 
 @export var windStrength:float = 50
 @export var facingLeft:bool = true
+@export var turnedOn:bool = true
 
 var bodyInArea: CharacterBody2D = null
 var areaStart: float
@@ -15,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if bodyInArea:
+	if bodyInArea and turnedOn:
 		var posDiff
 		if scale.x == 1:
 			posDiff = (bodyInArea.global_position.x + bodyInArea.get_node("CollisionShape2D").shape.radius) - areaStart
@@ -40,3 +41,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body == bodyInArea:
 		bodyInArea = null
+
+func _on_interact():
+	turnedOn = !turnedOn
+	print(turnedOn)
