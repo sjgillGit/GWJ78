@@ -1,13 +1,15 @@
-[gd_scene load_steps=8 format=4 uid="uid://cmm8dtn8mm1em"]
+[gd_scene load_steps=12 format=4 uid="uid://cmm8dtn8mm1em"]
 
-[ext_resource type="Texture2D" uid="uid://bb63gwy4i02jv" path="res://Assets/enviroment/world_tileset.png" id="1_07qun"]
-[ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_t00hc"]
-[ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://markIncompleteScenes/level_one_start.tscn" id="3_sk1j7"]
-[ext_resource type="PackedScene" uid="uid://c2thyvk1fh353" path="res://markIncompleteScenes/mugger.tscn" id="4_kxsa5"]
-[ext_resource type="PackedScene" uid="uid://bxqvgy83i0ar2" path="res://markIncompleteScenes/level_two_start.tscn" id="5_quriu"]
+[ext_resource type="Texture2D" uid="uid://bb63gwy4i02jv" path="res://Assets/enviroment/world_tileset.png" id="1_3k31k"]
+[ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_b6gq6"]
+[ext_resource type="PackedScene" uid="uid://c2thyvk1fh353" path="res://markIncompleteScenes/mugger.tscn" id="3_hg66u"]
+[ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="4_4o2fa"]
+[ext_resource type="PackedScene" uid="uid://bxqvgy83i0ar2" path="res://Scenes/levels/level_transitions/level_two_start.tscn" id="5_obu17"]
+[ext_resource type="Shader" path="res://markIncompleteScenes/shader.gdshader" id="6_56rhw"]
+[ext_resource type="PackedScene" uid="uid://bkdtmnem2yfg1" path="res://Scenes/levels/level_transitions/level_three_start.tscn" id="6_vei3v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d0vtq"]
-texture = ExtResource("1_07qun")
+texture = ExtResource("1_3k31k")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -267,25 +269,46 @@ physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_d0vtq")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8salo"]
+shader = ExtResource("6_56rhw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mpjd7"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
 [node name="player room" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAEAAAAAAAAAAEAAAADAAAAAAAAAAEAAAACAAAAAAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAD//wAAAAAAAAEAAAD+/wAAAAAAAAEAAAD9/wAAAAAAAAEAAAD8/wAAAAAAAAEAAAD7/wAAAAAAAAEAAAD7////AAAAAAEAAAD7//7/AAAAAAEAAAD7//3/AAAAAAEAAAD7//z/AAAAAAEAAAD8//v/AAAAAAEAAAD9//v/AAAAAAEAAAD+//v/AAAAAAEAAAD///v/AAAAAAEAAAAAAPv/AAAAAAEAAAABAPv/AAAAAAEAAAACAPz/AAAAAAEAAAADAP3/AAAAAAEAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAACAAAAAAAXAAAAAAACAAAAAAAYAAAAAAACAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAbAAAAAAACAAAAAAAcAAAAAAACAAAAAAAWAP//AAAIAAQAAAAQAP//AAAIAAMAAAAKAP//AAAIAAMAAAD+////AAADAAIAAAA=")
 tile_set = SubResource("TileSet_xhrbg")
 
-[node name="Player2" parent="." instance=ExtResource("2_t00hc")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_b6gq6")]
 position = Vector2(6, -15)
 
-[node name="Camera2D" type="Camera2D" parent="Player2"]
-position = Vector2(-6, 15)
-zoom = Vector2(3.45, 3.45)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-5, 14)
+zoom = Vector2(2.845, 2.845)
 
-[node name="mugger" parent="." instance=ExtResource("4_kxsa5")]
+[node name="mugger" parent="." instance=ExtResource("3_hg66u")]
 position = Vector2(103, -10)
 
-[node name="next_level_transition" parent="." instance=ExtResource("3_sk1j7")]
-position = Vector2(169, -2)
+[node name="next_level_transition1" parent="." instance=ExtResource("4_4o2fa")]
+position = Vector2(169, -7)
+level_name = "world_1"
 
-[node name="next_level_transition2" parent="." instance=ExtResource("5_quriu")]
+[node name="next_level_transition2" parent="." instance=ExtResource("5_obu17")]
 position = Vector2(265, -5)
-level_name = "debug_world_2"
+level_name = "world_2"
+
+[node name="next_level_transition3" parent="." instance=ExtResource("6_vei3v")]
+position = Vector2(362, -6)
+level_name = "world_3"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_8salo")
+position = Vector2(2, 1)
+mesh = SubResource("QuadMesh_mpjd7")
