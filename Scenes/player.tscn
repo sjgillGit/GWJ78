@@ -553,11 +553,10 @@ shader = ExtResource("10_pqmdy")
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_properties")]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(-1, -4)
 collision_layer = 3
 script = ExtResource("1_wp6sb")
-player_properties = NodePath("Player_Properties")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]

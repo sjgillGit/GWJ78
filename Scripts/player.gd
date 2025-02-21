@@ -25,11 +25,13 @@ var direction = 0
 var dayS:bool = true
 var isMoving:bool = true
 var isDashing:bool = false
+var isHurt:bool = false
 var timeInAir:float = 0
 
 var idleAnim:String = "idle"
 var runAnim:String = "run"
 var jumpAnim:String = "jump_up"
+var hurtAnim:String = "hurt"
 
 func _ready():
 	initialize_playerProperties()
@@ -44,7 +46,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		if not isDashing:
 			velocity += get_gravity() * delta * player_properties.gravity_modifier
-			print(player_properties.gravity_modifier)
 		timeInAir += delta
 	else:
 		timeInAir = 0
@@ -54,43 +55,25 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1) and isMoving and !PlayerProperties.disable_jump:
 		velocity.y = player_properties.JUMP_VELOCITY
 		
-<<<<<<< Updated upstream
-	#if Input.is_action_just_pressed("interact"):
-		#if dayS:
-			#_on_time_of_day_change("NIGHT")
-			#dayS = !dayS
-		#else:
-			#_on_time_of_day_change("DAY")
-			#dayS = !dayS
-=======
-	if Input.is_action_just_pressed("interact"):
+
+	
+	if isHurt:
 		pass
-		#if dayS:
-		#	_on_time_of_day_change("NIGHT")
-		#	dayS = !dayS
-		#else:
-		#	_on_time_of_day_change("DAY")
-		#	dayS = !dayS
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-	direction = Input.get_axis("move_left", "move_right")
+	else:
+		direction = Input.get_axis("move_left", "move_right")
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite_2d.play(idleAnim)
+			#else:
+			elif velocity.x != 0:
+				animated_sprite_2d.play(runAnim)
+		else:
+			animated_sprite_2d.play(jumpAnim)
 	
 	if direction > 0:
 		animated_sprite_2d.flip_h = true
 	elif direction < 0:
 		animated_sprite_2d.flip_h = false
-	
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite_2d.play(idleAnim)
-		#else:
-		elif velocity.x != 0:
-			animated_sprite_2d.play(runAnim)
-	else:
-		animated_sprite_2d.play(jumpAnim)
-	
 	
 	
 		
@@ -157,5 +140,5 @@ func initialize_playerProperties():
 				
 func take_damage():
 	player_health -= 30
+	animated_sprite_2d.play(hurtAnim)
 	print("damage taken by player, current hp: ", player_health)
-	
