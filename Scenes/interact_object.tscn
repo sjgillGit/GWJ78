@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkj3s73hbe2vk"]
+
+[ext_resource type="Script" path="res://Scripts/interact_object.gd" id="1_4j3ow"]
+[ext_resource type="Texture2D" uid="uid://d2gpavvykk6q8" path="res://Assets/Cute_Fantasy_Free/Outdoor decoration/Chest.png" id="2_8k1ty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jmkg"]
+
+[node name="InteractObject" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_4j3ow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8k1ty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.09536, 1.60743)
+shape = SubResource("RectangleShape2D_2jmkg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -59.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = -20.0
+text = "Press E to interact"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

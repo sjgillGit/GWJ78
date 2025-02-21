@@ -51,13 +51,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1):
 		velocity.y = player_properties.JUMP_VELOCITY
 		
-	if Input.is_action_just_pressed("interact"):
-		if dayS:
-			_on_time_of_day_change("NIGHT")
-			dayS = !dayS
-		else:
-			_on_time_of_day_change("DAY")
-			dayS = !dayS
+	#if Input.is_action_just_pressed("interact"):
+		#if dayS:
+			#_on_time_of_day_change("NIGHT")
+			#dayS = !dayS
+		#else:
+			#_on_time_of_day_change("DAY")
+			#dayS = !dayS
 	direction = Input.get_axis("move_left", "move_right")
 	
 	if direction > 0:
