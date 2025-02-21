@@ -2,18 +2,25 @@ extends Node
 class_name Player_Properties
 signal UIInfo
 signal UpdateTown
+
+#consts
+const CONST_JUMP_VELOCITY = -350.0
+
 #in player.dg get values from Player_Properties Class
 @export_category("Base Player Values")
 @export var BASE_SPEED = 150.0
 @export var PLAYER_BASE_HEALTH = 100
-@export var JUMP_VELOCITY = -350.0
+@export var JUMP_VELOCITY = CONST_JUMP_VELOCITY
 @export var ACCELERATION = 5.0
 @export var SPEED_DELTA = 20.0
 @export var MAX_SPEED = 500.0
+@export var BASE_GRAVITY = 1.3
 @export_category("Player Modifiers")
 @export var air_dash: bool
+@export var disable_jump: bool = false
 @export var current_speed = BASE_SPEED
 @export var player_current_base_health = 100
+@export var gravity_modifier = BASE_GRAVITY
 @export_category("Player Inventory")
 @export var player_money: int = 0
 
