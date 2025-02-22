@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var hurt: AudioStreamPlayer2D = $Audio/hurt
 
 @export var player_speed_boost: float
 @export var player_health_boost: int
@@ -13,9 +14,11 @@ extends CharacterBody2D
 @export var population_health_change: int = 0
 @export var chaos_change: int = 0
 @export var good_change: int = 0
-
-
+@export_category("Walk Speed Sounds")
+@onready var walk: AudioStreamPlayer2D = $Audio/walk
+@export var walk_sound_timer: float = 0.4
 var player_properties:= PlayerProperties
+@onready var jump: AudioStreamPlayer2D = $Audio/Jump
 
 var direction = 0
 
@@ -32,7 +35,8 @@ var idleAnim:String = "idle"
 var runAnim:String = "run"
 var jumpAnim:String = "jump_up"
 var hurtAnim:String = "hurt"
-
+@onready var progress_bar: ProgressBar = $DashComponent/ProgressBar
+@onready var dash_component: DashComponent = $DashComponent
 func _ready():
 	initialize_playerProperties()
 	#set_base_stats()
@@ -40,6 +44,8 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	#table for 
+	#Dash Cooldown
+	
 	PlayerProperties.player_position = global_position
 	label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
 	# Add the gravity.
@@ -54,6 +60,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1) and isMoving and !PlayerProperties.disable_jump:
 		velocity.y = player_properties.JUMP_VELOCITY
+		jump.play()
 		
 
 	
@@ -67,6 +74,7 @@ func _physics_process(delta: float) -> void:
 			#else:
 			elif velocity.x != 0:
 				animated_sprite_2d.play(runAnim)
+				#get_tree().create_timer(walk_sound_timer).timeout.connect(Callable(self, "walk_sounds"))
 		else:
 			animated_sprite_2d.play(jumpAnim)
 	
@@ -146,4 +154,8 @@ func initialize_playerProperties():
 func take_damage():
 	player_health -= 30
 	animated_sprite_2d.play(hurtAnim)
+	hurt.play()
 	print("damage taken by player, current hp: ", player_health)
+	
+func walk_sounds():
+	walk.play()

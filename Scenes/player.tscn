@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bc7wyx8xvx0ks"]
+[gd_scene load_steps=83 format=3 uid="uid://bc7wyx8xvx0ks"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
@@ -17,6 +17,14 @@
 [ext_resource type="Shader" path="res://markIncompleteScenes/shader.gdshader" id="10_pqmdy"]
 [ext_resource type="Texture2D" uid="uid://bgvwpgv17l1i4" path="res://Assets/markAssets/02-King Pig/Run (38x28).png" id="10_ssf1c"]
 [ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="17_qlpq0"]
+[ext_resource type="AudioStream" uid="uid://ywo4571gt2w5" path="res://Assets/sound/jump.wav" id="18_i4hxt"]
+[ext_resource type="AudioStream" uid="uid://bdc066cvllw21" path="res://Assets/sound/power_up.wav" id="19_rko0k"]
+[ext_resource type="AudioStream" uid="uid://gpre6lw5t3s2" path="res://Assets/sound/hurt.wav" id="19_u2w5h"]
+[ext_resource type="AudioStream" uid="uid://ca5d1ar2ugh87" path="res://Assets/sound/12_Player_Movement_SFX/03_Step_grass_03.wav" id="20_2qcga"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orii7"]
+atlas = ExtResource("3_2qm07")
+region = Rect2(0, 0, 38, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcjis"]
 atlas = ExtResource("2_e3mkm")
@@ -244,6 +252,26 @@ region = Rect2(700, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4hkln"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orii7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orii7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orii7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orii7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orii7")
+}],
+"loop": true,
+"name": &"dash_cooldown",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bcjis")
@@ -625,6 +653,8 @@ player_properties = NodePath("../Player_Properties")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.34, 2.34)
+limit_bottom = 115
+position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
@@ -633,6 +663,24 @@ material = SubResource("ShaderMaterial_aupqv")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_a7d57")
 
-[node name="Node2D" parent="." instance=ExtResource("17_qlpq0")]
+[node name="Parallax BG" parent="." instance=ExtResource("17_qlpq0")]
 z_index = -4
 scale = Vector2(1.925, 1.925)
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("18_i4hxt")
+volume_db = -40.657
+
+[node name="cooldown" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("19_rko0k")
+volume_db = -35.0
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("19_u2w5h")
+volume_db = -15.0
+
+[node name="walk" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("20_2qcga")
+volume_db = -4.0

@@ -1,9 +1,11 @@
 class_name DashComponent
 extends Node
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var cooldown_sound: AudioStreamPlayer2D = $"../Audio/cooldown"
 
 @export var characterBody:CharacterBody2D
-@export var cooldown:float = 2
-@export var airDashStrength:float = 5
+@export var cooldown:float = 1.75
+@export var airDashStrength:float = 3
 @export var airDashDuration:float = 0.2
 var isOnCooldown:bool = false
 var dashingDirection = 1
@@ -18,6 +20,7 @@ func air_dash() -> void:
 	isOnCooldown = true
 	characterBody.isDashing = true
 	get_tree().create_timer(cooldown).timeout.connect(set.bind("isOnCooldown", false))
+	get_tree().create_timer(cooldown).timeout.connect(Callable(self, "cooldown_flash")) #, animated_sprite_2d.play("dash_cooldown")
 	dashingDirection = characterBody.direction
 	var prevVel = characterBody.velocity
 	get_tree().create_timer(airDashDuration).timeout.connect(func():
@@ -63,3 +66,7 @@ func _input(event: InputEvent) -> void:
 			last_keycode = event.keycode
 		double_down_time = DOUBLETAP_DELAY
 #endregion
+
+func cooldown_flash():
+	animated_sprite_2d.play("dash_cooldown")
+	cooldown_sound.play()
