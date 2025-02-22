@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cu687a3n7xojp"]
+[gd_scene load_steps=15 format=3 uid="uid://cd3sap8kut7hg"]
 
-[ext_resource type="Texture2D" uid="uid://ddvgyavdx0afn" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets v2.png" id="1_yn5kr"]
-[ext_resource type="Texture2D" uid="uid://dyfisxk5o4vbg" path="res://Assets/GandalfHardcore FREE Platformer Assets/Pixel Art Wheat.png" id="2_0hvg0"]
-[ext_resource type="Texture2D" uid="uid://ciw1nfa6gcw4s" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="3_3iogg"]
-[ext_resource type="Texture2D" uid="uid://d2hdsqep3yiqd" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="4_35u02"]
-[ext_resource type="Texture2D" uid="uid://b70ekngrkddng" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="5_2opbb"]
+[ext_resource type="Texture2D" uid="uid://ddvgyavdx0afn" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets v2.png" id="1_jnoue"]
+[ext_resource type="Texture2D" uid="uid://dyfisxk5o4vbg" path="res://Assets/GandalfHardcore FREE Platformer Assets/Pixel Art Wheat.png" id="2_4l1b7"]
+[ext_resource type="Texture2D" uid="uid://ciw1nfa6gcw4s" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="3_j4587"]
+[ext_resource type="Texture2D" uid="uid://d2hdsqep3yiqd" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="4_xtjt3"]
+[ext_resource type="Texture2D" uid="uid://b70ekngrkddng" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="5_10ibq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k21fl"]
-texture = ExtResource("1_yn5kr")
+texture = ExtResource("1_jnoue")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.375, -8, -6.75, -3.5, -6.5, 8, 8, 8, 8, -8)
 1:0/0 = 0
@@ -2303,7 +2303,7 @@ texture = ExtResource("1_yn5kr")
 9:79/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shl6m"]
-texture = ExtResource("2_0hvg0")
+texture = ExtResource("2_4l1b7")
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
@@ -2329,7 +2329,7 @@ texture = ExtResource("2_0hvg0")
 14:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shtn4"]
-texture = ExtResource("3_3iogg")
+texture = ExtResource("3_j4587")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.75, 4.875, 8, 5.125, 8, 8, -8, 8)
 1:0/0 = 0
@@ -2480,7 +2480,7 @@ texture = ExtResource("3_3iogg")
 1:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50t44"]
-texture = ExtResource("4_35u02")
+texture = ExtResource("4_xtjt3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3012,7 +3012,7 @@ texture = ExtResource("4_35u02")
 19:24/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wfwvt"]
-texture = ExtResource("5_2opbb")
+texture = ExtResource("5_10ibq")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
 1:0/0 = 0
@@ -3326,7 +3326,7 @@ texture = ExtResource("5_2opbb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iuwlk"]
 resource_name = "Tiles_noCol"
-texture = ExtResource("4_35u02")
+texture = ExtResource("4_xtjt3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3794,7 +3794,7 @@ texture = ExtResource("4_35u02")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s41bu"]
 resource_name = "Tree-Assets_noCol"
-texture = ExtResource("5_2opbb")
+texture = ExtResource("5_10ibq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4083,7 +4083,7 @@ texture = ExtResource("5_2opbb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_meefu"]
 resource_name = "Hive_noCol"
-texture = ExtResource("3_3iogg")
+texture = ExtResource("3_j4587")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
