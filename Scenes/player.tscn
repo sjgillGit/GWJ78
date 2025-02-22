@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://bc7wyx8xvx0ks"]
+[gd_scene load_steps=78 format=3 uid="uid://bc7wyx8xvx0ks"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://byrupa24vdoc5" path="res://Assets/markAssets/02-King Pig/Jump (38x28).png" id="9_spv00"]
 [ext_resource type="Shader" path="res://markIncompleteScenes/shader.gdshader" id="10_pqmdy"]
 [ext_resource type="Texture2D" uid="uid://bgvwpgv17l1i4" path="res://Assets/markAssets/02-King Pig/Run (38x28).png" id="10_ssf1c"]
+[ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="17_qlpq0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcjis"]
 atlas = ExtResource("2_e3mkm")
@@ -576,7 +577,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kt6h3"]
 radius = 5.0
-height = 14.0
+height = 15.62
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aupqv"]
 shader = ExtResource("10_pqmdy")
@@ -601,12 +602,11 @@ theme_override_font_sizes/font_size = 11
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4hkln")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.485038
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(1, 4.19)
 shape = SubResource("CapsuleShape2D_kt6h3")
 metadata/_edit_group_ = true
 
@@ -632,3 +632,7 @@ zoom = Vector2(2.34, 2.34)
 material = SubResource("ShaderMaterial_aupqv")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_a7d57")
+
+[node name="Node2D" parent="." instance=ExtResource("17_qlpq0")]
+z_index = -4
+scale = Vector2(1.925, 1.925)

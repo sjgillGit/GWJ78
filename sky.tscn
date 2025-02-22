@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://vdtsye5sd5ar"]
+
+[ext_resource type="Texture2D" uid="uid://cl1tg7vtgxlbe" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_3ug5e"]
+[ext_resource type="Texture2D" uid="uid://foos2khhmgdo" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="2_5xn6a"]
+[ext_resource type="Texture2D" uid="uid://cu74pcsghrlo3" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="3_7m88d"]
+[ext_resource type="Texture2D" uid="uid://cgbmnhln0yybw" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="4_cfkif"]
+[ext_resource type="Texture2D" uid="uid://smub2wu8o50m" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="5_tcos5"]
+
+[node name="Parallax2D" type="Parallax2D"]
+
+[node name="GandalfHardcoreBackgroundLayersLayer5" type="Sprite2D" parent="."]
+texture = ExtResource("1_3ug5e")
+
+[node name="Parallax2D" type="Parallax2D" parent="GandalfHardcoreBackgroundLayersLayer5"]
+
+[node name="Node2D" type="Node2D" parent="GandalfHardcoreBackgroundLayersLayer5"]
+
+[node name="Parallax2D" type="Parallax2D" parent="GandalfHardcoreBackgroundLayersLayer5/Node2D"]
+
+[node name="GandalfHardcoreBackgroundLayersLayer4" type="Sprite2D" parent="GandalfHardcoreBackgroundLayersLayer5/Node2D/Parallax2D"]
+texture = ExtResource("2_5xn6a")
+
+[node name="Parallax2D2" type="Parallax2D" parent="GandalfHardcoreBackgroundLayersLayer5/Node2D"]
+
+[node name="GandalfHardcoreBackgroundLayersLayer3" type="Sprite2D" parent="GandalfHardcoreBackgroundLayersLayer5/Node2D/Parallax2D2"]
+position = Vector2(0, -1)
+texture = ExtResource("3_7m88d")
+
+[node name="Parallax2D3" type="Parallax2D" parent="GandalfHardcoreBackgroundLayersLayer5/Node2D"]
+
+[node name="GandalfHardcoreBackgroundLayersLayer2" type="Sprite2D" parent="GandalfHardcoreBackgroundLayersLayer5/Node2D/Parallax2D3"]
+position = Vector2(0, -1)
+texture = ExtResource("4_cfkif")
+
+[node name="Parallax2D4" type="Parallax2D" parent="GandalfHardcoreBackgroundLayersLayer5/Node2D"]
+
+[node name="GandalfHardcoreBackgroundLayersLayer1" type="Sprite2D" parent="GandalfHardcoreBackgroundLayersLayer5/Node2D/Parallax2D4"]
+position = Vector2(-1, 1)
+texture = ExtResource("5_tcos5")

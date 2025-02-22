@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxrqa6sgh7qnn"]
+
+[ext_resource type="Texture2D" uid="uid://cl1tg7vtgxlbe" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_kof3f"]
+[ext_resource type="Texture2D" uid="uid://foos2khhmgdo" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="2_n5dd4"]
+[ext_resource type="Texture2D" uid="uid://cu74pcsghrlo3" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="3_gmh76"]
+[ext_resource type="Texture2D" uid="uid://cgbmnhln0yybw" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="4_b4tlg"]
+[ext_resource type="Texture2D" uid="uid://smub2wu8o50m" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="5_kk0df"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="GandalfHardcoreBackgroundLayersLayer5" type="Sprite2D" parent="Parallax2D"]
+z_index = -14
+position = Vector2(-3, -2)
+texture = ExtResource("1_kof3f")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="GandalfHardcoreBackgroundLayersLayer4" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(-2, -1)
+texture = ExtResource("2_n5dd4")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.9, 0.9)
+
+[node name="GandalfHardcoreBackgroundLayersLayer3" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-1, 0)
+texture = ExtResource("3_gmh76")
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.1, 1.1)
+
+[node name="GandalfHardcoreBackgroundLayersLayer2" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(-3, -1)
+texture = ExtResource("4_b4tlg")
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.2, 1.2)
+
+[node name="GandalfHardcoreBackgroundLayersLayer1" type="Sprite2D" parent="Parallax2D5"]
+position = Vector2(-3, -1)
+texture = ExtResource("5_kk0df")

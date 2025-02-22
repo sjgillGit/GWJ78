@@ -107,6 +107,7 @@ size = Vector2(32, 7)
 z_index = -1
 collision_mask = 2
 script = ExtResource("1_tnwb4")
+boost = 400.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p781x")

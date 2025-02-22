@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	# the game checks if the playerd is holding shift (same as sprint) and is in the air for longer than 0.2s.
 	# that ensures that even is the player is sprinting 
 	# and then jumps still holding shift it will dash but not instantly when he's off the floor
-	if Input.is_action_pressed("sprint") and characterBody.timeInAir > 0.2 and !isOnCooldown:
+	if Input.is_action_pressed("dash") and characterBody.timeInAir > 0.2 and !isOnCooldown:
 		air_dash()
 	
 	# each frame the X velocity is equal to the Air Dash Strength and Y is 0 to make the dash horizontal
