@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://uy6f4gypnnqr"]
+[gd_scene load_steps=18 format=3 uid="uid://uy6f4gypnnqr"]
 
 [ext_resource type="Script" path="res://Scripts/jump_pad.gd" id="1_tnwb4"]
 [ext_resource type="Texture2D" uid="uid://dxuaqymdl1uau" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/ForestJump.png" id="2_q2por"]
 [ext_resource type="Texture2D" uid="uid://b43k6lg60l3sc" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/HoneyJump.png" id="3_pv3i3"]
+[ext_resource type="AudioStream" uid="uid://dr8hfs20l3dtp" path="res://Assets/sound/10_Battle_SFX/15_Impact_flesh_02.wav" id="4_m4fb1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51fqt"]
 atlas = ExtResource("2_q2por")
@@ -125,5 +126,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_ufptm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_m4fb1")
+volume_db = -20.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

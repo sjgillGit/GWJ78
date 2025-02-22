@@ -42,16 +42,28 @@ const CONST_JUMP_VELOCITY = -350.0
 var player_position: Vector2 = Vector2.ZERO
 
 @export_category("Fruit Collection")
-@export var fruit1_toggle: bool = false
-@export var fruit2_toggle: bool = false
-@export var fruit3_toggle: bool = false
-@export var fruit4_toggle: bool = false
-@export var fruit5_toggle: bool = false
-@export var fruit6_toggle: bool = false
-@export var fruit7_toggle: bool = false
-@export var fruit8_toggle: bool = false
-@export var fruit9_toggle: bool = false
-@export var fruit10_toggle: bool = false
+var fruits_collected = { 
+	"1": false,
+	"2": false,
+	"3": false,
+	"4": false,
+	"5": false,
+	"6": false,
+	"7": false,
+	"8": false,
+	"9": false,
+	"10": false
+}
+#@export var fruit1: bool = false
+#@export var fruit2: bool = false
+#@export var fruit3: bool = false
+#@export var fruit4: bool = false
+#@export var fruit5: bool = false
+#@export var fruit6: bool = false
+#@export var fruit7: bool = false
+#@export var fruit8: bool = false
+#@export var fruit9: bool = false
+#@export var fruit10: bool = false
 
 
 func _set_air_dash(toggle: bool):

@@ -176,3 +176,5 @@ func check_life():
 		isHurt = true
 		await get_tree().create_timer(2).timeout
 		get_tree().reload_current_scene()
+
+	

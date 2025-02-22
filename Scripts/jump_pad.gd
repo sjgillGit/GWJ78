@@ -3,6 +3,7 @@ extends StaticBody2D
 @onready var area_2d: Area2D = $Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var disable: bool = false
 @export var boost: float = 260
@@ -19,6 +20,7 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and !disable:
+		audio_stream_player_2d.play()
 		boost_curr = boost
 		var space_state:PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
 		var parameters := PhysicsRayQueryParameters2D.create(area_2d.global_position, body.global_position, 2)
