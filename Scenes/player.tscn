@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://bc7wyx8xvx0ks"]
+[gd_scene load_steps=82 format=3 uid="uid://bc7wyx8xvx0ks"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://byrupa24vdoc5" path="res://Assets/markAssets/02-King Pig/Jump (38x28).png" id="9_spv00"]
 [ext_resource type="Shader" path="res://markIncompleteScenes/shader.gdshader" id="10_pqmdy"]
 [ext_resource type="Texture2D" uid="uid://bgvwpgv17l1i4" path="res://Assets/markAssets/02-King Pig/Run (38x28).png" id="10_ssf1c"]
-[ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="17_qlpq0"]
 [ext_resource type="AudioStream" uid="uid://ywo4571gt2w5" path="res://Assets/sound/jump.wav" id="18_i4hxt"]
 [ext_resource type="AudioStream" uid="uid://bdc066cvllw21" path="res://Assets/sound/power_up.wav" id="19_rko0k"]
 [ext_resource type="AudioStream" uid="uid://gpre6lw5t3s2" path="res://Assets/sound/hurt.wav" id="19_u2w5h"]
@@ -630,7 +629,7 @@ theme_override_font_sizes/font_size = 11
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4hkln")
-animation = &"idle"
+animation = &"dead"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -662,10 +661,6 @@ position_smoothing_enabled = true
 material = SubResource("ShaderMaterial_aupqv")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_a7d57")
-
-[node name="Parallax BG" parent="." instance=ExtResource("17_qlpq0")]
-z_index = -4
-scale = Vector2(1.925, 1.925)
 
 [node name="Audio" type="Node2D" parent="."]
 
