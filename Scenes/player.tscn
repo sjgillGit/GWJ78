@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://byrupa24vdoc5" path="res://Assets/markAssets/02-King Pig/Jump (38x28).png" id="9_spv00"]
 [ext_resource type="Shader" path="res://markIncompleteScenes/shader.gdshader" id="10_pqmdy"]
 [ext_resource type="Texture2D" uid="uid://bgvwpgv17l1i4" path="res://Assets/markAssets/02-King Pig/Run (38x28).png" id="10_ssf1c"]
-[ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="17_qlpq0"]
+[ext_resource type="PackedScene" path="res://skyNodeView.tscn" id="17_qlpq0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcjis"]
 atlas = ExtResource("2_e3mkm")
