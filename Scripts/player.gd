@@ -31,6 +31,7 @@ var jumpAnim:String = "jump_up"
 
 func _ready():
 	initialize_playerProperties()
+	$Camera2D/CanvasLayer/UIManager/StartScreen.shader_toggled.connect(_on_shader_toggled)
 	#set_base_stats()
 	#apply_stat_modifiers()
 
@@ -152,3 +153,13 @@ func take_damage():
 	
 	print("damage taken by player, current hp: ", player_health)
 	
+
+func call_cauldron_menu():
+	print('call from player')
+	%UIManager.call_cauldron_menu()
+	
+func close_cauldron_menu():
+	%UIManager.close_cauldron_menu()
+
+func _on_shader_toggled(value):
+	$Camera2D/CanvasLayer/MeshInstance2D.visible = value

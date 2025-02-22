@@ -44,7 +44,7 @@ corner_radius_bottom_left = 5
 bg_color = Color(0.8, 0.8, 0.8, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lvlk"]
-bg_color = Color(0, 0, 0, 0.301961)
+bg_color = Color(0, 0, 0, 0)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5

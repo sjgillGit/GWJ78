@@ -29,9 +29,7 @@ layout_mode = 2
 [node name="Item1" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "juice boxes: 32
-press  e, esc, = for current 
-implemented ui"
+text = "juice boxes: 32"
 
 [node name="Item2" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true

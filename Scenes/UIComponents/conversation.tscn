@@ -9,14 +9,15 @@ signal is_talking # town should receive this signal with a true value to stop se
 				 # conversation signals until this state variable is false. for debug testing i am sending to uimanager
 signal key_press
 var press_key = false
-
+var call_from_cauldron = false
 
 func _ready():
 	hide()
-	print(process_mode)
-
-func initialize_conversation(text: String):
-	is_talking.emit(true)
+	
+func initialize_conversation(text: String, call_from_cauldron = false):
+	#is_talking.emit(true)
+	if ( call_from_cauldron ):
+		%Text.clear()
 	var limit = 400
 	var count = 0
 	var array_text = text.split('')
@@ -24,7 +25,9 @@ func initialize_conversation(text: String):
 	%PressInteractToContinue.hide()
 	for char in array_text:
 		if(count == limit):
+			%PressInteractToContinue.show()
 			await wait_for_key_press()
+			%PressInteractToContinue.hide()
 			%Text.clear()
 			count = 0
 		%Text.append_text(char)
@@ -35,7 +38,7 @@ func initialize_conversation(text: String):
 	%Text.clear()
 	hide()
 	is_talking.emit(false)
-#TODO idk why conversation wont pause when pause screen is active
+
 
 func wait_for_key_press() -> void:
 	press_key = false
@@ -132,4 +135,5 @@ theme_type_variation = &"ConversationButton"
 shortcut = SubResource("Shortcut_viwcs")
 script = SubResource("GDScript_35dg1")
 
+[connection signal="is_talking" from="." to="." method="_on_is_talking"]
 [connection signal="pressed" from="continuance" to="." method="on_button_continuance_press"]

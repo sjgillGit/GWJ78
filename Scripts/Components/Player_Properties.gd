@@ -31,7 +31,7 @@ signal UpdateTown
 @export var water_toggle: bool = false
 @export var people_toggle: bool = false
 @export var prosperity_toggle: bool = false
-
+@export var shader_visibility: bool = false
 var player_position: Vector2 = Vector2.ZERO
 
 

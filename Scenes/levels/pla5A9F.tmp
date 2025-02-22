@@ -309,6 +309,16 @@ tile_set = SubResource("TileSet_xhrbg")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_b6gq6")]
 position = Vector2(5, -26)
+player_speed_boost = null
+player_health_boost = null
+player_health = null
+player_currency = null
+money_found = null
+water_quality_change = null
+villager_happiness_change = null
+population_health_change = null
+chaos_change = null
+good_change = null
 
 [node name="mugger" parent="." instance=ExtResource("3_hg66u")]
 position = Vector2(103, -10)
@@ -334,5 +344,5 @@ material = SubResource("ShaderMaterial_8salo")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_mpjd7")
 
-[node name="Cauldron" parent="." instance=ExtResource("9_eokm1")]
+[node name="Gold" parent="." instance=ExtResource("9_eokm1")]
 position = Vector2(-107, -21)
