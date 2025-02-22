@@ -4,7 +4,7 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $CollisionShape2D/AnimatedSprite2D
 
 @export var windStrength:float = 50
-@export var facingLeft:bool = true
+#@export var facingLeft:bool = true
 @export var turnedOn:bool = true
 
 var bodyInArea: CharacterBody2D = null
@@ -21,12 +21,13 @@ func _physics_process(delta: float) -> void:
 		var posDiff
 		if scale.x == 1:
 			posDiff = (bodyInArea.global_position.x + bodyInArea.get_node("CollisionShape2D").shape.radius) - areaStart
-			if posDiff > 0:
+			if posDiff > 0:# and bodyInArea.velocity.x < PlayerProperties.current_speed:
 				bodyInArea.velocity.x -= windStrength
 		elif scale.x == -1:
 			posDiff = (bodyInArea.global_position.x - bodyInArea.get_node("CollisionShape2D").shape.radius) - areaStart
-			if posDiff < 0:
+			if posDiff < 0: # and bodyInArea.velocity.x < PlayerProperties.current_speed:
 				bodyInArea.velocity.x += windStrength
+				
 			
 
 
