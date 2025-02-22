@@ -30,6 +30,7 @@ var isMoving:bool = true
 var isDashing:bool = false
 var isHurt:bool = false
 var timeInAir:float = 0
+var isAirDropping:bool = false
 
 var idleAnim:String = "idle"
 var runAnim:String = "run"
@@ -49,6 +50,7 @@ func _physics_process(delta: float) -> void:
 	check_life()
 	PlayerProperties.player_position = global_position
 	label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
+	#label.text = "is air dropping = %s" % [isAirDropping]
 	# Add the gravity.
 	if not is_on_floor():
 		if not isDashing:
@@ -59,9 +61,11 @@ func _physics_process(delta: float) -> void:
 	
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.1) and isMoving and !PlayerProperties.disable_jump:
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or timeInAir < 0.2) and isMoving and !PlayerProperties.disable_jump:
+		PlayerProperties.disable_jump = true
 		velocity.y = player_properties.JUMP_VELOCITY
 		jump.play()
+		get_tree().create_timer(0.2).timeout.connect(func(): PlayerProperties.disable_jump = false)
 		
 
 	
@@ -93,8 +97,10 @@ func _physics_process(delta: float) -> void:
 			elif abs(velocity.x) <= player_properties.MAX_SPEED:
 				velocity.x += player_properties.ACCELERATION * direction
 		else:
+			#if abs(velocity.x) >= PlayerProperties.MAX_SPEED:
+				#velocity.x = move_toward(velocity.x, PlayerProperties.MAX_SPEED, player_properties.SPEED_DELTA)
 			if abs(velocity.x) > PlayerProperties.current_speed:
-				velocity.x = move_toward(velocity.x, direction * player_properties.current_speed, 2)
+				velocity.x = move_toward(velocity.x, direction * player_properties.current_speed, 8)
 			else:
 				velocity.x = move_toward(velocity.x, direction * player_properties.current_speed, player_properties.SPEED_DELTA)
 	else:

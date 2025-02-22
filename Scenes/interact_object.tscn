@@ -17,11 +17,11 @@ scale = Vector2(2.09536, 1.60743)
 shape = SubResource("RectangleShape2D_2jmkg")
 
 [node name="Label" type="Label" parent="."]
+z_index = 10
 offset_left = -59.0
 offset_top = -40.0
 offset_right = 64.0
 offset_bottom = -20.0
-text = "Press E to interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

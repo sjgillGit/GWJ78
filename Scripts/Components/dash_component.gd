@@ -29,11 +29,14 @@ func air_dash() -> void:
 		)
 		
 func air_drop() -> void:
-	characterBody.velocity = Vector2(0, 300)
+	
+	characterBody.velocity = Vector2(0, 200)
 	characterBody.move_and_slide()
 	if characterBody.is_on_floor():
 		drop_started = false
 		characterBody.isMoving = true
+		get_tree().create_timer(0.2).timeout.connect(characterBody.set.bind("isAirDropping", false))
+		#characterBody.isAirDropping = false
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,14 +60,20 @@ func _physics_process(delta: float) -> void:
 	
 func _input(event: InputEvent) -> void:	
 #region Air Drop
-	if event is InputEventKey and event.is_pressed():
-		if last_keycode == event.keycode and double_down_time >= 0 and event.is_action_pressed("move_down"):
-			characterBody.isMoving = false
-			drop_started = true
-			last_keycode = 0
-		else:
-			last_keycode = event.keycode
-		double_down_time = DOUBLETAP_DELAY
+	#if event is InputEventKey and event.is_pressed():
+		#if last_keycode == event.keycode and double_down_time >= 0 and event.is_action_pressed("move_down"):
+			#characterBody.isMoving = false
+			#characterBody.isAirDropping = true
+			#drop_started = true
+			#last_keycode = 0
+		#else:
+			#last_keycode = event.keycode
+		#double_down_time = DOUBLETAP_DELAY
+	if event.is_action_pressed("air_drop"):
+		characterBody.isMoving = false
+		characterBody.isAirDropping = true
+		drop_started = true
+		
 #endregion
 
 func cooldown_flash():
