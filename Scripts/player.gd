@@ -39,13 +39,14 @@ var hurtAnim:String = "hurt"
 @onready var dash_component: DashComponent = $DashComponent
 func _ready():
 	initialize_playerProperties()
+	
 	#set_base_stats()
 	#apply_stat_modifiers()
 
 func _physics_process(delta: float) -> void:
 	#table for 
 	#Dash Cooldown
-	
+	check_life()
 	PlayerProperties.player_position = global_position
 	label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
 	# Add the gravity.
@@ -137,9 +138,11 @@ func add_gold(gold: int):
 	
 	
 func initialize_playerProperties():
+	isHurt = false
 	self.set_collision_layer(PlayerProperties.player_collision_layer)
 	print("player layer 2:", self.get_collision_layer_value(2))
 	print("player layer 1:" ,self.get_collision_layer_value(1))
+	player_health = PlayerProperties.PLAYER_BASE_HEALTH
 	add_to_group("player")
 	var debug = get_groups()
 	print("Player in group",debug)
@@ -153,9 +156,17 @@ func initialize_playerProperties():
 				
 func take_damage():
 	player_health -= 30
-	animated_sprite_2d.play(hurtAnim)
-	hurt.play()
+	if !isHurt:
+		animated_sprite_2d.play(hurtAnim)
+		hurt.play()
 	print("damage taken by player, current hp: ", player_health)
 	
 func walk_sounds():
 	walk.play()
+
+func check_life():
+	if player_health <= 0:
+		animated_sprite_2d.play("dead")
+		isHurt = true
+		await get_tree().create_timer(2).timeout
+		get_tree().reload_current_scene()
