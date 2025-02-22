@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7qfihnyo70k4"]
+[gd_scene load_steps=6 format=3 uid="uid://c7qfihnyo70k4"]
 
 [ext_resource type="PackedScene" uid="uid://d282ssyvd6lv5" path="res://Scenes/UIComponents/conversation.tscn" id="1_kqu5t"]
-[ext_resource type="PackedScene" uid="uid://dcq4ft7y5ad56" path="res://Scenes/UIComponents/HUD.tscn" id="2_yq6se"]
 [ext_resource type="PackedScene" uid="uid://d1xcm87cu8iqg" path="res://Scenes/UIComponents/Cauldron.tscn" id="3_3dbq6"]
-[ext_resource type="PackedScene" uid="uid://b0k7suxo1n0ok" path="res://Scenes/UIComponents/LevelComplete.tscn" id="4_cffi0"]
 [ext_resource type="PackedScene" uid="uid://b3nkife0hdpvh" path="res://Scenes/UIComponents/Pause.tscn" id="4_cpx51"]
 [ext_resource type="PackedScene" uid="uid://buf50hfrk1l08" path="res://Scenes/UIComponents/StartScreen.tscn" id="7_tbluj"]
 
@@ -63,25 +61,6 @@ func call_cauldron_menu():
 	%Cauldron.call_cauldron_menu()
 "
 
-[sub_resource type="GDScript" id="GDScript_etogd"]
-script/source = "extends Control
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _update_HUD(data1, data2, data3):
-	%Item1.set_text(str(data1))
-	%RandomLabelNumber3.set_text(str(data1))
-	%Item2.set_text(str(data2))
-"
-
 [node name="UIManager" type="Node"]
 process_mode = 3
 script = SubResource("GDScript_u1mbo")
@@ -99,20 +78,6 @@ offset_bottom = 722.0
 grow_vertical = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="HUD" parent="." instance=ExtResource("2_yq6se")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1282.0
-offset_bottom = 722.0
-grow_horizontal = 1
-grow_vertical = 1
-script = SubResource("GDScript_etogd")
-
-[node name="LevelComplete" parent="." instance=ExtResource("4_cffi0")]
-unique_name_in_owner = true
-process_mode = 1
 
 [node name="StartScreen" parent="." instance=ExtResource("7_tbluj")]
 unique_name_in_owner = true
