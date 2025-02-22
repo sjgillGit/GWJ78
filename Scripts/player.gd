@@ -41,7 +41,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	#table for 
 	PlayerProperties.player_position = global_position
-	#label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
+	label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
 	# Add the gravity.
 	if not is_on_floor():
 		if not isDashing:
@@ -79,10 +79,15 @@ func _physics_process(delta: float) -> void:
 		
 	if direction and isMoving:
 		if Input.is_action_pressed("sprint") and is_on_floor():
-			if abs(velocity.x) <= player_properties.MAX_SPEED:
+			if velocity.x * direction < 0:
+				velocity.x = move_toward(velocity.x, direction * player_properties.current_speed, player_properties.SPEED_DELTA)
+			elif abs(velocity.x) <= player_properties.MAX_SPEED:
 				velocity.x += player_properties.ACCELERATION * direction
 		else:
-			velocity.x = move_toward(velocity.x, direction * player_properties.current_speed, player_properties.SPEED_DELTA)
+			if abs(velocity.x) > PlayerProperties.current_speed:
+				velocity.x = move_toward(velocity.x, direction * player_properties.current_speed, 2)
+			else:
+				velocity.x = move_toward(velocity.x, direction * player_properties.current_speed, player_properties.SPEED_DELTA)
 	else:
 		velocity.x = move_toward(velocity.x, 0, player_properties.SPEED_DELTA)
 		
