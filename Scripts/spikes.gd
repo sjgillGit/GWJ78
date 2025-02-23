@@ -5,18 +5,18 @@ extends StaticBody2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		if body.has_method("take_damage"):
+		if body.has_method("take_damage") and body.has_method("_set_isHurt"):
 			audio_stream_player_2d.play()
 			PlayerProperties.disable_jump = true
 			PlayerProperties.gravity_modifier = 0.5
 			PlayerProperties.JUMP_VELOCITY = 0
 			PlayerProperties._set_temporary_speed_change(0.2, 0.7)
-			body.isHurt = true
+			body._set_isHurt()
 			get_tree().create_timer(0.7).timeout.connect(func():
 				PlayerProperties.gravity_modifier = PlayerProperties.BASE_GRAVITY
 				PlayerProperties.JUMP_VELOCITY = PlayerProperties.CONST_JUMP_VELOCITY
 				PlayerProperties.disable_jump = false
-				body.isHurt = false
+				#body._set_isHurt()
 				)
 			body.take_damage()
 			body.velocity.y = -260

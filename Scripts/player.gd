@@ -183,3 +183,9 @@ func call_cauldron_menu():
 	
 func close_cauldron_menu():
 	%UIManager.close_cauldron_menu()
+
+func _set_isHurt():
+	if !isHurt:
+		isHurt = true
+		var timer = get_tree().create_timer(0.7)
+		timer.timeout.connect(func(): isHurt = false)

@@ -752,4 +752,4 @@ position = Vector2(0, -16)
 texture = ExtResource("10_0kgjh")
 
 [node name="Cauldron" parent="." instance=ExtResource("12_3dckh")]
-position = Vector2(-248, 7)
+position = Vector2(-240, 8)
