@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Scripts/hive_1.gd" id="1_4x2sv"]
 [ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/hive_sprite_sheet.tscn" id="1_8s5i5"]
 [ext_resource type="PackedScene" uid="uid://bkj3s73hbe2vk" path="res://Scenes/interact_object.tscn" id="2_hgmo6"]
-[ext_resource type="PackedScene" uid="uid://cseotyi6dutis" path="res://PrivateDevRoom/Scenes/player.tscn" id="2_svegt"]
+[ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_svegt"]
 [ext_resource type="Texture2D" uid="uid://ciw1nfa6gcw4s" path="res://Assets/markAssets/Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="3_5dhev"]
 [ext_resource type="PackedScene" uid="uid://uy6f4gypnnqr" path="res://Scenes/jumpPad.tscn" id="3_epaij"]
-[ext_resource type="PackedScene" uid="uid://b4g8y0hm6xin3" path="res://PrivateDevRoom/Scenes/windGust.tscn" id="3_r5430"]
+[ext_resource type="PackedScene" uid="uid://4e76ji10syx3" path="res://Scenes/windGust.tscn" id="3_r5430"]
 [ext_resource type="PackedScene" uid="uid://dbmaep8ywgg8n" path="res://Scenes/swingPlatform.tscn" id="4_8c8pk"]
 [ext_resource type="PackedScene" uid="uid://1fou844a84m5" path="res://Scenes/spikesHive.tscn" id="4_gvva6"]
-[ext_resource type="PackedScene" uid="uid://d12n8w3843y7h" path="res://PrivateDevRoom/Scenes/jumpPad.tscn" id="5_6wdrn"]
+[ext_resource type="PackedScene" uid="uid://uy6f4gypnnqr" path="res://Scenes/jumpPad.tscn" id="5_6wdrn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ybf4j"]
 atlas = ExtResource("3_5dhev")

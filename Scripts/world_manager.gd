@@ -9,13 +9,13 @@ extends Node2D
 
 
 func _ready() -> void:
-	if PlayerProperties.prosperity == true:
+	if PlayerProperties.water_toggle == true:
 		print("water toggle triggered on readyin ", self)
-		water_layer.queue_free()
+		water.queue_free()
 	if PlayerProperties.people_toggle == true:
 		print("people_toggle triggered on ready in ", self)
 		people_layer.queue_free()
-	if PlayerProperties.prosperity == true:
-		prosperity_layer.queue_free()
+	if PlayerProperties.prosperity_toggle == true:
+		prosperity.queue_free()
 		print("prosperity_toggle triggered on ready in ", self)
 	
