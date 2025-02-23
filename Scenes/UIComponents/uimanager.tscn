@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7qfihnyo70k4"]
+[gd_scene load_steps=7 format=3 uid="uid://c7qfihnyo70k4"]
 
 [ext_resource type="PackedScene" uid="uid://d282ssyvd6lv5" path="res://Scenes/UIComponents/conversation.tscn" id="1_kqu5t"]
 [ext_resource type="PackedScene" uid="uid://d1xcm87cu8iqg" path="res://Scenes/UIComponents/Cauldron.tscn" id="3_3dbq6"]
 [ext_resource type="PackedScene" uid="uid://b3nkife0hdpvh" path="res://Scenes/UIComponents/Pause.tscn" id="4_cpx51"]
+[ext_resource type="PackedScene" uid="uid://dcq4ft7y5ad56" path="res://Scenes/UIComponents/HUD.tscn" id="5_kinla"]
 [ext_resource type="PackedScene" uid="uid://buf50hfrk1l08" path="res://Scenes/UIComponents/StartScreen.tscn" id="7_tbluj"]
 
 [sub_resource type="GDScript" id="GDScript_u1mbo"]
@@ -55,10 +56,12 @@ func _on_human_button_pressed(text):
 
 func close_cauldron_menu():
 	%Cauldron.close_cauldron_menu()
+	$HUD.hide()
 
 func call_cauldron_menu():
 	%Cauldron.call_cauldron_menu()
-	%Conversation.initialize_conversation('You may choose one ENTITY to erase, going back to home automatically resets this', true)
+	%HUD.show()
+	#%Conversation.initialize_conversation('You may choose one ENTITY to erase, going back to home automatically resets this', true)
 	
 "
 
@@ -91,5 +94,10 @@ unique_name_in_owner = true
 process_mode = 3
 light_mask = 2
 visibility_layer = 2
+
+[node name="HUD" parent="." instance=ExtResource("5_kinla")]
+unique_name_in_owner = true
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
 [connection signal="wait_begin" from="Cauldron" to="Cauldron" method="_on_wait_begin"]

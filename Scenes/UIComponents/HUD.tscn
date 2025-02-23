@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcq4ft7y5ad56"]
+[gd_scene load_steps=3 format=3 uid="uid://dcq4ft7y5ad56"]
 
 [ext_resource type="Theme" uid="uid://be8fu88chioyx" path="res://Scenes/UIComponents/DefaultTheme.tres" id="1_4kyge"]
+
+[sub_resource type="GDScript" id="GDScript_4uief"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hide()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -10,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4kyge")
+script = SubResource("GDScript_4uief")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -29,19 +44,21 @@ layout_mode = 2
 [node name="Item1" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "juice boxes: 32"
+text = "You may choose one ENTITY to erase, going back to home automatically resets this"
 
 [node name="Item2" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "money: 69"
+text = "Press 1-3 to choose"
 
 [node name="RandomLabelNumber3" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "usb-c adapters: 17"
 
 [node name="ShouldDecideWhatTheseWillShow" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "plastic staws: 89214042999"
