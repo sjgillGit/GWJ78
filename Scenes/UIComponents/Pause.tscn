@@ -19,6 +19,13 @@ func pause():
 		show()
 		get_tree().paused = true
 		
+
+
+func _on_go_back_pressed() -> void:
+	get_tree().create_timer(1).timeout.connect(Callable(self, \"despawn_player_room\"))
+	get_tree().change_scene_to_file('res://Scenes/levels/player_room.tscn')
+	
+	
 "
 
 [node name="Pause" type="Control"]
@@ -58,7 +65,16 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="GoBack" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Back to Home"
+
 [node name="BottomMargin" type="Control" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/GoBack" to="." method="_on_go_back_pressed"]

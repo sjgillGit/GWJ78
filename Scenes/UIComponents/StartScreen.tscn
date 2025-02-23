@@ -77,7 +77,12 @@ size_flags_vertical = 0
 theme = ExtResource("1_kqh4r")
 theme_type_variation = &"TitleHeader"
 bbcode_enabled = true
-text = "press e to start"
+text = "press E to start
+
+
+
+
+WELCOME TO GUCCI GOBLINS BIG ADVENTURE"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

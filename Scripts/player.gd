@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	#Dash Cooldown
 	check_life()
 	PlayerProperties.player_position = global_position
-	label.text = "Velocity.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
+	label.text = "Velocityd.x = %d \nVelocity.y = %d \nCurrentSpeed = %d" % [velocity.x, velocity.y, player_properties.current_speed]
 	#label.text = "is air dropping = %s" % [isAirDropping]
 	# Add the gravity.
 	if not is_on_floor():
@@ -176,6 +176,7 @@ func check_life():
 		isHurt = true
 		await get_tree().create_timer(3).timeout
 		get_tree().reload_current_scene()
+	
 
 func call_cauldron_menu():
 	%UIManager.call_cauldron_menu()
