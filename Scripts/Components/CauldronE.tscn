@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://de7fytvgve4kc"]
+
+[ext_resource type="Texture2D" uid="uid://dx82bs16lwehx" path="res://Assets/Arrow(Projectile)/Arrow01(32x32).png" id="1_lttfq"]
+
+[sub_resource type="GDScript" id="GDScript_g5e6w"]
+resource_name = "Cauldron"
+script/source = "extends Area2D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method('call_cauldron_menu'):
+		body.call('call_cauldron_menu')
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.has_method('close_cauldron_menu'):
+		body.call('close_cauldron_menu')
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_da8ju"]
+radius = 30.0
+
+[node name="Gold" type="Area2D"]
+collision_mask = 2
+script = SubResource("GDScript_g5e6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_da8ju")
+
+[node name="Arrow01(32x32)" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_lttfq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

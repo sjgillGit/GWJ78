@@ -1,4 +1,8 @@
-[gd_scene load_steps=95 format=3 uid="uid://bc7wyx8xvx0ks"]
+<<<<<<< HEAD
+[gd_scene load_steps=79 format=3 uid="uid://bc7wyx8xvx0ks"]
+=======
+[gd_scene load_steps=93 format=3 uid="uid://bc7wyx8xvx0ks"]
+>>>>>>> dev_merge_ui
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
@@ -16,8 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://byrupa24vdoc5" path="res://Assets/markAssets/02-King Pig/Jump (38x28).png" id="9_spv00"]
 [ext_resource type="Shader" path="res://markIncompleteScenes/shader.gdshader" id="10_pqmdy"]
 [ext_resource type="Texture2D" uid="uid://bgvwpgv17l1i4" path="res://Assets/markAssets/02-King Pig/Run (38x28).png" id="10_ssf1c"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://c7qfihnyo70k4" path="res://Scenes/UIComponents/uimanager.tscn" id="17_lqdgb"]
+=======
 [ext_resource type="Script" path="res://Scenes/camera_2d_fruit_ui.gd" id="16_6ij4k"]
-[ext_resource type="PackedScene" uid="uid://c7qfihnyo70k4" path="res://Scenes/UIComponents/uimanager.tscn" id="17_73k3i"]
 [ext_resource type="Texture2D" uid="uid://e4q3er32lbal" path="res://Assets/fruits/02.png" id="18_2pwem"]
 [ext_resource type="AudioStream" uid="uid://ywo4571gt2w5" path="res://Assets/sound/jump.wav" id="18_i4hxt"]
 [ext_resource type="AudioStream" uid="uid://bdc066cvllw21" path="res://Assets/sound/power_up.wav" id="19_rko0k"]
@@ -36,6 +42,7 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_orii7"]
 atlas = ExtResource("3_2qm07")
 region = Rect2(0, 0, 38, 28)
+>>>>>>> dev_merge_ui
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcjis"]
 atlas = ExtResource("2_e3mkm")
@@ -625,7 +632,8 @@ shader = ExtResource("10_pqmdy")
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
-[sub_resource type="GDScript" id="GDScript_8t2s8"]
+<<<<<<< HEAD
+[sub_resource type="GDScript" id="GDScript_yby1o"]
 script/source = "extends MeshInstance2D
 
 
@@ -638,14 +646,16 @@ func _process(delta: float) -> void:
 	visible = PlayerProperties.shader_visibility
 "
 
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_properties")]
+=======
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+>>>>>>> dev_merge_ui
 position = Vector2(-1, -4)
 collision_layer = 3
 script = ExtResource("1_wp6sb")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = -19.0
 offset_top = -69.0
 offset_right = 21.0
@@ -683,7 +693,7 @@ script = ExtResource("16_6ij4k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
-[node name="UIManager" parent="Camera2D/CanvasLayer" instance=ExtResource("17_73k3i")]
+[node name="UIManager" parent="Camera2D/CanvasLayer" instance=ExtResource("17_lqdgb")]
 unique_name_in_owner = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D/CanvasLayer"]
@@ -691,7 +701,9 @@ process_mode = 3
 material = SubResource("ShaderMaterial_aupqv")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_a7d57")
-script = SubResource("GDScript_8t2s8")
+<<<<<<< HEAD
+script = SubResource("GDScript_yby1o")
+=======
 
 [node name="FruitUI" type="Node2D" parent="Camera2D"]
 position = Vector2(19, -14)
@@ -753,3 +765,4 @@ volume_db = -15.0
 [node name="walk" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("20_2qcga")
 volume_db = -4.0
+>>>>>>> dev_merge_ui

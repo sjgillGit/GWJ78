@@ -40,7 +40,11 @@ var hurtAnim:String = "hurt"
 @onready var dash_component: DashComponent = $DashComponent
 func _ready():
 	initialize_playerProperties()
+<<<<<<< HEAD
+	#$Camera2D/CanvasLayer/UIManager/StartScreen.shader_toggled.connect(_on_shader_toggled)
+=======
 	
+>>>>>>> dev_merge_ui
 	#set_base_stats()
 	#apply_stat_modifiers()
 
@@ -167,6 +171,14 @@ func take_damage():
 		hurt.play()
 	print("damage taken by player, current hp: ", player_health)
 	
+<<<<<<< HEAD
+
+func call_cauldron_menu():
+	%UIManager.call_cauldron_menu()
+	
+func close_cauldron_menu():
+	%UIManager.close_cauldron_menu()
+=======
 func walk_sounds():
 	walk.play()
 
@@ -177,8 +189,5 @@ func check_life():
 		await get_tree().create_timer(2).timeout
 		get_tree().reload_current_scene()
 
-func call_cauldron_menu():
-	%UIManager.call_cauldron_menu()
 	
-func close_cauldron_menu():
-	%UIManager.close_cauldron_menu()
+>>>>>>> dev_merge_ui

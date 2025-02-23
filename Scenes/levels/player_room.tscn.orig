@@ -1,17 +1,26 @@
-[gd_scene load_steps=59 format=4 uid="uid://cmm8dtn8mm1em"]
+<<<<<<< HEAD
+[gd_scene load_steps=11 format=4 uid="uid://cmm8dtn8mm1em"]
+=======
+[gd_scene load_steps=58 format=4 uid="uid://cmm8dtn8mm1em"]
+>>>>>>> dev_merge_ui
 
 [ext_resource type="Texture2D" uid="uid://bb63gwy4i02jv" path="res://Assets/enviroment/world_tileset.png" id="1_3k31k"]
 [ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="1_sdn7v"]
 [ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/hive_sprite_sheet.tscn" id="1_uqgsu"]
 [ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_b6gq6"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="4_4o2fa"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://bxqvgy83i0ar2" path="res://Scenes/levels/level_transitions/level_two_start.tscn" id="5_obu17"]
+[ext_resource type="PackedScene" uid="uid://bkdtmnem2yfg1" path="res://Scenes/levels/level_transitions/level_three_start.tscn" id="6_vei3v"]
+[ext_resource type="PackedScene" uid="uid://dypptn6vx300c" path="res://CauldronE.tscn" id="9_eokm1"]
+=======
 [ext_resource type="Texture2D" uid="uid://ce0y5c88sk0ui" path="res://Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="6_ktnmx"]
 [ext_resource type="Texture2D" uid="uid://vpu63p08nycv" path="res://Assets/WASD/Green/WASDGreen2.png" id="7_6v3n0"]
 [ext_resource type="Texture2D" uid="uid://ciak1h31jqn7f" path="res://Assets/WASD/Green/WASDGreen4.png" id="8_btyn6"]
 [ext_resource type="Texture2D" uid="uid://cbw83khg5xp5x" path="res://Assets/SpaceBar/Green/SpaceBarGreen.png" id="9_qi4tm"]
 [ext_resource type="Texture2D" uid="uid://btsg2bel4q3m2" path="res://Assets/Keys/down.png" id="10_0kgjh"]
 [ext_resource type="Texture2D" uid="uid://3jsar5q8tvae" path="res://Assets/shift.png" id="10_tjct6"]
-[ext_resource type="PackedScene" uid="uid://de7fytvgve4kc" path="res://Scripts/Components/CauldronE.tscn" id="12_3dckh"]
+>>>>>>> dev_merge_ui
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d0vtq"]
 texture = ExtResource("1_3k31k")
@@ -274,6 +283,8 @@ physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_d0vtq")
 
+<<<<<<< HEAD
+=======
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlkp1"]
 atlas = ExtResource("6_ktnmx")
 region = Rect2(0, 0, 32, 32)
@@ -671,6 +682,7 @@ _data = {
 "hover": SubResource("Animation_r6r5u")
 }
 
+>>>>>>> dev_merge_ui
 [node name="player room" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_uqgsu")]
@@ -702,9 +714,17 @@ visible = false
 tile_map_data = PackedByteArray("AAAEAAAAAAAAAAEAAAADAAAAAAAAAAEAAAACAAAAAAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAD//wAAAAAAAAEAAAD+/wAAAAAAAAEAAAD9/wAAAAAAAAEAAAD8/wAAAAAAAAEAAAD7/wAAAAAAAAEAAAD7////AAAAAAEAAAD7//7/AAAAAAEAAAD7//3/AAAAAAEAAAD7//z/AAAAAAEAAAD8//v/AAAAAAEAAAD9//v/AAAAAAEAAAD+//v/AAAAAAEAAAD///v/AAAAAAEAAAAAAPv/AAAAAAEAAAABAPv/AAAAAAEAAAACAPz/AAAAAAEAAAADAP3/AAAAAAEAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAACAAAAAAAXAAAAAAACAAAAAAAYAAAAAAACAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAbAAAAAAACAAAAAAAcAAAAAAACAAAAAAAWAP//AAAIAAQAAAAQAP//AAAIAAMAAAAKAP//AAAIAAMAAAD+////AAADAAIAAAA=")
 tile_set = SubResource("TileSet_xhrbg")
 
+<<<<<<< HEAD
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_b6gq6")]
+position = Vector2(5, -26)
+
+[node name="mugger" parent="." instance=ExtResource("3_hg66u")]
+position = Vector2(103, -10)
+=======
 [node name="Player" parent="." instance=ExtResource("2_b6gq6")]
 z_index = 1
 position = Vector2(-328, -72)
+>>>>>>> dev_merge_ui
 
 [node name="next_level_transition1" parent="." instance=ExtResource("4_4o2fa")]
 position = Vector2(329, -40)
@@ -722,6 +742,10 @@ frame_progress = 0.243336
 [node name="Node2D" parent="." instance=ExtResource("1_sdn7v")]
 position = Vector2(8, -112)
 
+<<<<<<< HEAD
+[node name="Cauldron" parent="." instance=ExtResource("9_eokm1")]
+position = Vector2(-107, -21)
+=======
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("WasdGreen2")
 libraries = {
@@ -750,6 +774,4 @@ texture = ExtResource("10_tjct6")
 [node name="KeysGreen" type="Sprite2D" parent="AnimationPlayer/SpaceBarGreen2"]
 position = Vector2(0, -16)
 texture = ExtResource("10_0kgjh")
-
-[node name="Cauldron" parent="." instance=ExtResource("12_3dckh")]
-position = Vector2(-248, 7)
+>>>>>>> dev_merge_ui
