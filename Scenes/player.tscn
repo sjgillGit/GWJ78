@@ -32,8 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://sxfuf0y3pcri" path="res://Assets/fruits/13.png" id="25_2vy4a"]
 [ext_resource type="Texture2D" uid="uid://cctkxjnkjohqo" path="res://Assets/fruits/06.png" id="26_h134t"]
 [ext_resource type="Texture2D" uid="uid://c3th7cnopldqy" path="res://Assets/fruits/08.png" id="27_llbsp"]
-[ext_resource type="Texture2D" uid="uid://cegjre1vgr0bc" path="res://Assets/icons/Buffs/swiftness.png" id="29_d2f3o"]
-[ext_resource type="AudioStream" uid="uid://djfoeaqof5whx" path="res://Assets/sound/dash.wav" id="33_ipcli"]
+[ext_resource type="AudioStream" uid="uid://c2i5n8s7y2dgj" path="res://Assets/sound/12_Player_Movement_SFX/45_Landing_01.wav" id="33_i1ex0"]
+[ext_resource type="AudioStream" uid="uid://d2eum2uptsfn" path="res://Assets/sound/8_Buffs_Heals_SFX/02_Heal_02.wav" id="34_8jkui"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orii7"]
 atlas = ExtResource("3_2qm07")
@@ -768,5 +768,8 @@ stream = ExtResource("19_u2w5h")
 stream = ExtResource("20_2qcga")
 
 [node name="dash" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("33_ipcli")
-volume_db = 10.851
+stream = ExtResource("33_i1ex0")
+volume_db = 9.401
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("34_8jkui")
