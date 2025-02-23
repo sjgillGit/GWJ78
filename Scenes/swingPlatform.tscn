@@ -1,21 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbmaep8ywgg8n"]
+[gd_scene load_steps=5 format=3 uid="uid://dbmaep8ywgg8n"]
 
 [ext_resource type="Script" path="res://Scripts/swing_platform.gd" id="1_kc1yt"]
+[ext_resource type="Texture2D" uid="uid://dygmrt2m21iwb" path="res://Assets/pixil-frame-0.png" id="2_6e4sp"]
+[ext_resource type="Texture2D" uid="uid://dcj6s3pliersm" path="res://Assets/swing_platform.png" id="3_6jjur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wg0d5"]
-size = Vector2(52.5, 5)
+size = Vector2(50, 4.5)
 
 [node name="SwingPlatform" type="StaticBody2D"]
 script = ExtResource("1_kc1yt")
 angle = 0.785398
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(0, 33)
 polygon = PackedVector2Array(-2, -34, -2, -3, -26, -3, -26, 2, 26, 2, 26, -3, 2, -3, 2, -34)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 32.5)
+position = Vector2(0, 33.25)
 shape = SubResource("RectangleShape2D_wg0d5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 50)
+texture = ExtResource("2_6e4sp")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 33)
+texture = ExtResource("3_6jjur")
 metadata/_edit_group_ = true

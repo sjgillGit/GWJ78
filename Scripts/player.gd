@@ -36,7 +36,6 @@ var idleAnim:String = "idle"
 var runAnim:String = "run"
 var jumpAnim:String = "jump_up"
 var hurtAnim:String = "hurt"
-@onready var progress_bar: ProgressBar = $DashComponent/ProgressBar
 @onready var dash_component: DashComponent = $DashComponent
 func _ready():
 	initialize_playerProperties()
