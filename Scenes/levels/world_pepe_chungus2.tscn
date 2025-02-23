@@ -1,0 +1,2895 @@
+[gd_scene load_steps=7 format=4 uid="uid://cmodudl5hnbig"]
+
+[ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/gandalf_sheet.tscn" id="1_ut0wb"]
+[ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_tokvj"]
+[ext_resource type="PackedScene" uid="uid://cqfdph3j36m20" path="res://Scenes/spikes.tscn" id="3_kbk4e"]
+[ext_resource type="PackedScene" uid="uid://uy6f4gypnnqr" path="res://Scenes/jumpPad.tscn" id="4_er33v"]
+[ext_resource type="PackedScene" uid="uid://v6kjuptiibqn" path="res://Scenes/fruit.tscn" id="5_qqrun"]
+[ext_resource type="Texture2D" uid="uid://cctkxjnkjohqo" path="res://Assets/fruits/06.png" id="6_cj3tw"]
+
+[node name="chungus2" type="Node2D"]
+position = Vector2(387, -56448)
+
+[node name="GandalfSheet" parent="." instance=ExtResource("1_ut0wb")]
+tile_map_data = PackedByteArray("AAD+//3/AAALACEAAAD+//7/AAALACIAAAD+////AAALACMAAAD+/wAAAAALACQAAAD+//n/AAALACEAAAD+//r/AAALACIAAAD+//v/AAALACMAAAD+//z/AAALACQAAAD+//X/AAALACEAAAD+//b/AAALACIAAAD+//f/AAALACMAAAD+//j/AAALACQAAAD+//H/AAALACEAAAD+//L/AAALACIAAAD+//P/AAALACMAAAD+//T/AAALACQAAAD+/+3/AAALACEAAAD+/+7/AAALACIAAAD+/+//AAALACMAAAD+//D/AAALACQAAAD+/wEAAAAHACAAAAD//wEAAAAIACAAAAAAAAEAAAAJACAAAAABAAEAAAAKACAAAAACAAEAAAAHACAAAAADAAEAAAAHACAAAAAEAAEAAAAIACAAAAAFAAEAAAAJACAAAAAGAAEAAAAKACAAAAAHAAEAAAAHACAAAAAIAAEAAAAIACAAAAAJAAEAAAAJACAAAAAKAAEAAAAKACAAAAALAAEAAAAHACAAAAAMAAEAAAAIACAAAAANAAEAAAAJACAAAAAOAAEAAAAKACAAAAAoAIECAAAIACAAAAApAIECAAAIACAAAAAqAIECAAAIACAAAAArAIECAAAIACAAAAAsAIECAAAIACAAAAAtAIECAAAIACAAAAAuAIECAAAIACAAAAAvAIECAAAIACAAAAAwAIECAAAIACAAAAAxAIECAAAIACAAAAAyAIECAAAIACAAAAAzAIECAAAIACAAAAA0AIECAAAIACAAAAA1AIECAAAIACAAAAA2AIECAAAIACAAAAA3AIECAAAIACAAAAA4AIECAAAIACAAAABQAGoCAAAJACAAAABaAGoCAAAHACAAAABbAGoCAAAHACAAAABcAGoCAAAHACAAAABdAGoCAAAHACAAAABeAGoCAAAHACAAAABfAGoCAAAHACAAAABgAGoCAAAHACAAAABhAGoCAAAHACAAAABiAGoCAAAHACAAAABjAGoCAAAHACAAAABkAGoCAAAHACAAAABlAGoCAAAHACAAAABmAGoCAAAHACAAAABnAGoCAAAHACAAAABoAGoCAAAHACAAAABpAGoCAAAHACAAAABqAGoCAAAHACAAAABrAGoCAAAHACAAAABsAGoCAAAHACAAAABtAGoCAAAHACAAAABuAGoCAAAHACAAAABvAGoCAAAIACAAAABwAGoCAAAJACAAAABxAGoCAAAKACAAAAByAGoCAAAHACAAAABzAGoCAAAIACAAAAB0AGoCAAAJACAAAAB1AGoCAAAKACAAAAB2AGoCAAAHACAAAAB3AGoCAAAIACAAAAB4AGoCAAAJACAAAAB5AGoCAAAKACAAAAB6AGoCAAAHACAAAAB7AGoCAAAIACAAAAB8AGoCAAAJACAAAAB9AGoCAAAKACAAAAB+AGoCAAAHACAAAAB/AGoCAAAIACAAAACAAGoCAAAJACAAAACBAGoCAAAKACAAAACCAGoCAAAHACAAAACDAGoCAAAIACAAAACEAGoCAAAJACAAAACFAGoCAAAKACAAAACGAGoCAAAHACAAAACHAGoCAAAIACAAAACIAGoCAAAJACAAAACJAGoCAAAKACAAAACKAGoCAAAHACAAAACLAGoCAAAIACAAAACMAGoCAAAJACAAAACNAGoCAAAKACAAAACOAGoCAAAHACAAAACPAGoCAAAIACAAAACQAGoCAAAJACAAAACRAGoCAAAHACAAAACSAGoCAAAIACAAAACTAGoCAAAJACAAAACUAGoCAAAKACAAAACVAGoCAAAHACAAAACWAGoCAAAIACAAAACXAGoCAAAJACAAAACYAGoCAAAKACAAAACZAGoCAAAHACAAAACaAGoCAAAIACAAAACbAGoCAAAJACAAAACcAGoCAAAKACAAAACdAGoCAAAHACAAAACeAGoCAAAIACAAAACfAGoCAAAJACAAAACgAGoCAAAKACAAAAChAGoCAAAHACAAAACiAGoCAAAIACAAAACjAGoCAAAJACAAAACkAGoCAAAKACAAAAClAGoCAAAHACAAAACmAGoCAAAIACAAAACnAGoCAAAJACAAAACoAGoCAAAKACAAAACpAGoCAAAHACAAAACqAGoCAAAIACAAAACrAGoCAAAJACAAAACsAGoCAAAKACAAAACtAGoCAAAHACAAAACuAGoCAAAIACAAAACvAGoCAAAJACAAAACwAGoCAAAKACAAAACxAGoCAAAHACAAAACyAGoCAAAIACAAAACzAGoCAAAJACAAAAC0AGoCAAAKACAAAAC1AGoCAAAHACAAAAC2AGoCAAAIACAAAAC3AGoCAAAJACAAAAC4AGoCAAAKACAAAAC5AGoCAAAHACAAAAC6AGoCAAAIACAAAAC7AGoCAAAJACAAAAC8AGoCAAAKACAAAAC9AGoCAAAHACAAAAC+AGoCAAAIACAAAAC/AGoCAAAJACAAAADAAGoCAAAKACAAAADBAGoCAAAHACAAAADCAGoCAAAIACAAAADDAGoCAAAJACAAAADEAGoCAAAKACAAAADFAGoCAAAHACAAAADGAGoCAAAIACAAAADHAGoCAAAJACAAAADIAGoCAAAKACAAAADJAGoCAAAHACAAAADKAGoCAAAIACAAAADLAGoCAAAJACAAAADMAGoCAAAKACAAAADNAGoCAAAHACAAAADOAGoCAAAIACAAAADPAGoCAAAJACAAAADQAGoCAAAKACAAAADRAGoCAAAHACAAAADSAGoCAAAIACAAAADTAGoCAAAJACAAAADUAGoCAAAKACAAAADVAGoCAAAHACAAAADWAGoCAAAIACAAAADXAGoCAAAJACAAAADYAGoCAAAKACAAAADZAGoCAAAHACAAAADaAGoCAAAIACAAAADbAGoCAAAJACAAAADcAGoCAAAKACAAAADdAG0CAAAHACAAAADeAG0CAAAIACAAAADfAG0CAAAJACAAAADgAG0CAAAKACAAAADZAG0CAAAHACAAAADaAG0CAAAIACAAAADbAG0CAAAJACAAAADcAG0CAAAKACAAAADVAG0CAAAHACAAAADWAG0CAAAIACAAAADXAG0CAAAJACAAAADYAG0CAAAKACAAAADRAG0CAAAHACAAAADSAG0CAAAIACAAAADTAG0CAAAJACAAAADUAG0CAAAKACAAAADNAHICAAAIACAAAADOAHICAAAJACAAAADQAHUCAAAIACAAAADRAHUCAAAJACAAAADNAHoCAAAIACAAAADOAHoCAAAJACAAAADRAH0CAAAIACAAAADSAH0CAAAJACAAAADQAIICAAAIACAAAADRAIICAAAJACAAAADWAIYCAAAIACAAAADXAIYCAAAJACAAAADYAIYCAAAIACAAAADZAIYCAAAJACAAAADaAIYCAAAIACAAAADbAIYCAAAJACAAAADcAIYCAAAIACAAAADdAIYCAAAJACAAAADeAIYCAAAIACAAAADfAIYCAAAJACAAAADgAIYCAAAIACAAAADhAIYCAAAJACAAAADiAIYCAAAIACAAAADjAIYCAAAJACAAAADkAIYCAAAIACAAAADlAIYCAAAJACAAAADmAIYCAAAIACAAAADnAIYCAAAJACAAAADoAIYCAAAIACAAAADpAIYCAAAJACAAAADqAIYCAAAIACAAAADrAIYCAAAJACAAAADsAIYCAAAIACAAAADtAIYCAAAJACAAAADuAIYCAAAIACAAAADvAIYCAAAJACAAAADwAIYCAAAIACAAAADxAIYCAAAJACAAAADyAIYCAAAIACAAAADzAIYCAAAJACAAAAD0AIYCAAAIACAAAAD1AIYCAAAJACAAAAD2AIYCAAAIACAAAAD3AIYCAAAJACAAAAD4AIYCAAAIACAAAAD5AIYCAAAJACAAAAD6AIYCAAAIACAAAAD7AIYCAAAJACAAAAD8AIYCAAAIACAAAAD9AIYCAAAJACAAAAD+AIYCAAAIACAAAAD/AIYCAAAJACAAAAAAAYYCAAAIACAAAAABAYYCAAAJACAAAAACAYYCAAAIACAAAAADAYYCAAAJACAAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_tokvj")]
+position = Vector2(7, -5)
+
+[node name="Spikes" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(269, 22)
+
+[node name="Spikes2" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(384, 22)
+
+[node name="Spikes3" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(443, 23)
+
+[node name="Spikes4" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(502, 21)
+
+[node name="Spikes5" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(389, 79)
+
+[node name="Spikes6" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(448, 80)
+
+[node name="Spikes7" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(507, 78)
+
+[node name="Spikes11" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(383, 117)
+
+[node name="Spikes12" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(442, 118)
+
+[node name="Spikes13" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(501, 116)
+
+[node name="Spikes14" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(383, 152)
+
+[node name="Spikes15" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(442, 153)
+
+[node name="Spikes16" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(501, 151)
+
+[node name="Spikes17" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 185)
+
+[node name="Spikes18" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(437, 186)
+
+[node name="Spikes19" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(496, 184)
+
+[node name="Spikes22" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(273, 84)
+
+[node name="Spikes25" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 129)
+
+[node name="Spikes28" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 162)
+
+[node name="Spikes31" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(275, 195)
+
+[node name="Spikes32" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 223)
+
+[node name="Spikes33" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(435, 224)
+
+[node name="Spikes34" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(494, 222)
+
+[node name="Spikes44" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 255)
+
+[node name="Spikes47" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 286)
+
+[node name="Spikes50" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 318)
+
+[node name="Spikes82" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(274, 229)
+
+[node name="Spikes85" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(274, 264)
+
+[node name="Spikes88" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(274, 299)
+
+[node name="Spikes91" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(275, 334)
+
+[node name="Spikes1556" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(568, 23)
+
+[node name="Spikes1557" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(627, 24)
+
+[node name="Spikes1558" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(686, 22)
+
+[node name="Spikes20" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(99, 85)
+
+[node name="Spikes21" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(158, 86)
+
+[node name="Spikes23" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(217, 84)
+
+[node name="Spikes26" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 107)
+
+[node name="Spikes27" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(275, 386)
+
+[node name="Spikes29" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 413)
+
+[node name="Spikes35" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 437)
+
+[node name="Spikes83" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(275, 462)
+
+[node name="Spikes86" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 485)
+
+[node name="Spikes89" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(274, 513)
+
+[node name="Spikes92" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(274, 538)
+
+[node name="Spikes30" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(275, 360)
+
+[node name="Spikes36" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 590)
+
+[node name="Spikes37" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 619)
+
+[node name="Spikes38" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 652)
+
+[node name="Spikes84" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(275, 686)
+
+[node name="Spikes87" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(275, 721)
+
+[node name="Spikes90" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(275, 756)
+
+[node name="Spikes93" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 791)
+
+[node name="Spikes39" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(273, 563)
+
+[node name="Spikes40" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 843)
+
+[node name="Spikes41" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 870)
+
+[node name="Spikes42" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 894)
+
+[node name="Spikes94" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 919)
+
+[node name="Spikes95" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 942)
+
+[node name="Spikes96" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 966)
+
+[node name="Spikes97" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 990)
+
+[node name="Spikes43" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 817)
+
+[node name="Spikes24" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 1012)
+
+[node name="Spikes45" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1057)
+
+[node name="Spikes46" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1090)
+
+[node name="Spikes48" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(278, 1123)
+
+[node name="Spikes98" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 1157)
+
+[node name="Spikes99" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 1192)
+
+[node name="Spikes100" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 1227)
+
+[node name="Spikes101" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(278, 1262)
+
+[node name="Spikes49" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 1035)
+
+[node name="Spikes51" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(278, 1314)
+
+[node name="Spikes52" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1341)
+
+[node name="Spikes53" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1365)
+
+[node name="Spikes102" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(278, 1390)
+
+[node name="Spikes103" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1413)
+
+[node name="Spikes104" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 1441)
+
+[node name="Spikes105" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 1466)
+
+[node name="Spikes54" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(278, 1288)
+
+[node name="Spikes55" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1518)
+
+[node name="Spikes56" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 1547)
+
+[node name="Spikes57" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1580)
+
+[node name="Spikes106" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(278, 1614)
+
+[node name="Spikes107" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(278, 1649)
+
+[node name="Spikes108" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(278, 1684)
+
+[node name="Spikes109" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1719)
+
+[node name="Spikes58" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(276, 1491)
+
+[node name="Spikes59" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1771)
+
+[node name="Spikes60" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 1798)
+
+[node name="Spikes61" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 1822)
+
+[node name="Spikes110" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1847)
+
+[node name="Spikes111" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 1870)
+
+[node name="Spikes112" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1894)
+
+[node name="Spikes113" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(277, 1916)
+
+[node name="Spikes62" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1745)
+
+[node name="Spikes63" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 1938)
+
+[node name="Spikes64" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 1983)
+
+[node name="Spikes65" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2016)
+
+[node name="Spikes66" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 2049)
+
+[node name="Spikes114" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 2083)
+
+[node name="Spikes115" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 2118)
+
+[node name="Spikes116" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 2153)
+
+[node name="Spikes117" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 2188)
+
+[node name="Spikes67" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 1961)
+
+[node name="Spikes68" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 2240)
+
+[node name="Spikes69" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2267)
+
+[node name="Spikes70" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2291)
+
+[node name="Spikes118" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 2316)
+
+[node name="Spikes119" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2339)
+
+[node name="Spikes120" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 2367)
+
+[node name="Spikes121" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(280, 2392)
+
+[node name="Spikes71" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 2214)
+
+[node name="Spikes72" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2444)
+
+[node name="Spikes73" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 2473)
+
+[node name="Spikes74" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2506)
+
+[node name="Spikes122" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 2540)
+
+[node name="Spikes123" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 2575)
+
+[node name="Spikes124" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(281, 2610)
+
+[node name="Spikes125" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2645)
+
+[node name="Spikes75" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(279, 2417)
+
+[node name="Spikes76" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2697)
+
+[node name="Spikes77" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 2724)
+
+[node name="Spikes78" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 2748)
+
+[node name="Spikes126" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2773)
+
+[node name="Spikes127" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 2796)
+
+[node name="Spikes128" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2820)
+
+[node name="Spikes129" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(287, 2844)
+
+[node name="Spikes79" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2671)
+
+[node name="Spikes80" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 2866)
+
+[node name="Spikes81" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 2911)
+
+[node name="Spikes130" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 2944)
+
+[node name="Spikes131" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 2977)
+
+[node name="Spikes132" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 3011)
+
+[node name="Spikes133" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 3046)
+
+[node name="Spikes134" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 3081)
+
+[node name="Spikes135" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 3116)
+
+[node name="Spikes136" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(286, 2889)
+
+[node name="Spikes137" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 3168)
+
+[node name="Spikes138" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3195)
+
+[node name="Spikes139" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3219)
+
+[node name="Spikes140" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 3244)
+
+[node name="Spikes141" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3267)
+
+[node name="Spikes142" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 3295)
+
+[node name="Spikes143" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(283, 3320)
+
+[node name="Spikes144" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 3142)
+
+[node name="Spikes145" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3372)
+
+[node name="Spikes146" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(286, 3401)
+
+[node name="Spikes147" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3434)
+
+[node name="Spikes148" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 3468)
+
+[node name="Spikes149" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 3503)
+
+[node name="Spikes150" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 3538)
+
+[node name="Spikes151" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3573)
+
+[node name="Spikes152" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(282, 3345)
+
+[node name="Spikes153" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3625)
+
+[node name="Spikes154" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(286, 3652)
+
+[node name="Spikes155" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(286, 3676)
+
+[node name="Spikes156" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3701)
+
+[node name="Spikes157" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(286, 3724)
+
+[node name="Spikes158" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(284, 3747)
+
+[node name="Spikes159" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(287, 3771)
+
+[node name="Spikes160" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(285, 3599)
+
+[node name="Spikes161" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(370, 346)
+
+[node name="Spikes162" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(370, 398)
+
+[node name="Spikes163" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 425)
+
+[node name="Spikes164" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 449)
+
+[node name="Spikes165" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(370, 474)
+
+[node name="Spikes166" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 497)
+
+[node name="Spikes167" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(369, 525)
+
+[node name="Spikes168" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(369, 550)
+
+[node name="Spikes169" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(370, 372)
+
+[node name="Spikes170" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 602)
+
+[node name="Spikes171" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 631)
+
+[node name="Spikes172" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 664)
+
+[node name="Spikes173" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(370, 698)
+
+[node name="Spikes174" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(370, 733)
+
+[node name="Spikes175" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(370, 768)
+
+[node name="Spikes176" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 803)
+
+[node name="Spikes177" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(368, 575)
+
+[node name="Spikes178" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 855)
+
+[node name="Spikes179" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 882)
+
+[node name="Spikes180" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 906)
+
+[node name="Spikes181" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 931)
+
+[node name="Spikes182" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 954)
+
+[node name="Spikes183" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 978)
+
+[node name="Spikes184" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 1002)
+
+[node name="Spikes185" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 829)
+
+[node name="Spikes186" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 1024)
+
+[node name="Spikes187" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1069)
+
+[node name="Spikes188" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1102)
+
+[node name="Spikes189" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 1135)
+
+[node name="Spikes190" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 1169)
+
+[node name="Spikes191" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 1204)
+
+[node name="Spikes192" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 1239)
+
+[node name="Spikes193" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 1274)
+
+[node name="Spikes194" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 1047)
+
+[node name="Spikes195" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 1326)
+
+[node name="Spikes196" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1353)
+
+[node name="Spikes197" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1377)
+
+[node name="Spikes198" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 1402)
+
+[node name="Spikes199" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1425)
+
+[node name="Spikes200" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 1453)
+
+[node name="Spikes201" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 1478)
+
+[node name="Spikes202" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 1300)
+
+[node name="Spikes203" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1530)
+
+[node name="Spikes204" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 1559)
+
+[node name="Spikes205" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1592)
+
+[node name="Spikes206" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 1626)
+
+[node name="Spikes207" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 1661)
+
+[node name="Spikes208" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 1696)
+
+[node name="Spikes209" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1731)
+
+[node name="Spikes210" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 1503)
+
+[node name="Spikes211" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1783)
+
+[node name="Spikes212" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 1810)
+
+[node name="Spikes213" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 1834)
+
+[node name="Spikes214" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1859)
+
+[node name="Spikes215" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 1882)
+
+[node name="Spikes216" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1906)
+
+[node name="Spikes217" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 1928)
+
+[node name="Spikes218" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1757)
+
+[node name="Spikes219" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 1950)
+
+[node name="Spikes220" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 1995)
+
+[node name="Spikes221" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2028)
+
+[node name="Spikes222" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 2061)
+
+[node name="Spikes223" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 2095)
+
+[node name="Spikes224" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 2130)
+
+[node name="Spikes225" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 2165)
+
+[node name="Spikes226" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 2200)
+
+[node name="Spikes227" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 1973)
+
+[node name="Spikes228" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 2252)
+
+[node name="Spikes229" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2279)
+
+[node name="Spikes230" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2303)
+
+[node name="Spikes231" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 2328)
+
+[node name="Spikes232" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2351)
+
+[node name="Spikes233" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 2379)
+
+[node name="Spikes234" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(375, 2404)
+
+[node name="Spikes235" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 2226)
+
+[node name="Spikes236" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2456)
+
+[node name="Spikes237" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 2485)
+
+[node name="Spikes238" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2518)
+
+[node name="Spikes239" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 2552)
+
+[node name="Spikes240" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 2587)
+
+[node name="Spikes241" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 2622)
+
+[node name="Spikes242" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2657)
+
+[node name="Spikes243" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 2429)
+
+[node name="Spikes244" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2709)
+
+[node name="Spikes245" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 2736)
+
+[node name="Spikes246" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 2760)
+
+[node name="Spikes247" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2785)
+
+[node name="Spikes248" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 2808)
+
+[node name="Spikes249" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2832)
+
+[node name="Spikes250" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(382, 2856)
+
+[node name="Spikes251" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2683)
+
+[node name="Spikes252" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 2878)
+
+[node name="Spikes253" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 2923)
+
+[node name="Spikes254" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 2956)
+
+[node name="Spikes255" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 2989)
+
+[node name="Spikes256" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 3023)
+
+[node name="Spikes257" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 3058)
+
+[node name="Spikes258" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 3093)
+
+[node name="Spikes259" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 3128)
+
+[node name="Spikes260" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(381, 2901)
+
+[node name="Spikes261" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 3180)
+
+[node name="Spikes262" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3207)
+
+[node name="Spikes263" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3231)
+
+[node name="Spikes264" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 3256)
+
+[node name="Spikes265" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3279)
+
+[node name="Spikes266" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 3307)
+
+[node name="Spikes267" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(378, 3332)
+
+[node name="Spikes268" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 3154)
+
+[node name="Spikes269" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3384)
+
+[node name="Spikes270" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(381, 3413)
+
+[node name="Spikes271" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3446)
+
+[node name="Spikes272" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 3480)
+
+[node name="Spikes273" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 3515)
+
+[node name="Spikes274" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 3550)
+
+[node name="Spikes275" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3585)
+
+[node name="Spikes276" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 3357)
+
+[node name="Spikes277" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3637)
+
+[node name="Spikes278" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(381, 3664)
+
+[node name="Spikes279" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(381, 3688)
+
+[node name="Spikes280" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3713)
+
+[node name="Spikes281" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(381, 3736)
+
+[node name="Spikes282" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3760)
+
+[node name="Spikes283" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(385, 3784)
+
+[node name="Spikes284" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 3611)
+
+[node name="Spikes285" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(286, 3792)
+
+[node name="Spikes286" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(287, 3815)
+
+[node name="Spikes287" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(291, 3834)
+
+[node name="Spikes288" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(293, 3855)
+
+[node name="Spikes289" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(294, 3880)
+
+[node name="Spikes290" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(295, 3904)
+
+[node name="Spikes291" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(296, 3925)
+
+[node name="Spikes292" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(298, 3947)
+
+[node name="Spikes293" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(299, 3967)
+
+[node name="Spikes294" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(301, 3988)
+
+[node name="Spikes295" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(302, 4013)
+
+[node name="Spikes296" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(303, 4037)
+
+[node name="Spikes297" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(304, 4058)
+
+[node name="Spikes298" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(306, 4080)
+
+[node name="Spikes299" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(307, 4102)
+
+[node name="Spikes300" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(309, 4123)
+
+[node name="Spikes301" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(310, 4148)
+
+[node name="Spikes302" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(311, 4172)
+
+[node name="Spikes303" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(312, 4193)
+
+[node name="Spikes304" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(314, 4215)
+
+[node name="Spikes305" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(315, 4235)
+
+[node name="Spikes306" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(317, 4256)
+
+[node name="Spikes307" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(318, 4281)
+
+[node name="Spikes308" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(319, 4305)
+
+[node name="Spikes309" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(320, 4326)
+
+[node name="Spikes310" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(322, 4348)
+
+[node name="Spikes311" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(323, 4370)
+
+[node name="Spikes312" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(325, 4391)
+
+[node name="Spikes313" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(326, 4416)
+
+[node name="Spikes314" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(327, 4440)
+
+[node name="Spikes315" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(328, 4461)
+
+[node name="Spikes316" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(330, 4483)
+
+[node name="Spikes317" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(331, 4503)
+
+[node name="Spikes318" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(333, 4524)
+
+[node name="Spikes319" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(334, 4549)
+
+[node name="Spikes320" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(335, 4573)
+
+[node name="Spikes321" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(336, 4594)
+
+[node name="Spikes322" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(338, 4616)
+
+[node name="Spikes323" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(339, 4638)
+
+[node name="Spikes324" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(341, 4659)
+
+[node name="Spikes325" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(342, 4684)
+
+[node name="Spikes326" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(343, 4708)
+
+[node name="Spikes327" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(344, 4729)
+
+[node name="Spikes328" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(346, 4751)
+
+[node name="Spikes329" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(347, 4771)
+
+[node name="Spikes330" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(349, 4792)
+
+[node name="Spikes331" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(350, 4817)
+
+[node name="Spikes332" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(351, 4841)
+
+[node name="Spikes333" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(352, 4862)
+
+[node name="Spikes334" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(354, 4884)
+
+[node name="Spikes335" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(355, 4906)
+
+[node name="Spikes336" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(356, 4931)
+
+[node name="Spikes337" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(357, 4955)
+
+[node name="Spikes338" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(358, 4976)
+
+[node name="Spikes339" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(360, 4998)
+
+[node name="Spikes340" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(361, 5018)
+
+[node name="Spikes341" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(363, 5039)
+
+[node name="Spikes342" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(364, 5064)
+
+[node name="Spikes343" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(365, 5088)
+
+[node name="Spikes344" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(366, 5109)
+
+[node name="Spikes345" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(368, 5131)
+
+[node name="Spikes346" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(369, 5153)
+
+[node name="Spikes347" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(371, 5174)
+
+[node name="Spikes348" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(372, 5199)
+
+[node name="Spikes349" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(373, 5223)
+
+[node name="Spikes350" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(374, 5244)
+
+[node name="Spikes351" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(376, 5266)
+
+[node name="Spikes352" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(377, 5286)
+
+[node name="Spikes353" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(379, 5307)
+
+[node name="Spikes354" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(380, 5332)
+
+[node name="Spikes355" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(381, 5356)
+
+[node name="Spikes356" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(382, 5377)
+
+[node name="Spikes357" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(384, 5399)
+
+[node name="Spikes358" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(383, 5420)
+
+[node name="Spikes359" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(387, 5439)
+
+[node name="Spikes360" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(389, 5460)
+
+[node name="Spikes361" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(390, 5485)
+
+[node name="Spikes362" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(391, 5509)
+
+[node name="Spikes363" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(392, 5530)
+
+[node name="Spikes364" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(394, 5552)
+
+[node name="Spikes365" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(395, 5572)
+
+[node name="Spikes366" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(397, 5593)
+
+[node name="Spikes367" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(398, 5618)
+
+[node name="Spikes368" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(399, 5642)
+
+[node name="Spikes369" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(400, 5663)
+
+[node name="Spikes370" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(402, 5685)
+
+[node name="Spikes371" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(403, 5707)
+
+[node name="Spikes372" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(405, 5728)
+
+[node name="Spikes373" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(406, 5753)
+
+[node name="Spikes374" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(407, 5777)
+
+[node name="Spikes375" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(408, 5798)
+
+[node name="Spikes376" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(410, 5820)
+
+[node name="Spikes377" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(411, 5840)
+
+[node name="Spikes378" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(413, 5861)
+
+[node name="Spikes379" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(414, 5886)
+
+[node name="Spikes380" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(415, 5910)
+
+[node name="Spikes381" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(416, 5931)
+
+[node name="Spikes382" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(418, 5953)
+
+[node name="Spikes383" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(419, 5975)
+
+[node name="Spikes384" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(421, 5996)
+
+[node name="Spikes385" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(422, 6021)
+
+[node name="Spikes386" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(423, 6045)
+
+[node name="Spikes387" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(424, 6066)
+
+[node name="Spikes388" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(426, 6088)
+
+[node name="Spikes389" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(427, 6108)
+
+[node name="Spikes390" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(429, 6129)
+
+[node name="Spikes391" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(430, 6154)
+
+[node name="Spikes392" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(431, 6178)
+
+[node name="Spikes393" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(432, 6199)
+
+[node name="Spikes394" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(434, 6221)
+
+[node name="Spikes395" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(435, 6243)
+
+[node name="Spikes396" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(437, 6264)
+
+[node name="Spikes397" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(438, 6289)
+
+[node name="Spikes398" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(439, 6313)
+
+[node name="Spikes399" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(440, 6334)
+
+[node name="Spikes400" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(442, 6356)
+
+[node name="Spikes401" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(443, 6376)
+
+[node name="Spikes402" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(445, 6397)
+
+[node name="Spikes403" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(446, 6422)
+
+[node name="Spikes404" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(447, 6446)
+
+[node name="Spikes405" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(448, 6467)
+
+[node name="Spikes406" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(450, 6489)
+
+[node name="Spikes407" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(451, 6511)
+
+[node name="Spikes408" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(452, 6536)
+
+[node name="Spikes409" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(453, 6560)
+
+[node name="Spikes410" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(454, 6581)
+
+[node name="Spikes411" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(456, 6603)
+
+[node name="Spikes412" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(457, 6623)
+
+[node name="Spikes413" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(459, 6644)
+
+[node name="Spikes414" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(460, 6669)
+
+[node name="Spikes415" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(461, 6693)
+
+[node name="Spikes416" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(462, 6714)
+
+[node name="Spikes417" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(464, 6736)
+
+[node name="Spikes418" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(465, 6758)
+
+[node name="Spikes419" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(467, 6779)
+
+[node name="Spikes420" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(468, 6804)
+
+[node name="Spikes421" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(469, 6828)
+
+[node name="Spikes422" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(470, 6849)
+
+[node name="Spikes423" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(472, 6871)
+
+[node name="Spikes424" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(473, 6891)
+
+[node name="Spikes425" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(475, 6912)
+
+[node name="Spikes426" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(476, 6937)
+
+[node name="Spikes427" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(477, 6961)
+
+[node name="Spikes428" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(478, 6982)
+
+[node name="Spikes429" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(480, 7004)
+
+[node name="Spikes430" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(483, 7028)
+
+[node name="Spikes431" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(485, 7049)
+
+[node name="Spikes432" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(486, 7074)
+
+[node name="Spikes433" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(487, 7098)
+
+[node name="Spikes434" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(488, 7119)
+
+[node name="Spikes435" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(490, 7141)
+
+[node name="Spikes436" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(491, 7161)
+
+[node name="Spikes437" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(493, 7182)
+
+[node name="Spikes438" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(494, 7207)
+
+[node name="Spikes439" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(495, 7231)
+
+[node name="Spikes440" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(496, 7252)
+
+[node name="Spikes441" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(498, 7274)
+
+[node name="Spikes442" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(499, 7296)
+
+[node name="Spikes443" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(501, 7317)
+
+[node name="Spikes444" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(502, 7342)
+
+[node name="Spikes445" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(503, 7366)
+
+[node name="Spikes446" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(504, 7387)
+
+[node name="Spikes447" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(506, 7409)
+
+[node name="Spikes448" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(507, 7429)
+
+[node name="Spikes449" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(509, 7450)
+
+[node name="Spikes450" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(510, 7475)
+
+[node name="Spikes451" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(511, 7499)
+
+[node name="Spikes452" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(512, 7520)
+
+[node name="Spikes453" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(514, 7542)
+
+[node name="Spikes454" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(515, 7564)
+
+[node name="Spikes455" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(517, 7585)
+
+[node name="Spikes456" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(518, 7610)
+
+[node name="Spikes457" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(519, 7634)
+
+[node name="Spikes458" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(520, 7655)
+
+[node name="Spikes459" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(522, 7677)
+
+[node name="Spikes460" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(523, 7697)
+
+[node name="Spikes461" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(525, 7718)
+
+[node name="Spikes462" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(526, 7743)
+
+[node name="Spikes463" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(527, 7767)
+
+[node name="Spikes464" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(528, 7788)
+
+[node name="Spikes465" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(530, 7810)
+
+[node name="Spikes466" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(531, 7832)
+
+[node name="Spikes467" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(533, 7853)
+
+[node name="Spikes468" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(534, 7878)
+
+[node name="Spikes469" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(535, 7902)
+
+[node name="Spikes470" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(536, 7923)
+
+[node name="Spikes471" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(538, 7945)
+
+[node name="Spikes472" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(539, 7965)
+
+[node name="Spikes473" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(541, 7986)
+
+[node name="Spikes474" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(542, 8011)
+
+[node name="Spikes475" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(543, 8035)
+
+[node name="Spikes476" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(544, 8056)
+
+[node name="Spikes477" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(546, 8078)
+
+[node name="Spikes478" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(547, 8100)
+
+[node name="Spikes479" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(548, 8125)
+
+[node name="Spikes480" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(549, 8149)
+
+[node name="Spikes481" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(550, 8170)
+
+[node name="Spikes482" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(552, 8192)
+
+[node name="Spikes483" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(553, 8212)
+
+[node name="Spikes484" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(555, 8233)
+
+[node name="Spikes485" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(556, 8258)
+
+[node name="Spikes486" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(557, 8282)
+
+[node name="Spikes487" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(558, 8303)
+
+[node name="Spikes488" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(560, 8325)
+
+[node name="Spikes489" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(561, 8347)
+
+[node name="Spikes490" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(563, 8368)
+
+[node name="Spikes491" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(564, 8393)
+
+[node name="Spikes492" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(565, 8417)
+
+[node name="Spikes493" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(566, 8438)
+
+[node name="Spikes494" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(568, 8460)
+
+[node name="Spikes495" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(569, 8480)
+
+[node name="Spikes496" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(571, 8501)
+
+[node name="Spikes497" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(572, 8526)
+
+[node name="Spikes498" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(573, 8550)
+
+[node name="Spikes499" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(574, 8571)
+
+[node name="Spikes500" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(576, 8593)
+
+[node name="Spikes501" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(575, 8614)
+
+[node name="Spikes502" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(579, 8633)
+
+[node name="Spikes503" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(581, 8654)
+
+[node name="Spikes504" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(582, 8679)
+
+[node name="Spikes505" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(583, 8703)
+
+[node name="Spikes506" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(584, 8724)
+
+[node name="Spikes507" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(586, 8746)
+
+[node name="Spikes508" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(587, 8766)
+
+[node name="Spikes509" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(589, 8787)
+
+[node name="Spikes510" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(590, 8812)
+
+[node name="Spikes511" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(591, 8836)
+
+[node name="Spikes512" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(592, 8857)
+
+[node name="Spikes513" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(594, 8879)
+
+[node name="Spikes514" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(595, 8901)
+
+[node name="Spikes515" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(597, 8922)
+
+[node name="Spikes516" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(598, 8947)
+
+[node name="Spikes517" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(599, 8971)
+
+[node name="Spikes518" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(600, 8992)
+
+[node name="Spikes519" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(602, 9014)
+
+[node name="Spikes520" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(603, 9034)
+
+[node name="Spikes521" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(605, 9055)
+
+[node name="Spikes522" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(606, 9080)
+
+[node name="Spikes523" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(607, 9104)
+
+[node name="Spikes524" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(608, 9125)
+
+[node name="Spikes525" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(610, 9147)
+
+[node name="Spikes526" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(611, 9169)
+
+[node name="Spikes527" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(613, 9190)
+
+[node name="Spikes528" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(614, 9215)
+
+[node name="Spikes529" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(615, 9239)
+
+[node name="Spikes530" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(616, 9260)
+
+[node name="Spikes531" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(618, 9282)
+
+[node name="Spikes532" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(619, 9302)
+
+[node name="Spikes533" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(621, 9323)
+
+[node name="Spikes534" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(622, 9348)
+
+[node name="Spikes535" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(623, 9372)
+
+[node name="Spikes536" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(624, 9393)
+
+[node name="Spikes537" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(626, 9415)
+
+[node name="Spikes538" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(627, 9437)
+
+[node name="Spikes539" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(629, 9458)
+
+[node name="Spikes540" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(630, 9483)
+
+[node name="Spikes541" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(631, 9507)
+
+[node name="Spikes542" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(632, 9528)
+
+[node name="Spikes543" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(634, 9550)
+
+[node name="Spikes544" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(635, 9570)
+
+[node name="Spikes545" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(637, 9591)
+
+[node name="Spikes546" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(638, 9616)
+
+[node name="Spikes547" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(639, 9640)
+
+[node name="Spikes548" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(640, 9661)
+
+[node name="Spikes549" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(642, 9683)
+
+[node name="Spikes550" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(643, 9705)
+
+[node name="Spikes551" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(644, 9730)
+
+[node name="Spikes552" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(645, 9754)
+
+[node name="Spikes553" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(646, 9775)
+
+[node name="Spikes554" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(648, 9797)
+
+[node name="Spikes555" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(649, 9817)
+
+[node name="Spikes556" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(651, 9838)
+
+[node name="Spikes557" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(652, 9863)
+
+[node name="Spikes558" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(653, 9887)
+
+[node name="Spikes559" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(654, 9908)
+
+[node name="Spikes560" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(656, 9930)
+
+[node name="Spikes561" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(657, 9952)
+
+[node name="Spikes562" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(659, 9973)
+
+[node name="Spikes563" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(660, 9998)
+
+[node name="Spikes564" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(661, 10022)
+
+[node name="Spikes565" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(662, 10043)
+
+[node name="Spikes566" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(664, 10065)
+
+[node name="Spikes567" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(665, 10085)
+
+[node name="Spikes568" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(667, 10106)
+
+[node name="Spikes569" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(668, 10131)
+
+[node name="Spikes570" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(669, 10155)
+
+[node name="Spikes571" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(670, 10176)
+
+[node name="Spikes572" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(672, 10198)
+
+[node name="Spikes573" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(385, 3812)
+
+[node name="Spikes574" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(382, 3831)
+
+[node name="Spikes575" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(384, 3852)
+
+[node name="Spikes576" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(385, 3877)
+
+[node name="Spikes577" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(386, 3901)
+
+[node name="Spikes578" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(387, 3922)
+
+[node name="Spikes579" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(389, 3944)
+
+[node name="Spikes580" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(390, 3964)
+
+[node name="Spikes581" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(392, 3985)
+
+[node name="Spikes582" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(393, 4010)
+
+[node name="Spikes583" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(394, 4034)
+
+[node name="Spikes584" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(395, 4055)
+
+[node name="Spikes585" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(397, 4077)
+
+[node name="Spikes586" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(398, 4099)
+
+[node name="Spikes587" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(400, 4120)
+
+[node name="Spikes588" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(401, 4145)
+
+[node name="Spikes589" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(402, 4169)
+
+[node name="Spikes590" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(403, 4190)
+
+[node name="Spikes591" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(405, 4212)
+
+[node name="Spikes592" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(406, 4232)
+
+[node name="Spikes593" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(408, 4253)
+
+[node name="Spikes594" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(409, 4278)
+
+[node name="Spikes595" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(410, 4302)
+
+[node name="Spikes596" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(411, 4323)
+
+[node name="Spikes597" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(413, 4345)
+
+[node name="Spikes598" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(414, 4367)
+
+[node name="Spikes599" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(416, 4388)
+
+[node name="Spikes600" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(417, 4413)
+
+[node name="Spikes601" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(418, 4437)
+
+[node name="Spikes602" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(419, 4458)
+
+[node name="Spikes603" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(421, 4480)
+
+[node name="Spikes604" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(422, 4500)
+
+[node name="Spikes605" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(424, 4521)
+
+[node name="Spikes606" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(425, 4546)
+
+[node name="Spikes607" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(426, 4570)
+
+[node name="Spikes608" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(427, 4591)
+
+[node name="Spikes609" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(429, 4613)
+
+[node name="Spikes610" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(430, 4635)
+
+[node name="Spikes611" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(432, 4656)
+
+[node name="Spikes612" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(433, 4681)
+
+[node name="Spikes613" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(434, 4705)
+
+[node name="Spikes614" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(435, 4726)
+
+[node name="Spikes615" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(437, 4748)
+
+[node name="Spikes616" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(438, 4768)
+
+[node name="Spikes617" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(440, 4789)
+
+[node name="Spikes618" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(441, 4814)
+
+[node name="Spikes619" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(442, 4838)
+
+[node name="Spikes620" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(443, 4859)
+
+[node name="Spikes621" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(445, 4881)
+
+[node name="Spikes622" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(446, 4903)
+
+[node name="Spikes623" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(447, 4928)
+
+[node name="Spikes624" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(448, 4952)
+
+[node name="Spikes625" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(449, 4973)
+
+[node name="Spikes626" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(451, 4995)
+
+[node name="Spikes627" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(452, 5015)
+
+[node name="Spikes628" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(454, 5036)
+
+[node name="Spikes629" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(455, 5061)
+
+[node name="Spikes630" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(456, 5085)
+
+[node name="Spikes631" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(457, 5106)
+
+[node name="Spikes632" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(459, 5128)
+
+[node name="Spikes633" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(460, 5150)
+
+[node name="Spikes634" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(462, 5171)
+
+[node name="Spikes635" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(463, 5196)
+
+[node name="Spikes636" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(464, 5220)
+
+[node name="Spikes637" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(465, 5241)
+
+[node name="Spikes638" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(467, 5263)
+
+[node name="Spikes639" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(468, 5283)
+
+[node name="Spikes640" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(470, 5304)
+
+[node name="Spikes641" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(471, 5329)
+
+[node name="Spikes642" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(472, 5353)
+
+[node name="Spikes643" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(473, 5374)
+
+[node name="Spikes644" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(475, 5396)
+
+[node name="Spikes645" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(474, 5417)
+
+[node name="Spikes646" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(478, 5436)
+
+[node name="Spikes647" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(480, 5457)
+
+[node name="Spikes648" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(481, 5482)
+
+[node name="Spikes649" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(482, 5506)
+
+[node name="Spikes650" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(483, 5527)
+
+[node name="Spikes651" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(485, 5549)
+
+[node name="Spikes652" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(486, 5569)
+
+[node name="Spikes653" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(488, 5590)
+
+[node name="Spikes654" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(489, 5615)
+
+[node name="Spikes655" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(490, 5639)
+
+[node name="Spikes656" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(491, 5660)
+
+[node name="Spikes657" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(493, 5682)
+
+[node name="Spikes658" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(494, 5704)
+
+[node name="Spikes659" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(496, 5725)
+
+[node name="Spikes660" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(497, 5750)
+
+[node name="Spikes661" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(498, 5774)
+
+[node name="Spikes662" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(499, 5795)
+
+[node name="Spikes663" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(501, 5817)
+
+[node name="Spikes664" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(502, 5837)
+
+[node name="Spikes665" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(504, 5858)
+
+[node name="Spikes666" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(505, 5883)
+
+[node name="Spikes667" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(506, 5907)
+
+[node name="Spikes668" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(507, 5928)
+
+[node name="Spikes669" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(509, 5950)
+
+[node name="Spikes670" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(510, 5972)
+
+[node name="Spikes671" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(512, 5993)
+
+[node name="Spikes672" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(513, 6018)
+
+[node name="Spikes673" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(514, 6042)
+
+[node name="Spikes674" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(515, 6063)
+
+[node name="Spikes675" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(517, 6085)
+
+[node name="Spikes676" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(518, 6105)
+
+[node name="Spikes677" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(520, 6126)
+
+[node name="Spikes678" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(521, 6151)
+
+[node name="Spikes679" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(522, 6175)
+
+[node name="Spikes680" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(523, 6196)
+
+[node name="Spikes681" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(525, 6218)
+
+[node name="Spikes682" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(526, 6240)
+
+[node name="Spikes683" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(528, 6261)
+
+[node name="Spikes684" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(529, 6286)
+
+[node name="Spikes685" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(530, 6310)
+
+[node name="Spikes686" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(531, 6331)
+
+[node name="Spikes687" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(533, 6353)
+
+[node name="Spikes688" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(534, 6373)
+
+[node name="Spikes689" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(536, 6394)
+
+[node name="Spikes690" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(537, 6419)
+
+[node name="Spikes691" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(538, 6443)
+
+[node name="Spikes692" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(539, 6464)
+
+[node name="Spikes693" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(541, 6486)
+
+[node name="Spikes694" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(542, 6508)
+
+[node name="Spikes695" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(543, 6533)
+
+[node name="Spikes696" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(544, 6557)
+
+[node name="Spikes697" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(545, 6578)
+
+[node name="Spikes698" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(547, 6600)
+
+[node name="Spikes699" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(548, 6620)
+
+[node name="Spikes700" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(550, 6641)
+
+[node name="Spikes701" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(551, 6666)
+
+[node name="Spikes702" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(552, 6690)
+
+[node name="Spikes703" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(553, 6711)
+
+[node name="Spikes704" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(555, 6733)
+
+[node name="Spikes705" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(556, 6755)
+
+[node name="Spikes706" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(558, 6776)
+
+[node name="Spikes707" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(559, 6801)
+
+[node name="Spikes708" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(560, 6825)
+
+[node name="Spikes709" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(561, 6846)
+
+[node name="Spikes710" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(563, 6868)
+
+[node name="Spikes711" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(564, 6888)
+
+[node name="Spikes712" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(566, 6909)
+
+[node name="Spikes713" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(567, 6934)
+
+[node name="Spikes714" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(568, 6958)
+
+[node name="Spikes715" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(569, 6979)
+
+[node name="Spikes716" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(571, 7001)
+
+[node name="Spikes717" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(574, 7025)
+
+[node name="Spikes718" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(576, 7046)
+
+[node name="Spikes719" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(577, 7071)
+
+[node name="Spikes720" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(578, 7095)
+
+[node name="Spikes721" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(579, 7116)
+
+[node name="Spikes722" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(581, 7138)
+
+[node name="Spikes723" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(582, 7158)
+
+[node name="Spikes724" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(584, 7179)
+
+[node name="Spikes725" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(585, 7204)
+
+[node name="Spikes726" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(586, 7228)
+
+[node name="Spikes727" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(587, 7249)
+
+[node name="Spikes728" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(589, 7271)
+
+[node name="Spikes729" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(590, 7293)
+
+[node name="Spikes730" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(592, 7314)
+
+[node name="Spikes731" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(593, 7339)
+
+[node name="Spikes732" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(594, 7363)
+
+[node name="Spikes733" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(595, 7384)
+
+[node name="Spikes734" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(597, 7406)
+
+[node name="Spikes735" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(598, 7426)
+
+[node name="Spikes736" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(600, 7447)
+
+[node name="Spikes737" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(601, 7472)
+
+[node name="Spikes738" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(602, 7496)
+
+[node name="Spikes739" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(603, 7517)
+
+[node name="Spikes740" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(605, 7539)
+
+[node name="Spikes741" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(606, 7561)
+
+[node name="Spikes742" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(608, 7582)
+
+[node name="Spikes743" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(609, 7607)
+
+[node name="Spikes744" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(610, 7631)
+
+[node name="Spikes745" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(611, 7652)
+
+[node name="Spikes746" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(613, 7674)
+
+[node name="Spikes747" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(614, 7694)
+
+[node name="Spikes748" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(616, 7715)
+
+[node name="Spikes749" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(617, 7740)
+
+[node name="Spikes750" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(618, 7764)
+
+[node name="Spikes751" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(619, 7785)
+
+[node name="Spikes752" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(621, 7807)
+
+[node name="Spikes753" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(622, 7829)
+
+[node name="Spikes754" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(624, 7850)
+
+[node name="Spikes755" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(625, 7875)
+
+[node name="Spikes756" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(626, 7899)
+
+[node name="Spikes757" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(627, 7920)
+
+[node name="Spikes758" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(629, 7942)
+
+[node name="Spikes759" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(630, 7962)
+
+[node name="Spikes760" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(632, 7983)
+
+[node name="Spikes761" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(633, 8008)
+
+[node name="Spikes762" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(634, 8032)
+
+[node name="Spikes763" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(635, 8053)
+
+[node name="Spikes764" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(637, 8075)
+
+[node name="Spikes765" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(638, 8097)
+
+[node name="Spikes766" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(639, 8122)
+
+[node name="Spikes767" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(640, 8146)
+
+[node name="Spikes768" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(641, 8167)
+
+[node name="Spikes769" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(643, 8189)
+
+[node name="Spikes770" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(644, 8209)
+
+[node name="Spikes771" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(646, 8230)
+
+[node name="Spikes772" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(647, 8255)
+
+[node name="Spikes773" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(648, 8279)
+
+[node name="Spikes774" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(649, 8300)
+
+[node name="Spikes775" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(651, 8322)
+
+[node name="Spikes776" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(652, 8344)
+
+[node name="Spikes777" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(654, 8365)
+
+[node name="Spikes778" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(655, 8390)
+
+[node name="Spikes779" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(656, 8414)
+
+[node name="Spikes780" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(657, 8435)
+
+[node name="Spikes781" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(659, 8457)
+
+[node name="Spikes782" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(660, 8477)
+
+[node name="Spikes783" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(662, 8498)
+
+[node name="Spikes784" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(663, 8523)
+
+[node name="Spikes785" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(664, 8547)
+
+[node name="Spikes786" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(665, 8568)
+
+[node name="Spikes787" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(667, 8590)
+
+[node name="Spikes788" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(666, 8611)
+
+[node name="Spikes789" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(670, 8630)
+
+[node name="Spikes790" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(672, 8651)
+
+[node name="Spikes791" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(673, 8676)
+
+[node name="Spikes792" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(674, 8700)
+
+[node name="Spikes793" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(675, 8721)
+
+[node name="Spikes794" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(677, 8743)
+
+[node name="Spikes795" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(678, 8763)
+
+[node name="Spikes796" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(680, 8784)
+
+[node name="Spikes797" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(681, 8809)
+
+[node name="Spikes798" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(682, 8833)
+
+[node name="Spikes799" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(683, 8854)
+
+[node name="Spikes800" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(685, 8876)
+
+[node name="Spikes801" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(686, 8898)
+
+[node name="Spikes802" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(688, 8919)
+
+[node name="Spikes803" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(689, 8944)
+
+[node name="Spikes804" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(690, 8968)
+
+[node name="Spikes805" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(691, 8989)
+
+[node name="Spikes806" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(693, 9011)
+
+[node name="Spikes807" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(694, 9031)
+
+[node name="Spikes808" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(696, 9052)
+
+[node name="Spikes809" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(697, 9077)
+
+[node name="Spikes810" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(698, 9101)
+
+[node name="Spikes811" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(699, 9122)
+
+[node name="Spikes812" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(701, 9144)
+
+[node name="Spikes813" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(702, 9166)
+
+[node name="Spikes814" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(704, 9187)
+
+[node name="Spikes815" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(705, 9212)
+
+[node name="Spikes816" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(706, 9236)
+
+[node name="Spikes817" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(707, 9257)
+
+[node name="Spikes818" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(709, 9279)
+
+[node name="Spikes819" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(710, 9299)
+
+[node name="Spikes820" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(712, 9320)
+
+[node name="Spikes821" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(713, 9345)
+
+[node name="Spikes822" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(714, 9369)
+
+[node name="Spikes823" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(715, 9390)
+
+[node name="Spikes824" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(717, 9412)
+
+[node name="Spikes825" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(718, 9434)
+
+[node name="Spikes826" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(720, 9455)
+
+[node name="Spikes827" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(721, 9480)
+
+[node name="Spikes828" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(722, 9504)
+
+[node name="Spikes829" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(723, 9525)
+
+[node name="Spikes830" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(725, 9547)
+
+[node name="Spikes831" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(726, 9567)
+
+[node name="Spikes832" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(728, 9588)
+
+[node name="Spikes833" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(729, 9613)
+
+[node name="Spikes834" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(730, 9637)
+
+[node name="Spikes835" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(731, 9658)
+
+[node name="Spikes836" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(733, 9680)
+
+[node name="Spikes837" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(734, 9702)
+
+[node name="Spikes838" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(735, 9727)
+
+[node name="Spikes839" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(736, 9751)
+
+[node name="Spikes840" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(737, 9772)
+
+[node name="Spikes841" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(739, 9794)
+
+[node name="Spikes842" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(740, 9814)
+
+[node name="Spikes843" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(742, 9835)
+
+[node name="Spikes844" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(743, 9860)
+
+[node name="Spikes845" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(744, 9884)
+
+[node name="Spikes846" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(745, 9905)
+
+[node name="Spikes847" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(747, 9927)
+
+[node name="Spikes848" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(748, 9949)
+
+[node name="Spikes849" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(750, 9970)
+
+[node name="Spikes850" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(751, 9995)
+
+[node name="Spikes851" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(752, 10019)
+
+[node name="Spikes852" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(753, 10040)
+
+[node name="Spikes853" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(755, 10062)
+
+[node name="Spikes854" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(756, 10082)
+
+[node name="Spikes855" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(758, 10103)
+
+[node name="Spikes856" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(759, 10128)
+
+[node name="Spikes857" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(760, 10152)
+
+[node name="Spikes858" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(761, 10173)
+
+[node name="Spikes859" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(763, 10195)
+
+[node name="JumpPad" parent="." instance=ExtResource("4_er33v")]
+position = Vector2(936, 10227)
+
+[node name="JumpPad2" parent="." instance=ExtResource("4_er33v")]
+position = Vector2(875, 10125)
+
+[node name="JumpPad3" parent="." instance=ExtResource("4_er33v")]
+position = Vector2(845, 10012)
+
+[node name="JumpPad4" parent="." instance=ExtResource("4_er33v")]
+position = Vector2(869, 9912)
+boost = 200.0
+
+[node name="JumpPad5" parent="." instance=ExtResource("4_er33v")]
+position = Vector2(951, 9911)
+boost = 200.0
+
+[node name="JumpPad6" parent="." instance=ExtResource("4_er33v")]
+position = Vector2(1040, 9909)
+boost = 200.0
+
+[node name="JumpPad7" parent="." instance=ExtResource("4_er33v")]
+position = Vector2(1128, 9910)
+boost = 200.0
+
+[node name="Spikes860" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3560, 9867)
+
+[node name="Spikes861" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3507, 9890)
+
+[node name="Spikes862" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3448, 9888)
+
+[node name="Fruit" parent="." instance=ExtResource("5_qqrun")]
+position = Vector2(4112, 10301)
+fruit_id = 9
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Fruit"]
+position = Vector2(1, 0)
+texture = ExtResource("6_cj3tw")
+
+[node name="Spikes863" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(270, 10455)
+
+[node name="Spikes864" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(327, 10454)
+
+[node name="Spikes865" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(386, 10452)
+
+[node name="Spikes866" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(443, 10451)
+
+[node name="Spikes867" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(497, 10452)
+
+[node name="Spikes868" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(554, 10451)
+
+[node name="Spikes869" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(-71, 10459)
+
+[node name="Spikes870" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(-14, 10458)
+
+[node name="Spikes871" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(45, 10456)
+
+[node name="Spikes872" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(102, 10455)
+
+[node name="Spikes873" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(156, 10456)
+
+[node name="Spikes874" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(213, 10455)
+
+[node name="Spikes875" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(604, 10452)
+
+[node name="Spikes876" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(661, 10451)
+
+[node name="Spikes877" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(720, 10449)
+
+[node name="Spikes878" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(777, 10448)
+
+[node name="Spikes879" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(831, 10449)
+
+[node name="Spikes880" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(888, 10448)
+
+[node name="Spikes881" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(945, 10454)
+
+[node name="Spikes882" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1002, 10453)
+
+[node name="Spikes883" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1061, 10451)
+
+[node name="Spikes884" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1118, 10450)
+
+[node name="Spikes885" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1172, 10451)
+
+[node name="Spikes886" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1229, 10450)
+
+[node name="Spikes887" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1284, 10455)
+
+[node name="Spikes888" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1341, 10454)
+
+[node name="Spikes889" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1400, 10452)
+
+[node name="Spikes890" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1457, 10451)
+
+[node name="Spikes891" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1511, 10452)
+
+[node name="Spikes892" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1568, 10451)
+
+[node name="Spikes893" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1625, 10457)
+
+[node name="Spikes894" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1682, 10456)
+
+[node name="Spikes895" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1741, 10454)
+
+[node name="Spikes896" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1798, 10453)
+
+[node name="Spikes897" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1852, 10454)
+
+[node name="Spikes898" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1909, 10453)
+
+[node name="Spikes899" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(1953, 10455)
+
+[node name="Spikes900" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2010, 10454)
+
+[node name="Spikes901" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2069, 10452)
+
+[node name="Spikes902" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2126, 10451)
+
+[node name="Spikes903" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2180, 10452)
+
+[node name="Spikes904" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2237, 10451)
+
+[node name="Spikes905" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2294, 10457)
+
+[node name="Spikes906" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2351, 10456)
+
+[node name="Spikes907" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2410, 10454)
+
+[node name="Spikes908" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2467, 10453)
+
+[node name="Spikes909" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2521, 10454)
+
+[node name="Spikes910" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2578, 10453)
+
+[node name="Spikes911" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2598, 10473)
+
+[node name="Spikes912" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2655, 10472)
+
+[node name="Spikes913" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2714, 10470)
+
+[node name="Spikes914" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2771, 10469)
+
+[node name="Spikes915" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2825, 10470)
+
+[node name="Spikes916" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2882, 10469)
+
+[node name="Spikes917" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2939, 10475)
+
+[node name="Spikes918" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(2996, 10474)
+
+[node name="Spikes919" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3055, 10472)
+
+[node name="Spikes920" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3112, 10471)
+
+[node name="Spikes921" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3166, 10472)
+
+[node name="Spikes922" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3223, 10471)
+
+[node name="Spikes923" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3240, 10490)
+
+[node name="Spikes924" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3260, 10510)
+
+[node name="Spikes925" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3317, 10509)
+
+[node name="Spikes926" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3376, 10507)
+
+[node name="Spikes927" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3433, 10506)
+
+[node name="Spikes928" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3487, 10507)
+
+[node name="Spikes929" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3544, 10506)
+
+[node name="Spikes930" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3601, 10512)
+
+[node name="Spikes931" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3658, 10511)
+
+[node name="Spikes932" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3717, 10509)
+
+[node name="Spikes933" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3774, 10508)
+
+[node name="Spikes934" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3828, 10509)
+
+[node name="Spikes935" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3885, 10508)
+
+[node name="Spikes936" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3916, 10530)
+
+[node name="Spikes937" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3936, 10550)
+
+[node name="Spikes938" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(3993, 10549)
+
+[node name="Spikes939" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4052, 10547)
+
+[node name="Spikes940" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4109, 10546)
+
+[node name="Spikes941" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4163, 10547)
+
+[node name="Spikes942" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4220, 10546)
+
+[node name="Spikes943" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4277, 10552)
+
+[node name="Spikes944" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4334, 10551)
+
+[node name="Spikes945" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4393, 10549)
+
+[node name="Spikes946" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4450, 10548)
+
+[node name="Spikes947" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4504, 10549)
+
+[node name="Spikes948" parent="." instance=ExtResource("3_kbk4e")]
+position = Vector2(4561, 10548)
