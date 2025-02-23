@@ -279,8 +279,8 @@ one_shot = true
 [node name="lagTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
-[connection signal="body_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]
 [connection signal="body_exited" from="Hurtbox" to="." method="_on_body_exited"]
+[connection signal="body_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]
 [connection signal="body_exited" from="Hurtbox" to="Hurtbox" method="_on_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Hurtbox" method="_on_timer_timeout"]
