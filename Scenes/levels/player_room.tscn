@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bb63gwy4i02jv" path="res://Assets/enviroment/world_tileset.png" id="1_3k31k"]
 [ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="1_sdn7v"]
-[ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/gandalf_sheet.tscn" id="1_uqgsu"]
+[ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/hive_sprite_sheet.tscn" id="1_uqgsu"]
 [ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_b6gq6"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="4_4o2fa"]
 [ext_resource type="Texture2D" uid="uid://ce0y5c88sk0ui" path="res://Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="6_ktnmx"]
@@ -701,7 +701,7 @@ visible = false
 tile_map_data = PackedByteArray("AAAEAAAAAAAAAAEAAAADAAAAAAAAAAEAAAACAAAAAAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAD//wAAAAAAAAEAAAD+/wAAAAAAAAEAAAD9/wAAAAAAAAEAAAD8/wAAAAAAAAEAAAD7/wAAAAAAAAEAAAD7////AAAAAAEAAAD7//7/AAAAAAEAAAD7//3/AAAAAAEAAAD7//z/AAAAAAEAAAD8//v/AAAAAAEAAAD9//v/AAAAAAEAAAD+//v/AAAAAAEAAAD///v/AAAAAAEAAAAAAPv/AAAAAAEAAAABAPv/AAAAAAEAAAACAPz/AAAAAAEAAAADAP3/AAAAAAEAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAACAAAAAAAXAAAAAAACAAAAAAAYAAAAAAACAAAAAAAZAAAAAAACAAAAAAAaAAAAAAACAAAAAAAbAAAAAAACAAAAAAAcAAAAAAACAAAAAAAWAP//AAAIAAQAAAAQAP//AAAIAAMAAAAKAP//AAAIAAMAAAD+////AAADAAIAAAA=")
 tile_set = SubResource("TileSet_xhrbg")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_b6gq6")]
+[node name="Player" parent="." instance=ExtResource("2_b6gq6")]
 z_index = 1
 position = Vector2(-328, -72)
 

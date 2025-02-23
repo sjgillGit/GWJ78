@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="6_rckpy"]
 [ext_resource type="PackedScene" uid="uid://bgmywrevibtrl" path="res://markIncompleteScenes/mugger_spawn.tscn" id="7_8fpje"]
 [ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/hive_sprite_sheet.tscn" id="8_lxk5y"]
-[ext_resource type="PackedScene" uid="uid://cqfdph3j36m20" path="res://Scenes/spikes.tscn" id="8_oys5g"]
+[ext_resource type="PackedScene" path="res://Scenes/spikes.tscn" id="8_oys5g"]
 [ext_resource type="PackedScene" uid="uid://uy6f4gypnnqr" path="res://Scenes/jumpPad.tscn" id="9_evn01"]
 [ext_resource type="PackedScene" uid="uid://c1uc0qvqgighb" path="res://go_back_pot.tscn" id="10_wwmnm"]
 [ext_resource type="Texture2D" uid="uid://cbw83khg5xp5x" path="res://Assets/SpaceBar/Green/SpaceBarGreen.png" id="11_8hjat"]
