@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 PlayerProperties="*res://Scripts/Components/Player_Properties.gd"
 Town="*res://Scripts/town.gd"
+BgAudio="*res://Scripts/bg_audio.gd"
 
 [display]
 

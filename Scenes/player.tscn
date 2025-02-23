@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://bc7wyx8xvx0ks"]
+[gd_scene load_steps=96 format=3 uid="uid://bc7wyx8xvx0ks"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
@@ -19,9 +19,9 @@
 [ext_resource type="Script" path="res://Scenes/camera_2d_fruit_ui.gd" id="16_6ij4k"]
 [ext_resource type="PackedScene" uid="uid://c7qfihnyo70k4" path="res://Scenes/UIComponents/uimanager.tscn" id="17_73k3i"]
 [ext_resource type="Texture2D" uid="uid://e4q3er32lbal" path="res://Assets/fruits/02.png" id="18_2pwem"]
-[ext_resource type="AudioStream" uid="uid://ywo4571gt2w5" path="res://Assets/sound/jump.wav" id="18_i4hxt"]
-[ext_resource type="AudioStream" uid="uid://bdc066cvllw21" path="res://Assets/sound/power_up.wav" id="19_rko0k"]
-[ext_resource type="AudioStream" uid="uid://gpre6lw5t3s2" path="res://Assets/sound/hurt.wav" id="19_u2w5h"]
+[ext_resource type="AudioStream" uid="uid://7ponpj5ywhy4" path="res://Assets/sound/jump.wav" id="18_i4hxt"]
+[ext_resource type="AudioStream" uid="uid://wx4hnxhrw1ss" path="res://Assets/sound/power_up.wav" id="19_rko0k"]
+[ext_resource type="AudioStream" uid="uid://buakskqxga7bx" path="res://Assets/sound/hurt.wav" id="19_u2w5h"]
 [ext_resource type="Texture2D" uid="uid://ba8u8etq8hacm" path="res://Assets/fruits/03.png" id="19_vb5bd"]
 [ext_resource type="AudioStream" uid="uid://ca5d1ar2ugh87" path="res://Assets/sound/12_Player_Movement_SFX/03_Step_grass_03.wav" id="20_2qcga"]
 [ext_resource type="Texture2D" uid="uid://c5cpfdiqm8pr2" path="res://Assets/fruits/05.png" id="20_yujh1"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://sxfuf0y3pcri" path="res://Assets/fruits/13.png" id="25_2vy4a"]
 [ext_resource type="Texture2D" uid="uid://cctkxjnkjohqo" path="res://Assets/fruits/06.png" id="26_h134t"]
 [ext_resource type="Texture2D" uid="uid://c3th7cnopldqy" path="res://Assets/fruits/08.png" id="27_llbsp"]
+[ext_resource type="AudioStream" uid="uid://djfoeaqof5whx" path="res://Assets/sound/dash.wav" id="33_ipcli"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orii7"]
 atlas = ExtResource("3_2qm07")
@@ -682,21 +683,9 @@ position_smoothing_enabled = true
 position_smoothing_speed = 50.0
 script = ExtResource("16_6ij4k")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
-
-[node name="UIManager" parent="Camera2D/CanvasLayer" instance=ExtResource("17_73k3i")]
-unique_name_in_owner = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D/CanvasLayer"]
-process_mode = 3
-material = SubResource("ShaderMaterial_aupqv")
-position = Vector2(2, 1)
-mesh = SubResource("QuadMesh_a7d57")
-script = SubResource("GDScript_8t2s8")
-
 [node name="FruitUI" type="Node2D" parent="Camera2D"]
 z_index = 5
-position = Vector2(21, -20)
+position = Vector2(21, -218)
 
 [node name="01" type="Sprite2D" parent="Camera2D/FruitUI"]
 position = Vector2(-263, 108)
@@ -738,20 +727,33 @@ texture = ExtResource("26_h134t")
 position = Vector2(-119, 108)
 texture = ExtResource("27_llbsp")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="UIManager" parent="Camera2D/CanvasLayer" instance=ExtResource("17_73k3i")]
+unique_name_in_owner = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D/CanvasLayer"]
+process_mode = 3
+material = SubResource("ShaderMaterial_aupqv")
+position = Vector2(2, 1)
+mesh = SubResource("QuadMesh_a7d57")
+script = SubResource("GDScript_8t2s8")
+
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("18_i4hxt")
-volume_db = -40.657
+volume_db = -4.782
 
 [node name="cooldown" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("19_rko0k")
-volume_db = -35.0
 
 [node name="hurt" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("19_u2w5h")
-volume_db = -15.0
 
 [node name="walk" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("20_2qcga")
-volume_db = -4.0
+
+[node name="dash" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("33_ipcli")
+volume_db = 10.851
