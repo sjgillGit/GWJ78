@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://dhl8x63tys2a6"]
+[gd_scene load_steps=33 format=4 uid="uid://dhl8x63tys2a6"]
 
 [ext_resource type="Script" path="res://Scripts/world_manager.gd" id="1_pe62w"]
 [ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="2_eslkw"]
@@ -27,69 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://rejbnhmb35o3" path="res://Assets/fruits/11.png" id="22_fgn1n"]
 [ext_resource type="Texture2D" uid="uid://sxfuf0y3pcri" path="res://Assets/fruits/13.png" id="23_r758g"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="26_woghe"]
-
-[sub_resource type="Animation" id="Animation_o18da"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Sprite2D/RightClick:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer2/Sprite2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(232, -80)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer2/Sprite2D/LeftClick:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/downArrow:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
 
 [sub_resource type="Animation" id="Animation_6kkll"]
 resource_name = "airDrop"
@@ -161,7 +98,6 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xdjc8"]
 _data = {
-"RESET": SubResource("Animation_o18da"),
 "airDrop": SubResource("Animation_6kkll"),
 "hover": SubResource("Animation_y63m6")
 }
@@ -329,7 +265,8 @@ z_index = 1
 position = Vector2(1256, -744)
 
 [node name="Player" parent="." instance=ExtResource("6_rckpy")]
-position = Vector2(-2031, -15)
+z_index = 4
+position = Vector2(-1654, -150)
 
 [node name="Node2D" parent="Player" instance=ExtResource("2_eslkw")]
 position = Vector2(0, 7)
@@ -381,6 +318,7 @@ rotation = -0.000372129
 boost = 800.0
 
 [node name="1tree at start" parent="water/water_toggle" instance=ExtResource("8_lxk5y")]
+z_index = 13
 tile_map_data = PackedByteArray("AACo//j/AAAmAB4AAACo//n/AAAmAB8AAACp//f/AAAnAB0AAACp//j/AAAnAB4AAACp//n/AAAnAB8AAACp//r/AAAnACAAAACq//f/AAAoAB0AAACq//j/AAAoAB4AAACq//n/AAAoAB8AAACq//r/AAAoACAAAACr//X/AAApABsAAACr//b/AAApABwAAACr//f/AAApAB0AAACr//j/AAApAB4AAACr//n/AAApAB8AAACr//r/AAApACAAAACr//v/AAApACEAAACs//T/AAAqABoAAACs//X/AAAqABsAAACs//b/AAAqABwAAACs//f/AAAqAB0AAACs//j/AAAqAB4AAACs//n/AAAqAB8AAACs//r/AAAqACAAAACs//v/AAAqACEAAACt//T/AAArABoAAACt//X/AAArABsAAACt//b/AAArABwAAACt//f/AAArAB0AAACt//j/AAArAB4AAACt//n/AAArAB8AAACt//r/AAArACAAAACt//v/AAArACEAAACu//P/AAAsABkAAACu//T/AAAsABoAAACu//X/AAAsABsAAACu//b/AAAsABwAAACu//f/AAAsAB0AAACu//j/AAAsAB4AAACu//n/AAAsAB8AAACu//r/AAAsACAAAACu//v/AAAsACEAAACv//P/AAAtABkAAACv//T/AAAtABoAAACv//X/AAAtABsAAACv//b/AAAtABwAAACv//f/AAAtAB0AAACv//j/AAAtAB4AAACv//n/AAAtAB8AAACv//r/AAAtACAAAACw//P/AAAuABkAAACw//T/AAAuABoAAACw//X/AAAuABsAAACw//b/AAAuABwAAACw//f/AAAuAB0AAACw//j/AAAuAB4AAACw//n/AAAuAB8AAACw//r/AAAuACAAAACx//P/AAAvABkAAACx//T/AAAvABoAAACx//X/AAAvABsAAACx//b/AAAvABwAAACx//f/AAAvAB0AAACx//j/AAAvAB4AAACx//n/AAAvAB8AAACx//r/AAAvACAAAACx//v/AAAvACEAAACy//P/AAAwABkAAACy//T/AAAwABoAAACy//X/AAAwABsAAACy//b/AAAwABwAAACy//f/AAAwAB0AAACy//j/AAAwAB4AAACy//n/AAAwAB8AAACy//r/AAAwACAAAACy//v/AAAwACEAAACz//T/AAAxABoAAACz//X/AAAxABsAAACz//b/AAAxABwAAACz//f/AAAxAB0AAACz//j/AAAxAB4AAACz//n/AAAxAB8AAACz//r/AAAxACAAAACz//v/AAAxACEAAACz//z/AAAxACIAAAC0//T/AAAyABoAAAC0//X/AAAyABsAAAC0//b/AAAyABwAAAC0//f/AAAyAB0AAAC0//j/AAAyAB4AAAC0//n/AAAyAB8AAAC0//r/AAAyACAAAAC0//v/AAAyACEAAAC0//z/AAAyACIAAAC1//f/AAAzAB0AAAC1//j/AAAzAB4AAAC1//n/AAAzAB8AAAC1//r/AAAzACAAAAC1//v/AAAzACEAAAC2//j/AAA0AB4AAAC2//n/AAA0AB8AAAC2//r/AAA0ACAAAAC2//v/AAA0ACEAAAC3//j/AAA1AB4AAAC3//n/AAA1AB8AAAC3//r/AAA1ACAAAAA=")
 
 [node name="JumpPad" parent="water/water_toggle" instance=ExtResource("9_evn01")]
@@ -596,7 +534,6 @@ libraries = {
 autoplay = "hover"
 
 [node name="downArrow" type="Sprite2D" parent="AnimationPlayer"]
-position = Vector2(-1544, -100)
 texture = ExtResource("11_3dkqt")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer"]
@@ -762,6 +699,9 @@ z_index = 0
 position = Vector2(-160, -320)
 rotation = 0.166868
 boost = 600.0
+
+[node name="JumpPad2" parent="." instance=ExtResource("9_evn01")]
+position = Vector2(127, 72)
 
 [editable path="next_level_transition"]
 [editable path="hive_level_enter"]
