@@ -607,7 +607,6 @@ player_properties = NodePath("Player_Properties")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = -19.0
 offset_top = -69.0
 offset_right = 21.0

@@ -155,7 +155,6 @@ func take_damage():
 	
 
 func call_cauldron_menu():
-	print('call from player')
 	%UIManager.call_cauldron_menu()
 	
 func close_cauldron_menu():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cmm8dtn8mm1em"]
+[gd_scene load_steps=11 format=4 uid="uid://cmm8dtn8mm1em"]
 
 [ext_resource type="Texture2D" uid="uid://bb63gwy4i02jv" path="res://Assets/enviroment/world_tileset.png" id="1_3k31k"]
 [ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/gandalf_sheet.tscn" id="1_uqgsu"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c2thyvk1fh353" path="res://markIncompleteScenes/mugger.tscn" id="3_hg66u"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="4_4o2fa"]
 [ext_resource type="PackedScene" uid="uid://bxqvgy83i0ar2" path="res://Scenes/levels/level_transitions/level_two_start.tscn" id="5_obu17"]
-[ext_resource type="Shader" path="res://markIncompleteScenes/shader.gdshader" id="6_56rhw"]
 [ext_resource type="PackedScene" uid="uid://bkdtmnem2yfg1" path="res://Scenes/levels/level_transitions/level_three_start.tscn" id="6_vei3v"]
 [ext_resource type="PackedScene" uid="uid://dypptn6vx300c" path="res://CauldronE.tscn" id="9_eokm1"]
 
@@ -271,13 +270,6 @@ physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_d0vtq")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8salo"]
-shader = ExtResource("6_56rhw")
-
-[sub_resource type="QuadMesh" id="QuadMesh_mpjd7"]
-size = Vector2(1280, 720)
-center_offset = Vector3(640, 360, 0)
-
 [node name="player room" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_uqgsu")]
@@ -324,15 +316,6 @@ level_name = "world_2"
 [node name="next_level_transition3" parent="." instance=ExtResource("6_vei3v")]
 position = Vector2(362, -6)
 level_name = "world_3"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_8salo")
-position = Vector2(2, 1)
-mesh = SubResource("QuadMesh_mpjd7")
 
 [node name="Cauldron" parent="." instance=ExtResource("9_eokm1")]
 position = Vector2(-107, -21)

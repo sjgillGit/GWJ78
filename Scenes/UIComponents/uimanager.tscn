@@ -67,6 +67,7 @@ script = SubResource("GDScript_u1mbo")
 
 [node name="Conversation" parent="." instance=ExtResource("1_kqu5t")]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(300, 200)
 anchors_preset = 0
 anchor_top = 0.0
@@ -81,13 +82,16 @@ size_flags_vertical = 3
 
 [node name="StartScreen" parent="." instance=ExtResource("7_tbluj")]
 unique_name_in_owner = true
+visible = false
 
 [node name="Cauldron" parent="." instance=ExtResource("3_3dbq6")]
 unique_name_in_owner = true
+visible = false
 
 [node name="Pause" parent="." instance=ExtResource("4_cpx51")]
 unique_name_in_owner = true
 process_mode = 3
+visible = false
 light_mask = 2
 visibility_layer = 2
 
