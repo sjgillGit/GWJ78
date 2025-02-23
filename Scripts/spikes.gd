@@ -16,7 +16,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				PlayerProperties.gravity_modifier = PlayerProperties.BASE_GRAVITY
 				PlayerProperties.JUMP_VELOCITY = PlayerProperties.CONST_JUMP_VELOCITY
 				PlayerProperties.disable_jump = false
-				#body._set_isHurt()
 				)
 			body.take_damage()
 			body.velocity.y = -260

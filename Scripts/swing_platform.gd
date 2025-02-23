@@ -1,5 +1,4 @@
 extends StaticBody2D
-@onready var player: CharacterBody2D = $"../Player"
 @export_range(0, 90, 0.1, "radians_as_degrees") var angle:float
 @export var swingDuration:float = 1
 
@@ -17,7 +16,3 @@ func swing(swingLeft:bool = true):
 	else:
 		tween.tween_property(self, "rotation", angle, swingDuration).from_current()
 	tween.tween_callback(swing.bind(!swingLeft))
-
-func _process(delta: float) -> void:
-	#player.label.text = str(rotat)
-	pass

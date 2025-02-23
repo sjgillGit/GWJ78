@@ -20,7 +20,10 @@ extends CharacterBody2D
 var player_properties:= PlayerProperties
 @onready var jump: AudioStreamPlayer2D = $Audio/Jump
 
+var spawnPoint: Vector2 = Vector2(9999, 9999)
+
 var direction = 0
+@onready var pickup: AudioStreamPlayer2D = $Audio/pickup
 
 @onready var label: Label = $Label
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -31,12 +34,12 @@ var isDashing:bool = false
 var isHurt:bool = false
 var timeInAir:float = 0
 var isAirDropping:bool = false
+var isDying: bool = false
 
 var idleAnim:String = "idle"
 var runAnim:String = "run"
 var jumpAnim:String = "jump_up"
 var hurtAnim:String = "hurt"
-@onready var progress_bar: ProgressBar = $DashComponent/ProgressBar
 @onready var dash_component: DashComponent = $DashComponent
 func _ready():
 	initialize_playerProperties()
@@ -145,6 +148,7 @@ func add_gold(gold: int):
 	
 func initialize_playerProperties():
 	isHurt = false
+	isDying = false
 	self.set_collision_layer(PlayerProperties.player_collision_layer)
 	print("player layer 2:", self.get_collision_layer_value(2))
 	print("player layer 1:" ,self.get_collision_layer_value(1))
@@ -173,9 +177,19 @@ func walk_sounds():
 func check_life():
 	if player_health <= 0:
 		animated_sprite_2d.play("dead")
-		isHurt = true
-		await get_tree().create_timer(3).timeout
-		get_tree().reload_current_scene()
+		if !isDying:
+			isHurt = true
+			isDying = true
+			get_tree().create_timer(2).timeout.connect(func():
+				if spawnPoint == Vector2(9999, 9999):
+					get_tree().reload_current_scene()
+				else:
+					initialize_playerProperties()
+					position = spawnPoint
+					spawnPoint = Vector2(9999, 9999)
+				)
+		
+		
 	
 
 func call_cauldron_menu():
@@ -189,3 +203,6 @@ func _set_isHurt():
 		isHurt = true
 		var timer = get_tree().create_timer(0.7)
 		timer.timeout.connect(func(): isHurt = false)
+		
+func _pickup_sound():
+	pickup.play()

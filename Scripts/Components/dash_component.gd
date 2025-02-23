@@ -2,6 +2,7 @@ class_name DashComponent
 extends Node
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 @onready var cooldown_sound: AudioStreamPlayer2D = $"../Audio/cooldown"
+@onready var dash: AudioStreamPlayer2D = $"../Audio/dash"
 
 @export var characterBody:CharacterBody2D
 @export var cooldown:float = 1.75
@@ -17,19 +18,18 @@ var double_down_time = DOUBLETAP_DELAY
 
 
 func air_dash() -> void:
+	dash.play()
 	isOnCooldown = true
 	characterBody.isDashing = true
 	get_tree().create_timer(cooldown).timeout.connect(set.bind("isOnCooldown", false))
 	get_tree().create_timer(cooldown).timeout.connect(Callable(self, "cooldown_flash")) #, animated_sprite_2d.play("dash_cooldown")
 	dashingDirection = characterBody.direction
-	var prevVel = characterBody.velocity
 	get_tree().create_timer(airDashDuration).timeout.connect(func():
 		characterBody.velocity = Vector2.ZERO
 		characterBody.isDashing = false
 		)
 		
 func air_drop() -> void:
-	
 	characterBody.velocity = Vector2(0, 200)
 	characterBody.move_and_slide()
 	if characterBody.is_on_floor():
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	# the game checks if the playerd is holding shift (same as sprint) and is in the air for longer than 0.2s.
 	# that ensures that even is the player is sprinting 
 	# and then jumps still holding shift it will dash but not instantly when he's off the floor
-	if Input.is_action_pressed("dash") and characterBody.timeInAir > 0.2 and !isOnCooldown:
+	if Input.is_action_pressed("dash") and characterBody.timeInAir > 0.2 and !isOnCooldown and characterBody.direction:
 		air_dash()
 	
 	# each frame the X velocity is equal to the Air Dash Strength and Y is 0 to make the dash horizontal

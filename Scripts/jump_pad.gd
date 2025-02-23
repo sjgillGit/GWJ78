@@ -33,6 +33,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				animated_sprite_2d.play(type)
 
 func _on_interact():
-	disable = false
-	visible = true
-	collision_shape_2d.disabled = false
+	if disable:
+		disable = false
+		visible = true
+		collision_shape_2d.disabled = false
+	else:
+		disable = true
+		visible = false
+		collision_shape_2d.disabled = true
+		

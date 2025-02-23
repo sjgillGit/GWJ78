@@ -14,7 +14,6 @@ func _ready() -> void:
 	"9" : $"FruitUI/9",
 	"10" : $"FruitUI/10"
 	}
-	
 
 func _process(_delta):
 	for fruit in fruit_sprites.keys():

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d2gpavvykk6q8" path="res://Assets/Cute_Fantasy_Free/Outdoor decoration/Chest.png" id="2_8k1ty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jmkg"]
+size = Vector2(20, 32.3498)
 
 [node name="InteractObject" type="Area2D"]
 collision_mask = 2
@@ -13,6 +14,7 @@ script = ExtResource("1_4j3ow")
 texture = ExtResource("2_8k1ty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 scale = Vector2(2.09536, 1.60743)
 shape = SubResource("RectangleShape2D_2jmkg")
 
