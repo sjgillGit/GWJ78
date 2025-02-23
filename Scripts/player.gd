@@ -174,7 +174,7 @@ func check_life():
 	if player_health <= 0:
 		animated_sprite_2d.play("dead")
 		isHurt = true
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(3).timeout
 		get_tree().reload_current_scene()
 
 func call_cauldron_menu():

@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = playerPathing.x * 10.00
 		change_Sprite_Direction()
 		move_and_slide()
-	else: animated_sprite_2d.play("idle")
+	#else: animated_sprite_2d.play("idle")
 	
 
 
