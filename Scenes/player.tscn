@@ -730,7 +730,6 @@ position = Vector2(-119, 108)
 texture = ExtResource("27_llbsp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
-visible = false
 
 [node name="UIManager" parent="Camera2D/CanvasLayer" instance=ExtResource("17_73k3i")]
 unique_name_in_owner = true
