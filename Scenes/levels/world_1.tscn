@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2thyvk1fh353" path="res://markIncompleteScenes/mugger.tscn" id="6_6qvio"]
 [ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="6_rckpy"]
 [ext_resource type="PackedScene" uid="uid://bgmywrevibtrl" path="res://markIncompleteScenes/mugger_spawn.tscn" id="7_8fpje"]
-[ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/gandalf_sheet.tscn" id="8_lxk5y"]
+[ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/hive_sprite_sheet.tscn" id="8_lxk5y"]
 [ext_resource type="PackedScene" uid="uid://cqfdph3j36m20" path="res://Scenes/spikes.tscn" id="8_oys5g"]
 [ext_resource type="PackedScene" uid="uid://uy6f4gypnnqr" path="res://Scenes/jumpPad.tscn" id="9_evn01"]
 [ext_resource type="PackedScene" uid="uid://c1uc0qvqgighb" path="res://go_back_pot.tscn" id="10_wwmnm"]
@@ -405,142 +405,142 @@ position = Vector2(240, -616)
 boost = 700.0
 
 [node name="JumpPad12" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1712, -48)
 boost = 550.0
 
 [node name="JumpPad13" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1624, -112)
 boost = 550.0
 
 [node name="JumpPad14" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1568, -248)
 boost = 550.0
 
 [node name="JumpPad15" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1640, -296)
 boost = 550.0
 
 [node name="JumpPad16" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1704, -352)
 boost = 550.0
 
 [node name="JumpPad17" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1568, -424)
 boost = 550.0
 
 [node name="JumpPad18" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1664, -472)
 boost = 550.0
 
 [node name="JumpPad19" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1576, -584)
 boost = 550.0
 
 [node name="JumpPad20" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1704, -544)
 boost = 550.0
 
 [node name="JumpPad21" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1688, -664)
 boost = 550.0
 
 [node name="JumpPad22" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1576, -720)
 boost = 550.0
 
 [node name="JumpPad23" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1704, -848)
 boost = 550.0
 
 [node name="JumpPad24" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1616, -872)
 boost = 550.0
 
 [node name="JumpPad25" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1624, -992)
 boost = 550.0
 
 [node name="JumpPad26" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1664, -1056)
 boost = 550.0
 
 [node name="JumpPad27" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1568, -1120)
 boost = 550.0
 
 [node name="JumpPad28" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1680, -1232)
 boost = 550.0
 
 [node name="JumpPad29" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1568, -1288)
 boost = 550.0
 
 [node name="JumpPad30" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1704, -1376)
 boost = 550.0
 
 [node name="JumpPad31" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1584, -1568)
 boost = 550.0
 
 [node name="JumpPad32" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1616, -1632)
 boost = 550.0
 
 [node name="JumpPad33" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1664, -1632)
 boost = 550.0
 
 [node name="JumpPad34" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1704, -1784)
 boost = 550.0
 
 [node name="JumpPad35" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1568, -1856)
 boost = 550.0
 
 [node name="JumpPad36" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1656, -1944)
 boost = 550.0
 
 [node name="JumpPad37" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1568, -2024)
 boost = 550.0
 
 [node name="JumpPad38" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1712, -2000)
 boost = 550.0
 
 [node name="JumpPad39" parent="water/water_toggle" instance=ExtResource("9_evn01")]
-z_index = 1
+z_index = 3
 position = Vector2(1720, -2184)
 rotation = 0.429162
 boost = 550.0
