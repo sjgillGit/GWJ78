@@ -23,6 +23,7 @@ var player_properties:= PlayerProperties
 var spawnPoint: Vector2 = Vector2(9999, 9999)
 
 var direction = 0
+@onready var pickup: AudioStreamPlayer2D = $Audio/pickup
 
 @onready var label: Label = $Label
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -202,3 +203,6 @@ func _set_isHurt():
 		isHurt = true
 		var timer = get_tree().create_timer(0.7)
 		timer.timeout.connect(func(): isHurt = false)
+		
+func _pickup_sound():
+	pickup.play()

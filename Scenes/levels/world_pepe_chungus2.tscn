@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://cmodudl5hnbig"]
 
-[ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/gandalf_sheet.tscn" id="1_ut0wb"]
+[ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/hive_sprite_sheet.tscn" id="1_ut0wb"]
 [ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_tokvj"]
 [ext_resource type="PackedScene" uid="uid://cqfdph3j36m20" path="res://Scenes/spikes.tscn" id="3_kbk4e"]
 [ext_resource type="PackedScene" uid="uid://uy6f4gypnnqr" path="res://Scenes/jumpPad.tscn" id="4_er33v"]
