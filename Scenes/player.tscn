@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://bc7wyx8xvx0ks"]
+[gd_scene load_steps=97 format=3 uid="uid://bc7wyx8xvx0ks"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://sxfuf0y3pcri" path="res://Assets/fruits/13.png" id="25_2vy4a"]
 [ext_resource type="Texture2D" uid="uid://cctkxjnkjohqo" path="res://Assets/fruits/06.png" id="26_h134t"]
 [ext_resource type="Texture2D" uid="uid://c3th7cnopldqy" path="res://Assets/fruits/08.png" id="27_llbsp"]
+[ext_resource type="Texture2D" uid="uid://cegjre1vgr0bc" path="res://Assets/icons/Buffs/swiftness.png" id="29_d2f3o"]
 [ext_resource type="AudioStream" uid="uid://djfoeaqof5whx" path="res://Assets/sound/dash.wav" id="33_ipcli"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orii7"]
@@ -685,7 +686,7 @@ script = ExtResource("16_6ij4k")
 
 [node name="FruitUI" type="Node2D" parent="Camera2D"]
 z_index = 5
-position = Vector2(21, -218)
+position = Vector2(21, -241)
 
 [node name="01" type="Sprite2D" parent="Camera2D/FruitUI"]
 position = Vector2(-263, 108)
@@ -738,6 +739,18 @@ material = SubResource("ShaderMaterial_aupqv")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_a7d57")
 script = SubResource("GDScript_8t2s8")
+
+[node name="Node2D" type="Node2D" parent="Camera2D"]
+position = Vector2(0, -23)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Node2D"]
+position = Vector2(-242, -83)
+texture = ExtResource("29_d2f3o")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/Node2D/Sprite2D"]
+visible = false
+modulate = Color(0.411765, 0.411765, 0.411765, 1)
+texture = ExtResource("29_d2f3o")
 
 [node name="Audio" type="Node2D" parent="."]
 
