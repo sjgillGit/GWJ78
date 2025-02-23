@@ -42,6 +42,7 @@ func close_cauldron_menu():
 
 func _on_remove_humans_pressed() -> void:
 	if (not waiting):
+		%AudioStreamPlayer2D.play()
 		humans_erased = not humans_erased
 		if (humans_erased):
 			humans_button_pressed.emit(humans_are_erased_flavor_text)
@@ -53,6 +54,7 @@ func _on_remove_humans_pressed() -> void:
 
 func _on_remove_water_pressed() -> void:
 	if(not waiting):
+		%AudioStreamPlayer2D.play()
 		water_erased = not water_erased
 		if (water_erased):
 			water_button_pressed.emit(water_is_erased_flavor_text)
@@ -62,6 +64,7 @@ func _on_remove_water_pressed() -> void:
 
 func _on_remove_prosperity_pressed() -> void:
 	if ( not waiting ):
+		%AudioStreamPlayer2D.play()
 		prosperity_erased = not prosperity_erased
 		if (prosperity_erased):
 			prosperity_button_pressed.emit(prosperity_is_erased_flavor_text)
