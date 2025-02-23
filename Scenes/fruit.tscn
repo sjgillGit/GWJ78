@@ -4,21 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://d2eum2uptsfn" path="res://Assets/sound/8_Buffs_Heals_SFX/02_Heal_02.wav" id="2_xxvrf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_da8ju"]
-
-[sub_resource type="Animation" id="Animation_ve0ps"]
-resource_name = "collect"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 6), Vector2(0, -88)]
-}
+radius = 11.0
 
 [sub_resource type="Animation" id="Animation_b1b0i"]
 length = 0.001
@@ -33,6 +19,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ve0ps"]
+resource_name = "collect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 6), Vector2(0, -88)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qeow4"]

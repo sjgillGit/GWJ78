@@ -694,7 +694,8 @@ mesh = SubResource("QuadMesh_a7d57")
 script = SubResource("GDScript_8t2s8")
 
 [node name="FruitUI" type="Node2D" parent="Camera2D"]
-position = Vector2(19, -14)
+z_index = 5
+position = Vector2(21, -20)
 
 [node name="01" type="Sprite2D" parent="Camera2D/FruitUI"]
 position = Vector2(-263, 108)

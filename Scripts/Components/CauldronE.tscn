@@ -34,6 +34,7 @@ script = SubResource("GDScript_g5e6w")
 shape = SubResource("CircleShape2D_da8ju")
 
 [node name="Arrow01(32x32)" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -1)
 texture = ExtResource("1_lttfq")
 

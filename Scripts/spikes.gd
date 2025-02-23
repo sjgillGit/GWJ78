@@ -1,10 +1,12 @@
 extends StaticBody2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if body.has_method("take_damage"):
+			audio_stream_player_2d.play()
 			PlayerProperties.disable_jump = true
 			PlayerProperties.gravity_modifier = 0.5
 			PlayerProperties.JUMP_VELOCITY = 0
