@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://bc7wyx8xvx0ks"]
+[gd_scene load_steps=98 format=3 uid="uid://bc7wyx8xvx0ks"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wp6sb"]
 [ext_resource type="Texture2D" uid="uid://cq8skn7xdgvxh" path="res://Assets/markAssets/02-King Pig/Dead (38x28).png" id="2_e3mkm"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://sxfuf0y3pcri" path="res://Assets/fruits/13.png" id="25_2vy4a"]
 [ext_resource type="Texture2D" uid="uid://cctkxjnkjohqo" path="res://Assets/fruits/06.png" id="26_h134t"]
 [ext_resource type="Texture2D" uid="uid://c3th7cnopldqy" path="res://Assets/fruits/08.png" id="27_llbsp"]
+[ext_resource type="Texture2D" uid="uid://cegjre1vgr0bc" path="res://Assets/icons/Buffs/swiftness.png" id="29_tc0v4"]
 [ext_resource type="AudioStream" uid="uid://c2i5n8s7y2dgj" path="res://Assets/sound/12_Player_Movement_SFX/45_Landing_01.wav" id="33_i1ex0"]
 [ext_resource type="AudioStream" uid="uid://d2eum2uptsfn" path="res://Assets/sound/8_Buffs_Heals_SFX/02_Heal_02.wav" id="34_8jkui"]
 
@@ -656,7 +657,7 @@ theme_override_font_sizes/font_size = 11
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4hkln")
-animation = &"dead"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -686,7 +687,7 @@ script = ExtResource("16_6ij4k")
 
 [node name="FruitUI" type="Node2D" parent="Camera2D"]
 z_index = 5
-position = Vector2(21, -218)
+position = Vector2(21, -246)
 
 [node name="01" type="Sprite2D" parent="Camera2D/FruitUI"]
 position = Vector2(-263, 108)
@@ -729,6 +730,7 @@ position = Vector2(-119, 108)
 texture = ExtResource("27_llbsp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+visible = false
 
 [node name="UIManager" parent="Camera2D/CanvasLayer" instance=ExtResource("17_73k3i")]
 unique_name_in_owner = true
@@ -739,6 +741,17 @@ material = SubResource("ShaderMaterial_aupqv")
 position = Vector2(2, 1)
 mesh = SubResource("QuadMesh_a7d57")
 script = SubResource("GDScript_8t2s8")
+
+[node name="Node2D" type="Node2D" parent="Camera2D"]
+position = Vector2(-243, -115)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Node2D"]
+texture = ExtResource("29_tc0v4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/Node2D/Sprite2D"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("29_tc0v4")
 
 [node name="Audio" type="Node2D" parent="."]
 

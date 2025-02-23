@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func call_cauldron_menu():
 	show()
-	%RemoveHumans.grab_focus()
+	#%RemoveHumans.grab_focus()
 	cauldron_interface_active = true
 	cauldron_interface_toggle.emit(cauldron_interface_active)
 	
