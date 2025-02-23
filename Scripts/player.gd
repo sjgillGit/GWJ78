@@ -206,3 +206,7 @@ func _set_isHurt():
 		
 func _pickup_sound():
 	pickup.play()
+	
+func call_hamel_conversation():
+	print('CONVERSATOIN CALLED ')
+	%UIManager._call_conversation('YOU WILL PAY FOR ERASING US')

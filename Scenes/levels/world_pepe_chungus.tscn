@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqfdph3j36m20" path="res://Scenes/spikes.tscn" id="3_csspx"]
 [ext_resource type="PackedScene" uid="uid://uy6f4gypnnqr" path="res://Scenes/jumpPad.tscn" id="4_cvnbp"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="5_dau3i"]
-[ext_resource type="Texture2D" uid="uid://3jsar5q8tvae" path="res://Assets/shift.png" id="6_nvenl"]
+[ext_resource type="Texture2D" uid="uid://kplxajctwv3i" path="res://Assets/shift.png" id="6_nvenl"]
 [ext_resource type="Texture2D" uid="uid://ciak1h31jqn7f" path="res://Assets/WASD/Green/WASDGreen4.png" id="7_4qjhd"]
 
 [node name="world_PEPE_CHUNGUS" type="Node2D"]

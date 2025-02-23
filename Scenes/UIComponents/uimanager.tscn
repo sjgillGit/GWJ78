@@ -32,8 +32,7 @@ func _process(_delta: float) -> void:
 
 
 func _call_conversation(text):
-	if (not get_tree().paused):
-		%Conversation.initialize_conversation(text, true)
+	%Conversation.initialize_conversation(text, true)
 	
 func _on_is_talking(value: bool):
 	is_talking_debug_only = value

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dhl8x63tys2a6"]
+[gd_scene load_steps=34 format=4 uid="uid://dhl8x63tys2a6"]
 
 [ext_resource type="Script" path="res://Scripts/world_manager.gd" id="1_pe62w"]
 [ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="2_eslkw"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://rejbnhmb35o3" path="res://Assets/fruits/11.png" id="22_fgn1n"]
 [ext_resource type="Texture2D" uid="uid://sxfuf0y3pcri" path="res://Assets/fruits/13.png" id="23_r758g"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="26_woghe"]
+[ext_resource type="PackedScene" uid="uid://blvv7pra3km3k" path="res://Scenes/Hamel.tscn" id="27_7uaq4"]
 
 [sub_resource type="Animation" id="Animation_o18da"]
 length = 0.001
@@ -735,6 +736,11 @@ z_index = 0
 position = Vector2(-160, -320)
 rotation = 0.166868
 boost = 600.0
+
+[node name="Hamel" parent="." instance=ExtResource("27_7uaq4")]
+position = Vector2(-1878, -74)
+collision_layer = 0
+collision_mask = 0
 
 [editable path="next_level_transition"]
 [editable path="hive_level_enter"]
