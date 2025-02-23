@@ -679,6 +679,7 @@ player_properties = NodePath("../Player_Properties")
 zoom = Vector2(2.34, 2.34)
 limit_bottom = 115
 position_smoothing_enabled = true
+position_smoothing_speed = 50.0
 script = ExtResource("16_6ij4k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]

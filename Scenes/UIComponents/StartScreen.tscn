@@ -77,8 +77,8 @@ size_flags_vertical = 0
 theme = ExtResource("1_kqh4r")
 theme_type_variation = &"TitleHeader"
 bbcode_enabled = true
-text = "press E to start
-
+text = "                            press E to start
+           Press ESC to Pause and go back home
 
 
 
