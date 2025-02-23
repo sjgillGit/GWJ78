@@ -1,94 +1,161 @@
-[gd_scene load_steps=31 format=3 uid="uid://c2thyvk1fh353"]
+[gd_scene load_steps=31 format=3 uid="uid://blvv7pra3km3k"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_npc.gd" id="1_lt23b"]
-[ext_resource type="Texture2D" uid="uid://cipp4tvdknrpy" path="res://Assets/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack01.png" id="2_ialov"]
-[ext_resource type="Texture2D" uid="uid://cbqqnbsj5qfg2" path="res://Assets/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Idle.png" id="3_eu1la"]
-[ext_resource type="Texture2D" uid="uid://bfsejr56w7l1n" path="res://Assets/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Walk.png" id="4_8n2cs"]
-[ext_resource type="PackedScene" uid="uid://cbcf2h05dochh" path="res://markIncompleteScenes/hurtbox.tscn" id="5_hki62"]
+[ext_resource type="Texture2D" uid="uid://cipp4tvdknrpy" path="res://Assets/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack01.png" id="1_8mrb0"]
+[ext_resource type="Texture2D" uid="uid://cbqqnbsj5qfg2" path="res://Assets/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Idle.png" id="2_okqrd"]
+[ext_resource type="Texture2D" uid="uid://bfsejr56w7l1n" path="res://Assets/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Walk.png" id="3_c3eij"]
+[ext_resource type="PackedScene" uid="uid://cbcf2h05dochh" path="res://markIncompleteScenes/hurtbox.tscn" id="4_epnhw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lqlrt"]
+[sub_resource type="GDScript" id="GDScript_o7vpv"]
+script/source = "extends CharacterBody2D
+@export var health:int = 1
+var isDead:bool = false
+@export var speed: float = 200.0
+var isAttacking: bool = false
+var player_in_range: bool = false
+#var wait_time = 1 #how long the attack animation and hurtbox will last
+@onready var hurtbox: Area2D = $Hurtbox
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var timer: Timer = $Timer
+@onready var lag_timer: Timer = $lagTimer
+
+func _ready() -> void:
+	hurtbox.set_collision_mask_value(PlayerProperties.player_collision_layer, true)
+	
+func _physics_process(delta: float) -> void:
+	var distance = global_position.distance_to(PlayerProperties.player_position)
+	if !isAttacking and distance <= 150:
+		var playerPathing = global_position.direction_to(PlayerProperties.player_position) #where THIS mob is in the world (works with sprite or characterBody2D) direction_to
+		velocity.x = playerPathing.x * speed
+		velocity.y = playerPathing.y * speed
+		change_Sprite_Direction()
+		move_and_slide()
+	#else: animated_sprite_2d.play(\"idle\")
+	
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	print(\"Player Group in hurtbox. Sent from mugger parent node\")
+	if body.is_in_group(\"player\"):
+		print(\"Player validated Group in hurtbox. Sent from mugger parent node\")
+		isAttacking = true
+		player_in_range = true
+		hurtbox.set_process(true)
+		animated_sprite_2d.play(\"attack\")
+		while player_in_range:
+			timer.start()
+			await timer.timeout
+
+		
+func check_life():
+	if isDead:
+		var wait_time = 0.3
+		$AnimatedSprite2D.play_death()
+		await get_tree().create_timer(wait_time).timeout
+		queue_free()
+		
+func _on_timer_timeout() -> void:
+	print(player_in_range, ' right before timer check to set isattacking false')
+	if !player_in_range:
+		isAttacking = false
+		hurtbox.set_process(false)
+	
+func change_Sprite_Direction():
+	if velocity.x < 0: #Look Left
+		animated_sprite_2d.flip_h = true
+		animated_sprite_2d.play(\"walk\")
+	elif velocity.x > 0: #Look Right
+		animated_sprite_2d.flip_h = false
+		animated_sprite_2d.play(\"walk\")
+	else: animated_sprite_2d.play(\"idle\")
+
+
+func _on_hurtbox_body_exited(body: Node2D) -> void:
+	player_in_range = false
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7e2sd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo574"]
-atlas = ExtResource("2_ialov")
+atlas = ExtResource("1_8mrb0")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ykabp"]
-atlas = ExtResource("2_ialov")
+atlas = ExtResource("1_8mrb0")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqn3i"]
-atlas = ExtResource("2_ialov")
+atlas = ExtResource("1_8mrb0")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w0sqg"]
-atlas = ExtResource("2_ialov")
+atlas = ExtResource("1_8mrb0")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24yh6"]
-atlas = ExtResource("2_ialov")
+atlas = ExtResource("1_8mrb0")
 region = Rect2(400, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3aeok"]
-atlas = ExtResource("2_ialov")
+atlas = ExtResource("1_8mrb0")
 region = Rect2(500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3ykc"]
-atlas = ExtResource("3_eu1la")
+atlas = ExtResource("2_okqrd")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3ise"]
-atlas = ExtResource("3_eu1la")
+atlas = ExtResource("2_okqrd")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nbeq"]
-atlas = ExtResource("3_eu1la")
+atlas = ExtResource("2_okqrd")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qptg"]
-atlas = ExtResource("3_eu1la")
+atlas = ExtResource("2_okqrd")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqcq3"]
-atlas = ExtResource("3_eu1la")
+atlas = ExtResource("2_okqrd")
 region = Rect2(400, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xl04"]
-atlas = ExtResource("3_eu1la")
+atlas = ExtResource("2_okqrd")
 region = Rect2(500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1qskn"]
-atlas = ExtResource("4_8n2cs")
+atlas = ExtResource("3_c3eij")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0yln1"]
-atlas = ExtResource("4_8n2cs")
+atlas = ExtResource("3_c3eij")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hoh42"]
-atlas = ExtResource("4_8n2cs")
+atlas = ExtResource("3_c3eij")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flf2a"]
-atlas = ExtResource("4_8n2cs")
+atlas = ExtResource("3_c3eij")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jujvl"]
-atlas = ExtResource("4_8n2cs")
+atlas = ExtResource("3_c3eij")
 region = Rect2(400, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mvdu"]
-atlas = ExtResource("4_8n2cs")
+atlas = ExtResource("3_c3eij")
 region = Rect2(500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yy00s"]
-atlas = ExtResource("4_8n2cs")
+atlas = ExtResource("3_c3eij")
 region = Rect2(600, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmj4m"]
-atlas = ExtResource("4_8n2cs")
+atlas = ExtResource("3_c3eij")
 region = Rect2(700, 0, 100, 100)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_y448l"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yk8kn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -174,18 +241,19 @@ _data = {
 "attack": SubResource("Animation_65qus")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0ega"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lg4u2"]
 radius = 4.0
 height = 40.0
 
-[node name="mugger" type="CharacterBody2D"]
-script = ExtResource("1_lt23b")
+[node name="Hamel" type="CharacterBody2D"]
+script = SubResource("GDScript_o7vpv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_lqlrt")
+shape = SubResource("CircleShape2D_7e2sd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_y448l")
+modulate = Color(0.501961, 0, 0.501961, 0.584314)
+sprite_frames = SubResource("SpriteFrames_yk8kn")
 animation = &"walk"
 autoplay = "idle"
 
@@ -194,12 +262,12 @@ libraries = {
 "": SubResource("AnimationLibrary_f85km")
 }
 
-[node name="Hurtbox" parent="." instance=ExtResource("5_hki62")]
+[node name="Hurtbox" parent="." instance=ExtResource("4_epnhw")]
 
 [node name="hurtbox" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, 5)
 rotation = -1.5708
-shape = SubResource("CapsuleShape2D_d0ega")
+shape = SubResource("CapsuleShape2D_lg4u2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
@@ -208,7 +276,7 @@ one_shot = true
 [node name="lagTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
-[connection signal="body_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]
+[connection signal="body_exited" from="Hurtbox" to="." method="_on_body_exited"]
 [connection signal="body_exited" from="Hurtbox" to="Hurtbox" method="_on_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Hurtbox" method="_on_timer_timeout"]

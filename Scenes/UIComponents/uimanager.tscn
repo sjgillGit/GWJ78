@@ -59,6 +59,8 @@ func close_cauldron_menu():
 
 func call_cauldron_menu():
 	%Cauldron.call_cauldron_menu()
+	%Conversation.initialize_conversation('You may choose one ENTITY to erase, going back to home automatically resets this', true)
+	
 "
 
 [node name="UIManager" type="Node"]

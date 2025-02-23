@@ -16,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print(saved_body," was recorded, and attempting to trigger damage")
+	print(player_in_range," was recorded, and attempting to trigger damage")
 	if player_in_range:
 		if saved_body.has_method("take_damage"):
 			saved_body.take_damage()
@@ -25,3 +25,4 @@ func _on_timer_timeout() -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	player_in_range = false
+	print(player_in_range, 'on exit set')

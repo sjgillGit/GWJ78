@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://brk0w0k4564ml"]
+[gd_scene load_steps=8 format=4 uid="uid://brk0w0k4564ml"]
 
 [ext_resource type="PackedScene" uid="uid://cd3sap8kut7hg" path="res://Scenes/SpriteSheet/hive_sprite_sheet.tscn" id="1_tnwom"]
 [ext_resource type="PackedScene" uid="uid://bc7wyx8xvx0ks" path="res://Scenes/player.tscn" id="2_wfomg"]
 [ext_resource type="PackedScene" uid="uid://cqfdph3j36m20" path="res://Scenes/spikes.tscn" id="3_csspx"]
 [ext_resource type="PackedScene" uid="uid://uy6f4gypnnqr" path="res://Scenes/jumpPad.tscn" id="4_cvnbp"]
 [ext_resource type="PackedScene" uid="uid://dcm77dbaqxc3q" path="res://Scenes/levels/level_transitions/level_one_start.tscn" id="5_dau3i"]
+[ext_resource type="Texture2D" uid="uid://3jsar5q8tvae" path="res://Assets/shift.png" id="6_nvenl"]
+[ext_resource type="Texture2D" uid="uid://ciak1h31jqn7f" path="res://Assets/WASD/Green/WASDGreen4.png" id="7_4qjhd"]
 
 [node name="world_PEPE_CHUNGUS" type="Node2D"]
 position = Vector2(292, -3739)
@@ -277,3 +279,18 @@ position = Vector2(812, 390)
 
 [node name="Spikes79" parent="." instance=ExtResource("3_csspx")]
 position = Vector2(749, 391)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(162, -68)
+texture = ExtResource("6_nvenl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 209.0
+offset_top = -78.0
+offset_right = 249.0
+offset_bottom = -58.0
+text = "+"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(243, -69)
+texture = ExtResource("7_4qjhd")

@@ -12,6 +12,11 @@ var player_in_range: bool = false
 
 func _ready() -> void:
 	hurtbox.set_collision_mask_value(PlayerProperties.player_collision_layer, true)
+	if (PlayerProperties.people_toggle == true):
+		hide()
+	else:
+		show()
+		
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

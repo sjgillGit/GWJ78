@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d282ssyvd6lv5"]
+[gd_scene load_steps=7 format=3 uid="uid://d282ssyvd6lv5"]
 
 [ext_resource type="Theme" uid="uid://be8fu88chioyx" path="res://Scenes/UIComponents/DefaultTheme.tres" id="1_asqip"]
 
@@ -61,8 +61,10 @@ device = -1
 keycode = 69
 unicode = 101
 
+[sub_resource type="InputEventKey" id="InputEventKey_bwihj"]
+
 [sub_resource type="Shortcut" id="Shortcut_viwcs"]
-events = [SubResource("InputEventKey_emto6")]
+events = [SubResource("InputEventKey_emto6"), SubResource("InputEventKey_bwihj")]
 
 [sub_resource type="GDScript" id="GDScript_35dg1"]
 script/source = "extends Button
