@@ -14,5 +14,4 @@ func _on_body_entered(body: Node2D) -> void:
 		audio_stream_player_2d.play()
 		PlayerProperties.fruits_collected[str(fruit_id)] = true
 		#animation_player.play("collect")
-		await get_tree().create_timer(0.8).timeout
 		queue_free()

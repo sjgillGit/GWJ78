@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://cmm8dtn8mm1em"]
+[gd_scene load_steps=60 format=4 uid="uid://cmm8dtn8mm1em"]
 
 [ext_resource type="Texture2D" uid="uid://bb63gwy4i02jv" path="res://Assets/enviroment/world_tileset.png" id="1_3k31k"]
 [ext_resource type="PackedScene" uid="uid://bxrqa6sgh7qnn" path="res://skyNodeView.tscn" id="1_sdn7v"]
@@ -10,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://ciak1h31jqn7f" path="res://Assets/WASD/Green/WASDGreen4.png" id="8_btyn6"]
 [ext_resource type="Texture2D" uid="uid://cbw83khg5xp5x" path="res://Assets/SpaceBar/Green/SpaceBarGreen.png" id="9_qi4tm"]
 [ext_resource type="Texture2D" uid="uid://btsg2bel4q3m2" path="res://Assets/Keys/down.png" id="10_0kgjh"]
-[ext_resource type="Texture2D" uid="uid://3jsar5q8tvae" path="res://Assets/shift.png" id="10_tjct6"]
+[ext_resource type="Texture2D" uid="uid://kplxajctwv3i" path="res://Assets/shift.png" id="10_tjct6"]
 [ext_resource type="PackedScene" uid="uid://de7fytvgve4kc" path="res://Scripts/Components/CauldronE.tscn" id="12_3dckh"]
+[ext_resource type="AudioStream" uid="uid://cyqbajnhru2m0" path="res://Assets/sound/bg_music.wav" id="13_4p3qs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d0vtq"]
 texture = ExtResource("1_3k31k")
@@ -704,7 +705,7 @@ tile_set = SubResource("TileSet_xhrbg")
 
 [node name="Player" parent="." instance=ExtResource("2_b6gq6")]
 z_index = 1
-position = Vector2(-328, -72)
+position = Vector2(-305, 17)
 
 [node name="next_level_transition1" parent="." instance=ExtResource("4_4o2fa")]
 position = Vector2(329, -40)
@@ -753,3 +754,9 @@ texture = ExtResource("10_0kgjh")
 
 [node name="Cauldron" parent="." instance=ExtResource("12_3dckh")]
 position = Vector2(-240, 8)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_4p3qs")
+autoplay = true
+
+[editable path="Player"]

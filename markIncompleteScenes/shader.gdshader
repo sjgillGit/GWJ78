@@ -15,4 +15,3 @@ void fragment() {
 	//COLOR = vec4(centered_uv, 0.0, 1.0);
 	COLOR = vec4(screen_color, 1.0);
 }
-
