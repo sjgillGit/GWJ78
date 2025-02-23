@@ -15,14 +15,19 @@ var last_keycode = 0
 var drop_started = false
 const DOUBLETAP_DELAY = 0.25
 var double_down_time = DOUBLETAP_DELAY
+@onready var dashIcon: Sprite2D = $"../Camera2D/Node2D/Sprite2D/Sprite2D2"
 
 
 func air_dash() -> void:
 	dash.play()
+	dashIcon.visible = true
 	isOnCooldown = true
 	characterBody.isDashing = true
-	get_tree().create_timer(cooldown).timeout.connect(set.bind("isOnCooldown", false))
-	get_tree().create_timer(cooldown).timeout.connect(Callable(self, "cooldown_flash")) #, animated_sprite_2d.play("dash_cooldown")
+	get_tree().create_timer(cooldown).timeout.connect(func():
+		isOnCooldown = false
+		dashIcon.visible = false
+		)
+	#get_tree().create_timer(cooldown).timeout.connect(Callable(self, "cooldown_flash")) #, animated_sprite_2d.play("dash_cooldown")
 	dashingDirection = characterBody.direction
 	get_tree().create_timer(airDashDuration).timeout.connect(func():
 		characterBody.velocity = Vector2.ZERO
