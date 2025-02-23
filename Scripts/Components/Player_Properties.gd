@@ -94,9 +94,7 @@ func _level_start():
 	population_health_change = 0
 	chaos_change = 0
 	good_change = 0
-	
 
-	
 #On Signal for in_level_change
 #
 	
